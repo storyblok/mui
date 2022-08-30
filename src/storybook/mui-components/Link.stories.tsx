@@ -6,7 +6,7 @@ const Component = Link
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui/Link`,
+  title: `Mui Components/Link`,
   component: Component,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   // decorators: [(Story) => (

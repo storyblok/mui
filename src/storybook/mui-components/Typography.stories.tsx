@@ -7,7 +7,7 @@ const Component = Typography
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: `Mui/Typography`,
+    title: `Mui Components/Typography`,
     component: Component,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

@@ -6,7 +6,7 @@ const Component = TextField
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: `Mui/TextField`,
+    title: `Mui Components/TextField`,
     component: Component,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

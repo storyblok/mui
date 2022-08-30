@@ -9,7 +9,7 @@ const Component = Snackbar
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: `Mui/Snackbar`,
+    title: `Mui Components/Snackbar`,
     component: Component,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Component>;

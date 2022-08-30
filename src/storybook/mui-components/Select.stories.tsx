@@ -7,7 +7,7 @@ const Component = Select
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: `Mui/Select`,
+    title: `Mui Components/Select`,
     component: Component,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

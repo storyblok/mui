@@ -6,7 +6,7 @@ const Component = Checkbox
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui/Checkbox`,
+  title: `Mui Components/Checkbox`,
   component: Component,
   argTypes: {
     checked: {

@@ -15,6 +15,7 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Overview',
+        'Design',
         'Icons',
         [
           'Overview',
@@ -24,6 +25,10 @@ export const parameters = {
           '*',
           'Other',
         ],
+        'Mui Components',
+        'Components',
+        'Layout',
+        'Pages',
         '*',
       ],
     },
