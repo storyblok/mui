@@ -1,0 +1,119 @@
+import {Meta, DocsContainer, ColorPalette, ColorItem} from '@storybook/addon-docs/blocks';
+import {
+    alpha,
+    Checkbox,
+    Container,
+    Divider,
+    Grid,
+    List,
+    ListItem, ListItemButton, ListItemIcon, ListItemSecondaryAction,
+    ListItemText, MenuItem, MenuList,
+    ThemeProvider,
+    Typography,
+    useTheme
+} from "@mui/material";
+import {CssBaseline} from "@mui/material";
+import {lightTheme} from "@src/theme"; import {useState} from "react"; import Button from "@mui/material/Button";
+
+<Meta
+    title="Design/Palette"
+    parameters={{
+        docs: {
+            container: ({children, context}) => (
+                <DocsContainer context={context}>
+                    <ThemeProvider theme={lightTheme}>
+                        <CssBaseline/>
+                        {children}
+                    </ThemeProvider>
+                </DocsContainer>
+            ),
+        },
+    }}
+/>
+
+export const PaletteItem = (props) => {
+    const {palette} = useTheme()
+    const {name} = props
+    return (
+        <ColorItem
+            title={name}
+            colors={{main: palette[name].main}}
+        />
+    )
+}
+
+export const LoremIpsum = () => (
+    <>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis ullamcorper tortor, eget lobortis leo.
+        Pellentesque congue eros nec metus dictum, non viverra urna fermentum. Aliquam non viverra purus, sit amet
+        dictum turpis. Ut consectetur, arcu ut commodo pretium, augue magna sodales nibh, vel imperdiet leo urna in
+        metus. Pellentesque elementum pharetra feugiat. Morbi a nisi massa. Etiam dolor magna, facilisis eget luctus eu,
+        aliquet non ligula.
+    </>
+)
+
+export const BackgroundItem = () => {
+    const {palette} = useTheme()
+    return (
+        <ColorItem
+            title="background"
+            colors={{
+                default: palette.background.default,
+                paper: palette.background.paper,
+            }}
+        />
+    )
+}
+
+## Surfaces
+
+<ColorPalette>
+    <PaletteItem name="primary"/>
+    <PaletteItem name="secondary"/>
+    <PaletteItem name="success"/>
+    <PaletteItem name="info"/>
+    <PaletteItem name="warning"/>
+    <PaletteItem name="error"/>
+    <BackgroundItem/>
+</ColorPalette>
+
+## Divider
+
+<Container sx={{p: 4}}>
+    <Divider/>
+</Container>
+
+## Text
+
+<Grid container spacing={2}>
+    <Grid item xs={3}>
+        <Typography variant="subtitle1">
+            text.primary
+        </Typography>
+    </Grid>
+    <Grid item xs={9}>
+        <Typography sx={{color: 'text.primary'}}>
+            <LoremIpsum/>
+        </Typography>
+    </Grid>
+    <Grid item xs={3}>
+        <Typography variant="subtitle1">
+            text.secondary
+        </Typography>
+    </Grid>
+    <Grid item xs={9}>
+        <Typography sx={{color: 'text.secondary'}}>
+            <LoremIpsum/>
+        </Typography>
+    </Grid>
+    <Grid item xs={3}>
+        <Typography variant="subtitle1">
+            text.disabled
+        </Typography>
+    </Grid>
+    <Grid item xs={9}>
+        <Typography sx={{color: 'text.disabled'}}>
+            <LoremIpsum/>
+        </Typography>
+    </Grid>
+</Grid>

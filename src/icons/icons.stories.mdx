@@ -1,0 +1,46 @@
+import {Meta, DocsContainer} from '@storybook/addon-docs/blocks';
+import {
+    Grid,
+    ThemeProvider,
+} from "@mui/material";
+import Button from "@mui/material/Button";
+import {CssBaseline} from "@mui/material";
+import {lightTheme} from "../theme";
+import {StoryblokIcon} from "./brand/brand";
+
+<Meta
+    title="Icons/Overview"
+    parameters={{
+        docs: {
+            container: ({children, context}) => (
+                <DocsContainer context={context}>
+                    <ThemeProvider theme={lightTheme}>
+                        <CssBaseline/>
+                        {children}
+                    </ThemeProvider>
+                </DocsContainer>
+            ),
+        },
+    }}
+/>
+
+# Icons
+
+Each icon is exported as its own React component. For example:
+
+```jsx
+<StoryblokIcon />
+```
+Result:
+
+<StoryblokIcon />
+
+Each icon is a MUI icon. As such, they share the same props. For example:
+
+```jsx
+<StoryblokIcon color="primary" fontSize="large"/>
+```
+
+Result: <StoryblokIcon color="primary" fontSize="large"/>
+
+Icons are tree-shakeable, so importing just a couple of icons doesn't drastically increase the bundle size

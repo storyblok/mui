@@ -1,0 +1,40 @@
+import {
+  Meta,
+  DocsContainer,
+} from '@storybook/addon-docs/blocks';
+import {lightTheme} from "@src/theme";
+import {
+  CssBaseline,
+  Button,
+  ThemeProvider
+} from "@mui/material";
+
+<Meta
+  title="Overview"
+  parameters={{
+    docs: {
+      container: ({children, context}) => (
+        <DocsContainer context={context}>
+          <ThemeProvider theme={lightTheme}>
+            <CssBaseline/>
+            {children}
+          </ThemeProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Overview
+
+From [mui.com](https://mui.com/material-ui/getting-started/overview/):
+
+> MUI is an open-source React component library that implements Google's Material Design.
+>
+> It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
+
+`@storybook/mui` consists of a [MUI theme](https://mui.com/material-ui/customization/theming/) that styles the MUI standard components according to [Storyblok's design system](https://blok.ink).
+
+Since @storybook/mui is based on MUI, all the [MUI components](https://mui.com/material-ui/getting-started/supported-components/) are available. Some of these components are visualised here in the [MUI Components section](/?path=/story/mui). You'll find the official documentation on https://mui.com/.
+
+`@storybook/mui` also provides some additional components that are unique to this package.

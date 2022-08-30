@@ -1,0 +1,61 @@
+import {Meta, DocsContainer, ColorPalette, ColorItem} from '@storybook/addon-docs/blocks';
+import {
+    Grid,
+    Paper,
+    ThemeProvider,
+    Typography,
+    useTheme
+} from "@mui/material";
+import {CssBaseline} from "@mui/material";
+import {lightTheme} from "@src/theme";
+
+<Meta
+    title="Design/Shadows"
+    parameters={{
+        docs: {
+            container: ({children, context}) => (
+                <DocsContainer context={context}>
+                    <ThemeProvider theme={lightTheme}>
+                        <CssBaseline/>
+                        {children}
+                    </ThemeProvider>
+                </DocsContainer>
+            ),
+        },
+    }}
+/>
+
+# Shadows
+
+
+export const Shadows = () => {
+    const theme = useTheme()
+    return (
+        <Grid container spacing={6}>
+            <Grid item xs={3}>
+                <Typography variant="subtitle1">
+                    Elevation
+                </Typography>
+            </Grid>
+            <Grid item xs={9}>
+                <Typography variant="subtitle1">
+                    Display
+                </Typography>
+            </Grid>
+            {Object.keys(theme.shadows).map((index) => (
+                <>
+                    <Grid item xs={3}>
+                        <Typography variant="subtitle1">
+                            elevation {index}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={9}>
+                        <Paper elevation={index} sx={{p: 8}}/>
+                    </Grid>
+                </>
+            ))}
+        </Grid>
+    )
+}
+
+<Shadows />

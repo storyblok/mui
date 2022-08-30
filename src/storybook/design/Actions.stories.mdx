@@ -1,0 +1,99 @@
+import {
+  Meta,
+  DocsContainer,
+  ColorPalette,
+  ColorItem
+} from '@storybook/addon-docs/blocks';
+import {
+  alpha,
+  Checkbox,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  MenuItem,
+  MenuList,
+  ThemeProvider,
+  useTheme
+} from "@mui/material";
+import {CssBaseline} from "@mui/material";
+import {lightTheme} from "@src/theme"; import {useState} from "react"; import Button from "@mui/material/Button";
+
+<Meta
+  title="Design/Actions"
+  parameters={{
+    docs: {
+      container: ({children, context}) => (
+        <DocsContainer context={context}>
+          <ThemeProvider theme={lightTheme}>
+            <CssBaseline/>
+            {children}
+          </ThemeProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+## Actions
+
+export const ActionItem = (props) => {
+  const {palette} = useTheme()
+  const {name} = props
+  return (
+    <ColorItem
+      title={name}
+      colors={{
+        "": palette.action[name],
+      }}
+    />
+  )
+}
+
+export const ActionsPalette = () => {
+  const {palette} = useTheme()
+  return (
+    <ColorPalette>
+      <ActionItem name="active"/>
+      <ActionItem name="disabled"/>
+      <ActionItem name="hover"/>
+      <ActionItem name="focus"/>
+      <ColorItem
+        title="selected"
+        colors={{
+          "": alpha(palette.action.selected, palette.action.selectedOpacity),
+        }}
+      />
+    </ColorPalette>
+  )
+}
+
+<ActionsPalette/>
+
+### Demo
+
+export const Actionable = () => {
+  const [selected, setSelected] = useState(false)
+  return (
+    <ListItem>
+      <ListItemButton
+        selected={selected}
+        onClick={() => setSelected(selected => !selected)}
+      >
+        <ListItemIcon>
+          <Checkbox checked={selected}/>
+        </ListItemIcon>
+        <ListItemText>
+          Click Me!
+        </ListItemText>
+      </ListItemButton>
+    </ListItem>
+  )
+}
+
+<MenuList>
+  <MenuItem>MenuItem</MenuItem>
+  <MenuItem selected>Selected MenuItem</MenuItem>
+  <MenuItem disabled>Disabled MenuItem <Button sx={{mx: 2}}>Enabled Button</Button></MenuItem>
+  <MenuItem>Enabled MenuItem <Button sx={{mx: 2}} disabled>Disabled Button</Button></MenuItem>
+</MenuList>

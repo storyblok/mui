@@ -1,0 +1,75 @@
+import {
+  Meta,
+  DocsContainer,
+} from '@storybook/addon-docs/blocks';
+import {lightTheme} from "@src/theme";
+import {
+  CssBaseline,
+  Button,
+  ThemeProvider
+} from "@mui/material";
+
+<Meta
+  title="Getting Started"
+  parameters={{
+    docs: {
+      container: ({children, context}) => (
+        <DocsContainer context={context}>
+          <ThemeProvider theme={lightTheme}>
+            <CssBaseline/>
+            {children}
+          </ThemeProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Getting Started
+
+The steps below explains how to include `@storyblok/mui` in your project.
+
+## Prerequisites
+
+First of all, set up MUI with the help of [MUI's official documentation](https://mui.com/).
+
+## Installation
+
+Install `@storyblok/mui`:
+
+````shell
+npm install @storyblok/mui
+````
+
+With yarn:
+
+````shell
+yarn add @storyblok/mui
+````
+
+Wrap your application within a `<ThemeProvider /> component`:
+
+
+````typescript jsx
+import { lightTheme } from '@storyblok/mui'
+import {
+  CssBaseline,
+  Button,
+  ThemeProvider
+} from "@mui/material";
+
+const App = () => (
+    <ThemeProvider theme={lightTheme}>
+      <CssBaseline />
+      <Button>
+        Hello
+      </Button>
+    </ThemeProvider>
+)
+````
+
+Result:
+
+<Button>
+  Hello
+</Button>
