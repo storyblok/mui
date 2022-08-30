@@ -1,0 +1,32 @@
+import {
+  Meta,
+  DocsContainer,
+} from '@storybook/addon-docs/blocks';
+import {lightTheme} from "@src/theme";
+import {
+  CssBaseline,
+  Button,
+  ThemeProvider
+} from "@mui/material";
+
+<Meta
+  title="Mui Components/Overview"
+  parameters={{
+    docs: {
+      container: ({children, context}) => (
+        <DocsContainer context={context}>
+          <ThemeProvider theme={lightTheme}>
+            <CssBaseline/>
+            {children}
+          </ThemeProvider>
+        </DocsContainer>
+      ),
+    },
+  }}
+/>
+
+# Overview
+
+The theme in `@storyblok/mui` styles all the standard components from [MUI components](https://mui.com/material-ui/getting-started/supported-components/). Some of these components are visualised here in this section. You'll find the official documentation on https://mui.com/.
+
+See the getting started section for how to style your MUI standard component with the Storyblok theme.

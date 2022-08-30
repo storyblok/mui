@@ -26,6 +26,10 @@ export const parameters = {
           'Other',
         ],
         'Mui Components',
+        [
+          'Overview',
+          '*',
+        ],
         'Components',
         'Layout',
         'Pages',
