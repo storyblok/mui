@@ -15,7 +15,16 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Overview',
-        '*'
+        'Icons',
+        [
+          'Overview',
+          'Storyblok',
+          'TwoTone',
+          'Pictograms',
+          '*',
+          'Other',
+        ],
+        '*',
       ],
     },
   }
