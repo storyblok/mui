@@ -2,9 +2,9 @@ import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {useState} from "react";
 import Button from "@mui/material/Button";
 import {AppLayout} from "./AppLayout";
-import {SplitButton} from "../../components/SplitButton/SplitButton";
-import {Box, useTheme} from "@mui/material";
-import {StoryblokIcon} from "../../icons";
+import {DropMenu} from "../../components";
+import {Box, MenuItem, useTheme} from "@mui/material";
+import {SearchIcon, StoryblokIcon} from "../../icons";
 import {AppDrawer} from "../AppDrawer/AppDrawer";
 
 const Component = AppLayout
@@ -36,20 +36,7 @@ const Template: ComponentStory<typeof Component> = (args) => (
             subtitle="Created by Johannes Lindgren"
             header={
                 <Box display="flex" gap={4} alignItems="center">
-                    <SplitButton
-                        buttonProps={{
-                            children: 'Save'
-                        }}
-                        menuItemProps={[{
-                            children: 'Save as'
-                        }, {
-                            children: 'Delete'
-                        }, {
-                            children: 'Copy to clipboard'
-                        }, {
-                            children: 'Clone'
-                        }]}
-                    />
+                  <Button startIcon={<SearchIcon />}>Settings</Button>
                 </Box>
             }
             {...args}

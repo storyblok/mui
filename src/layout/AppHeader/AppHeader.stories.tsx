@@ -1,7 +1,7 @@
 import {ComponentStory, ComponentMeta} from '@storybook/react';
 import {AppHeader} from "./AppHeader";
-import {SplitButton} from "../../components/SplitButton/SplitButton";
-import {StoryblokIcon} from "../../icons";
+import {SearchIcon, StoryblokIcon} from "../../icons";
+import Button from "@mui/material/Button";
 
 const Component = AppHeader
 
@@ -32,18 +32,5 @@ Icon.args = {
 export const Actions = Template.bind({});
 Actions.args = {
     subtitle: "Subtitle",
-    children: <SplitButton
-        buttonProps={{
-            children: 'Save'
-        }}
-        menuItemProps={[{
-            children: 'Save as'
-        },{
-            children: 'Delete'
-        },{
-            children: 'Copy to clipboard'
-        },{
-            children: 'Clone'
-        }]}
-    />
+    children: <Button startIcon={<SearchIcon />}>Settings</Button>,
 }
