@@ -1,14 +1,20 @@
 {
   "name": "@storyblok/mui",
-  "version": "0.0.3-alpha",
+  "version": "0.0.4-alpha",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.esm.js",
   "types": "dist/esm/index.d.ts",
-  "author": "Johannes Lindgren",
+  "author": {
+    "name": "Johannes Lindgren",
+    "email": "johannes.lindgren@storyblok.com",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storyblok/mui.git"
+  },
   "license": "MIT",
   "files": [
-    "dist",
-    "package.json"
+    "dist/"
   ],
   "scripts": {
     "build": "rollup -c",
