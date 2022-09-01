@@ -13,7 +13,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo TODO tests",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
     "build-storybook": "build-storybook --disable-telemetry --quiet"
   },
