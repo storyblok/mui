@@ -84,8 +84,8 @@ export const NoItemsAddedPictogram: IconComponent = (props) => (
           d="M55,0 C85.3756612,0 110,24.6243388 110,55 C110,85.3756612 85.3756612,110 55,110 C24.6243388,110 0,85.3756612 0,55 C0,24.6243388 24.6243388,0 55,0 Z"></path>
       </clipPath>
       <linearGradient id="i2" x1="55px" y1="0px" x2="55px" y2="110px" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#F3F4F5" offset="0%"></stop>
-        <stop stop-color="#D7D9DD" offset="100%"></stop>
+        <stop stopColor="#F3F4F5" offset="0%"></stop>
+        <stop stopColor="#D7D9DD" offset="100%"></stop>
       </linearGradient>
       <clipPath id="i3">
         <path
@@ -105,40 +105,40 @@ export const NoItemsAddedPictogram: IconComponent = (props) => (
       </clipPath>
     </defs>
     <g transform="translate(-4670.0 -457.0)">
-      <g clip-path="url(#i0)">
+      <g clipPath="url(#i0)">
         <g transform="translate(4670.0 457.0)">
           <g transform="translate(3.0 0.0)">
-            <g clip-path="url(#i1)">
+            <g clipPath="url(#i1)">
               <polygon points="0,0 110,0 110,110 0,110 0,0" stroke="none" fill="url(#i2)"></polygon>
             </g>
           </g>
           <g transform="translate(0.0 86.0)">
-            <g clip-path="url(#i3)">
+            <g clipPath="url(#i3)">
               <polygon points="0,0 116,0 116,6 0,6 0,0" stroke="none" fill="#B1B5BE"></polygon>
             </g>
           </g>
           <g transform="translate(33.0 37.0)">
-            <g clip-path="url(#i4)">
+            <g clipPath="url(#i4)">
               <polygon points="0,0 49,0 49,49 0,49 0,0" stroke="none" fill="#CDCFD4"></polygon>
             </g>
           </g>
           <g transform="translate(69.0 80.0)">
-            <g clip-path="url(#i5)">
+            <g clipPath="url(#i5)">
               <polygon points="0,0 25,0 25,6 0,6 0,0" stroke="none" fill="#F8F9FA"></polygon>
             </g>
           </g>
           <g transform="translate(69.0 73.0)">
-            <g clip-path="url(#i5)">
+            <g clipPath="url(#i5)">
               <polygon points="0,0 25,0 25,6 0,6 0,0" stroke="none" fill="#F8F9FA"></polygon>
             </g>
           </g>
           <g transform="translate(69.0 66.0)">
-            <g clip-path="url(#i5)">
+            <g clipPath="url(#i5)">
               <polygon points="0,0 25,0 25,6 0,6 0,0" stroke="none" fill="#F8F9FA"></polygon>
             </g>
           </g>
           <g transform="translate(49.0 37.0)">
-            <g clip-path="url(#i6)">
+            <g clipPath="url(#i6)">
               <polygon points="0,0 17,0 17,19.0495456 0,19.0495456 0,0" stroke="none" fill="#1B243F"></polygon>
             </g>
           </g>
