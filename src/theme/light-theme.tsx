@@ -180,6 +180,7 @@ const typography: TypographyOptions = ({
         fontSize: font_16,
         fontWeight: font_weight_medium,
         textTransform: 'inherit',
+        lineHeight: 'normal',
     },
     body1: {
         fontSize: font_14,
