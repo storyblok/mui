@@ -10,8 +10,8 @@ export const EmptyStatePictogram: IconComponent = (props) => (
   >
     <defs>
       <linearGradient id="linearGradient-1" x1="50%" x2="50%" y2="100%">
-        <stop stop-color="#F3F4F5" offset="0"></stop>
-        <stop stop-color="#D7D9DD" offset="1"></stop>
+        <stop stopColor="#F3F4F5" offset="0"></stop>
+        <stop stopColor="#D7D9DD" offset="1"></stop>
       </linearGradient>
       <rect id="path-2" width="122" height="54" rx="5"></rect>
       <filter id="filter-4" x="-.039344" y="-.088889" width="1.0787" height="1.1963">
@@ -22,7 +22,7 @@ export const EmptyStatePictogram: IconComponent = (props) => (
       </filter>
       <circle id="path-5" cx="16" cy="16" r="16"></circle>
     </defs>
-    <g fill="none" fill-rule="evenodd">
+    <g fill="none" fillRule="evenodd">
       <g transform="translate(-786 -353)">
         <g transform="translate(603 353)">
           <g transform="translate(183)">
@@ -32,7 +32,7 @@ export const EmptyStatePictogram: IconComponent = (props) => (
                 <use href="#path-2"></use>
               </mask>
               <use fill="black" filter="url(#filter-4)" href="#path-2"></use>
-              <use fill="#FFFFFF" fill-rule="evenodd" href="#path-2"></use>
+              <use fill="#FFFFFF" fillRule="evenodd" href="#path-2"></use>
               <g fill="#E0E1E5">
                 <rect x="41" y="14" width="71" height="10" rx="3" mask="url(#mask-3)"
                       opacity=".74496"></rect>
@@ -43,7 +43,7 @@ export const EmptyStatePictogram: IconComponent = (props) => (
               </g>
               <rect width="31" height="54" fill="#1B243F" mask="url(#mask-3)"></rect>
             </g>
-            <circle cx="16" cy="57" r="16" fill="#000" fill-opacity=".15256"></circle>
+            <circle cx="16" cy="57" r="16" fill="#000" fillOpacity=".15256"></circle>
             <g transform="translate(1 39)">
               <mask id="mask-6" fill="white">
                 <use href="#path-5"></use>
@@ -57,7 +57,7 @@ export const EmptyStatePictogram: IconComponent = (props) => (
                     d="m4 17.5c0 0.82843 0.67157 1.5 1.5 1.5h13c0.82843 0 1.5-0.67157 1.5-1.5s-0.67157-1.5-1.5-1.5h-13c-0.82843 0-1.5 0.67157-1.5 1.5z"></path>
                   <path
                     d="m4 12.5c0 0.82843 0.67157 1.5 1.5 1.5h13c0.82843 0 1.5-0.67157 1.5-1.5s-0.67157-1.5-1.5-1.5h-13c-0.82843 0-1.5 0.67157-1.5 1.5z"
-                    fill-opacity=".57"></path>
+                    fillOpacity=".57"></path>
                 </g>
               </g>
             </g>
@@ -148,6 +148,56 @@ export const NoItemsAddedPictogram: IconComponent = (props) => (
   </SvgIcon>
 )
 
+
+export const EmptyPictogram: IconComponent = (props) => (
+  <SvgIcon
+    xmlns="http://www.w3.org/2000/svg"
+    role="presentation"
+    viewBox="0 0 116.0 110.0"
+    {...props}
+  >
+    < defs>
+      < linearGradient
+        x1="50%"
+        y1="0%"
+        x2="50%"
+        y2="100%"
+        id="a">
+        <stop
+          stopColor="#F3F4F5"
+          offset="0%"
+        >
+        </stop>
+        <stop stopColor="#D7D9DD" offset="100%"></stop>
+      </linearGradient>
+      <rect id="b" x="0" y="0" width="74" height="52" rx="3"></rect>
+    </defs>
+    <g fill="none" fillRule="evenodd">
+      <circle fill="url(#a)" cx="58" cy="55" r="55"></circle>
+      <g transform="translate(0 22)">
+        <path d="M20 0h76a5 5 0 015 5v59H15V5a5 5 0 015-5z" fill="#CDCFD4"></path>
+        <rect fill="#C3C5CA" y="64" width="116" height="6" rx="3"></rect>
+        <g transform="translate(21 6)">
+          <mask id="c" fill="#fff">
+            <use href="#b"></use>
+          </mask>
+          <use fill="#F8F9FA" href="#b"></use>
+          <path fill="#1B243F" mask="url(#c)" d="M0 0h13v52H0z"></path>
+        </g>
+        <rect fill="#E0E1E5" x="40" y="19" width="9" height="3" rx="1.5"></rect>
+        <rect fill="#E0E1E5" x="40" y="12" width="9" height="3" rx="1.5"></rect>
+        <rect fill="#E0E1E5" x="52" y="19" width="9" height="3" rx="1.5"></rect>
+        <circle fill="#E0E1E5" cx="87.5" cy="20.5" r="1.5"></circle>
+        <rect fill="#E0E1E5" x="40" y="31" width="9" height="3" rx="1.5"></rect>
+        <rect fill="#E0E1E5" x="52" y="31" width="9" height="3" rx="1.5"></rect>
+        <circle fill="#E0E1E5" cx="87.5" cy="32.5" r="1.5"></circle>
+        <rect fill="#E0E1E5" x="40" y="25" width="29" height="3" rx="1.5"></rect>
+        <circle fill="#E0E1E5" cx="87.5" cy="26.5" r="1.5"></circle>
+      </g>
+    </g>
+  </SvgIcon>
+)
+
 export const EmptySearchPictogram: IconComponent = (props) => (
   <SvgIcon
     xmlns="http://www.w3.org/2000/svg"
@@ -201,16 +251,16 @@ export const NotFoundPictogram: IconComponent = (props) => (
     <title>45252F4F-6892-40EF-B15B-D994B1B45630@1x</title>
     <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-        <stop stop-color="#F3F4F5" offset="0%"/>
-        <stop stop-color="#D7D9DD" offset="100%"/>
+        <stop stopColor="#F3F4F5" offset="0%"/>
+        <stop stopColor="#D7D9DD" offset="100%"/>
       </linearGradient>
       <rect id="path-2" x="0" y="0" width="74" height="52" rx="3"/>
       <linearGradient x1="100%" y1="26.035503%" x2="50%" y2="73.964497%" id="linearGradient-4">
-        <stop stop-color="#C1C4CB" offset="0%"/>
-        <stop stop-color="#CDCFD4" offset="100%"/>
+        <stop stopColor="#C1C4CB" offset="0%"/>
+        <stop stopColor="#CDCFD4" offset="100%"/>
       </linearGradient>
     </defs>
-    <g id="👋-1-Onboarding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="👋-1-Onboarding" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="404-Non-existing-space" transform="translate(-617.000000, -372.000000)">
         <g id="illustration-404" transform="translate(617.000000, 372.000000)">
           <g id="Group-4" transform="translate(0.000000, 13.000000)">
@@ -242,7 +292,7 @@ export const NotFoundPictogram: IconComponent = (props) => (
                   </g>
                 </g>
                 <line x1="29.6175124" y1="37.4698274" x2="45" y2="35" id="Path-4" stroke="#1B243F"
-                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                       mask="url(#mask-3)"/>
               </g>
             </g>
@@ -251,7 +301,7 @@ export const NotFoundPictogram: IconComponent = (props) => (
             d="M136,0 C147.045695,-2.02906125e-15 156,8.954305 156,20 C156,29.2362243 149.739129,37.0101439 141.229868,39.3092787 L141.631677,46 L132.545,40 L94,40 C82.954305,40 74,31.045695 74,20 C74,8.954305 82.954305,2.02906125e-15 94,0 L136,0 Z"
             id="Combined-Shape" fill="#1C2540"
             transform="translate(115.000000, 23.000000) scale(-1, 1) translate(-115.000000, -23.000000) "/>
-          <text id="404" font-family="Roboto-Black, Roboto" font-size="26" font-weight="700" fill="#FFFFFF">
+          <text id="404" fontFamily="Roboto-Black, Roboto" fontSize="26" fontWeight="700" fill="#FFFFFF">
             <tspan x="92.4150391" y="30">404</tspan>
           </text>
           <rect id="Rectangle" fill="#B5B8BF" x="131" y="53" width="72" height="10" rx="5"/>
@@ -275,17 +325,17 @@ export const InternalServerErrorPictogram: IconComponent = (props) => (
   ><title>57066C23-8FF0-4801-9388-1073537E1E79@1x</title>
     <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-        <stop stop-color="#F3F4F5" offset="0%"></stop>
-        <stop stop-color="#D7D9DD" offset="100%"></stop>
+        <stop stopColor="#F3F4F5" offset="0%"></stop>
+        <stop stopColor="#D7D9DD" offset="100%"></stop>
       </linearGradient>
       <linearGradient x1="100%" y1="26.035503%" x2="50%" y2="73.964497%" id="linearGradient-2">
-        <stop stop-color="#C1C4CB" offset="0%"></stop>
-        <stop stop-color="#CDCFD4" offset="100%"></stop>
+        <stop stopColor="#C1C4CB" offset="0%"></stop>
+        <stop stopColor="#CDCFD4" offset="100%"></stop>
       </linearGradient>
       <rect id="path-3" x="0" y="0" width="74" height="52" rx="3"></rect>
       <circle id="path-5" cx="16" cy="16" r="16"></circle>
     </defs>
-    <g id="👋-1-Onboarding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="👋-1-Onboarding" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="500-Server-error" transform="translate(-617.000000, -372.000000)">
         <g id="illustration-500" transform="translate(617.000000, 372.000000)">
           <g id="Group-4" transform="translate(0.000000, 13.000000)">
@@ -320,8 +370,8 @@ export const InternalServerErrorPictogram: IconComponent = (props) => (
                       transform="translate(11.985281, 11.985281) rotate(-315.000000) translate(-11.985281, -11.985281) "></path>
                   </g>
                 </g>
-                <polyline id="Path-5" stroke="#1B243F" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" mask="url(#mask-4)"
+                <polyline id="Path-5" stroke="#1B243F" strokeWidth="2" strokeLinecap="round"
+                          strokeLinejoin="round" mask="url(#mask-4)"
                           points="24.0541992 40 27.9013672 36.152832 31.7485352 40 35.5957031 36.152832 39.4428711 40 43.2900391 36.152832 47.137207 40"></polyline>
               </g>
             </g>
@@ -340,7 +390,7 @@ export const InternalServerErrorPictogram: IconComponent = (props) => (
             d="M136,0 C147.045695,-2.02906125e-15 156,8.954305 156,20 C156,29.2362243 149.739129,37.0101439 141.229868,39.3092787 L141.631677,46 L132.545,40 L94,40 C82.954305,40 74,31.045695 74,20 C74,8.954305 82.954305,2.02906125e-15 94,0 L136,0 Z"
             id="Combined-Shape" fill="#1C2540"
             transform="translate(115.000000, 23.000000) scale(-1, 1) translate(-115.000000, -23.000000) "></path>
-          <text id="500" font-family="Roboto-Black, Roboto" font-size="26" font-weight="700" fill="#FFFFFF">
+          <text id="500" fontFamily="Roboto-Black, Roboto" fontSize="26" fontWeight="700" fill="#FFFFFF">
             <tspan x="92.4150391" y="30">500</tspan>
           </text>
         </g>
@@ -358,18 +408,18 @@ export const AccessDeniedPictogram: IconComponent = (props) => (
     <title>5AACCDE0-205B-48D7-A8CC-B5A91A082330@1x</title>
     <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-        <stop stop-color="#F3F4F5" offset="0%"></stop>
-        <stop stop-color="#D7D9DD" offset="100%"></stop>
+        <stop stopColor="#F3F4F5" offset="0%"></stop>
+        <stop stopColor="#D7D9DD" offset="100%"></stop>
       </linearGradient>
       <rect id="path-2" x="0" y="0" width="74" height="52" rx="3"></rect>
       <linearGradient x1="100%" y1="26.035503%" x2="50%" y2="73.964497%" id="linearGradient-4">
-        <stop stop-color="#C1C4CB" offset="0%"></stop>
-        <stop stop-color="#CDCFD4" offset="100%"></stop>
+        <stop stopColor="#C1C4CB" offset="0%"></stop>
+        <stop stopColor="#CDCFD4" offset="100%"></stop>
       </linearGradient>
       <circle id="path-5" cx="16" cy="16" r="16"></circle>
       <circle id="path-7" cx="16" cy="16" r="16"></circle>
     </defs>
-    <g id="👋-1-Onboarding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="👋-1-Onboarding" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="403-Access-denied" transform="translate(-617.000000, -384.000000)">
         <g id="illustration-access-denied" transform="translate(617.000000, 384.000000)">
           <g id="Group-7" transform="translate(0.000000, 1.000000)">
@@ -406,7 +456,7 @@ export const AccessDeniedPictogram: IconComponent = (props) => (
           <path
             d="M193,51 L193,87 L141,87 L141,51 L193,51 Z M171.5,64 L162.5,64 C160.567003,64 159,65.5670034 159,67.5 C159,69.4329966 160.567003,71 162.5,71 L162.5,71 L171.5,71 C173.432997,71 175,69.4329966 175,67.5 C175,65.5670034 173.432997,64 171.5,64 L171.5,64 Z"
             id="Combined-Shape" fill="url(#linearGradient-4)"></path>
-          <circle id="Oval" fill-opacity="0.152562281" fill="#000000" cx="167" cy="18" r="16"></circle>
+          <circle id="Oval" fillOpacity="0.152562281" fill="#000000" cx="167" cy="18" r="16"></circle>
           <g id="Oval-+-Oval-Mask" transform="translate(152.000000, 0.000000)">
             <mask id="mask-6" fill="white">
               <use href="#path-5"></use>
