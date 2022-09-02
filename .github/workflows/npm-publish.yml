@@ -3,7 +3,7 @@
 
 name: Node.js Package
 
-# TODO create github release when mering to main https://github.com/actions/create-release
+# TODO  create github release when mering to main https://github.com/actions/create-release
 
 on:
   release:
