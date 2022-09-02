@@ -6,9 +6,6 @@ name: Node.js Package
 on:
   release:
     types: [created]
-  push:
-    branches:
-      - main
 
 jobs:
   build:
@@ -25,7 +22,6 @@ jobs:
         with:
           name: dist
           path: dist/
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
@@ -40,6 +36,9 @@ jobs:
           name: dist
           path: dist/
       - run: yarn install --frozen-lockfile
-      - run: yarn publish --access public
+      - if: github.ref != 'refs/heads/master'
+        run: npm publish --access public --dry-run
+      - if: github.ref == 'refs/heads/master'
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
