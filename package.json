@@ -1,6 +1,6 @@
 {
   "name": "@storyblok/mui",
-  "version": "0.0.5-alpha",
+  "version": "0.0.6-alpha",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.esm.js",
   "types": "dist/esm/index.d.ts",
