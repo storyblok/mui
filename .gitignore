@@ -1,6 +1,9 @@
 # js
 node_modules/
+
+# Output
 dist/
+stats.html
 
 # Yarn
 yarn-error.log
