@@ -3,8 +3,11 @@
     <code>@storyblok/mui</code>
   </h1>
   <p style="text-align:center">
+    A MUI theme and several components for Storyblok.
   </p>
 </div>
+
+[![Node.js Package](https://github.com/storyblok/mui/actions/workflows/npm-publish.yml/badge.svg?branch=develop)](https://github.com/storyblok/mui/actions/workflows/npm-publish.yml)
 
 `@storybook/mui` is a component library based on [MUI](https://mui.com/). It is the ideal package to use for building Storyblok extensions with React as it takes care of the task of styling your components and lets you focus on building business logic. Thus, extensions built with `@storybook/mui` will seamlessly, visually integrate into Storyblok.
 
