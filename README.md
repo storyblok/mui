@@ -3,7 +3,7 @@
     <code>@storyblok/mui</code>
   </h1>
   <p style="text-align:center">
-    A MUI theme and several components for Storyblok.
+    A MUI Theme with multiple additional reusable components for Storyblok.
   </p>
 </div>
 
