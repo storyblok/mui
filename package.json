@@ -1,6 +1,6 @@
 {
   "name": "@storyblok/mui",
-  "description": "A MUI theme and components for Storyblok.",
+  "description": "A MUI theme and several components for Storyblok.",
   "version": "0.0.7-alpha",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.esm.js",
