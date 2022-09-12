@@ -20,6 +20,7 @@
     "dist/"
   ],
   "scripts": {
+    "lint": "eslint .",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "echo TODO tests",
@@ -43,7 +44,15 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "latest",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
     "babel-loader": "^8.2.5",
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-functional": "^4.3.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.64.0",
@@ -53,7 +62,8 @@
     "rollup-plugin-visualizer": "^5.8.1",
     "storybook-addon-material-ui": "^0.9.0-alpha.24",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
-    "typescript": "^4.5.4"
+    "tsutils": "^3.21.0",
+    "typescript": "^4.8.3"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.9.3",
