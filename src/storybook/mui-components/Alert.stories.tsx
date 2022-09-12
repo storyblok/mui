@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import {Alert, AlertTitle} from "@mui/material";
+import { Alert, AlertTitle } from '@mui/material'
 
 const Component = Alert
 
@@ -12,7 +12,7 @@ export default {
   argTypes: {
     severity: {
       control: 'select',
-      options: ["success","info","warning", "error"],
+      options: ['success', 'info', 'warning', 'error'],
     },
   },
   // decorators: [(Story) => (
@@ -20,42 +20,44 @@ export default {
   //       <Story />
   //     </ThemeProvider>
   // )]
-} as ComponentMeta<typeof Component>;
+} as ComponentMeta<typeof Component>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
+)
 
-const alertBody = <>
-  <AlertTitle>Title</AlertTitle>
-  This is an awesome component from Storyblok.
-</>
+const alertBody = (
+  <>
+    <AlertTitle>Title</AlertTitle>
+    This is an awesome component from Storyblok.
+  </>
+)
 
-export const Success = Template.bind({});
+export const Success = Template.bind({})
 Success.args = {
   children: alertBody,
-  severity: "success",
-  title: "Title",
-};
-export const Info = Template.bind({});
+  severity: 'success',
+  title: 'Title',
+}
+export const Info = Template.bind({})
 Info.args = {
   children: alertBody,
-  severity: "info",
-};
-export const Warning = Template.bind({});
+  severity: 'info',
+}
+export const Warning = Template.bind({})
 Warning.args = {
   children: alertBody,
-  severity: "warning",
-};
-export const Error = Template.bind({});
+  severity: 'warning',
+}
+export const Error = Template.bind({})
 Error.args = {
   children: alertBody,
-  severity: "error",
-};
-export const Outlined = Template.bind({});
+  severity: 'error',
+}
+export const Outlined = Template.bind({})
 Outlined.args = {
   children: alertBody,
-  severity: "info",
+  severity: 'info',
   variant: 'outlined',
-};
-
-
+}

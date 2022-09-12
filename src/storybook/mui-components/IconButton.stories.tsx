@@ -1,7 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import {IconButton} from "@mui/material";
-import {ArrowForwardIcon} from "../../icons";
+import { IconButton } from '@mui/material'
+import { ArrowForwardIcon } from '../../icons'
 
 const Component = IconButton
 
@@ -13,16 +13,26 @@ export default {
   argTypes: {
     color: {
       control: 'select',
-      options: [undefined, "inherit", "primary","secondary","success", "info", "warning", "error"],
+      options: [
+        undefined,
+        'inherit',
+        'primary',
+        'secondary',
+        'success',
+        'info',
+        'warning',
+        'error',
+      ],
     },
   },
-} as ComponentMeta<typeof Component>;
+} as ComponentMeta<typeof Component>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
+)
 
-
-export const Icon_Button = Template.bind({});
+export const Icon_Button = Template.bind({})
 Icon_Button.args = {
   children: <ArrowForwardIcon />,
-};
+}

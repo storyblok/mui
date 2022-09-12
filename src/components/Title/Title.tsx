@@ -1,20 +1,24 @@
-import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
-import { Box, Typography } from "@mui/material";
+import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
+import { Box, Typography } from '@mui/material'
 
 // TODO add more props from Typography: sx, variant, component
 export const Title: FunctionComponent<
   PropsWithChildren<{
-    icon?: ReactNode;
+    icon?: ReactNode
   }>
 > = (props) => (
-  <Box display="flex" gap={2} alignItems="center">
+  <Box
+    display="flex"
+    gap={2}
+    alignItems="center"
+  >
     {props.icon && (
       <Typography
         variant="h1"
         component="div"
         sx={{
-          display: "flex",
-          alignItems: "center",
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         {props.icon}
@@ -22,4 +26,4 @@ export const Title: FunctionComponent<
     )}
     <Typography variant="h1">{props.children}</Typography>
   </Box>
-);
+)

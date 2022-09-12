@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import {Link} from "@mui/material";
+import { Link } from '@mui/material'
 
 const Component = Link
 
@@ -14,26 +14,23 @@ export default {
   //       <Story />
   //     </ThemeProvider>
   // )]
-} as ComponentMeta<typeof Component>;
+} as ComponentMeta<typeof Component>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Component> = (args) => (
-    <Component {...args} />
+  <Component {...args} />
 )
 
-const AnchorTemplate: ComponentStory<'a'> = (args) => (
-    <a {...args} />
-)
+const AnchorTemplate: ComponentStory<'a'> = (args) => <a {...args} />
 
-export const MuiLink = Template.bind({});
+export const MuiLink = Template.bind({})
 MuiLink.args = {
   children: 'Link',
   href: '/',
-};
+}
 
-export const Anchor = AnchorTemplate.bind({});
+export const Anchor = AnchorTemplate.bind({})
 Anchor.args = {
   children: 'Link',
   href: '/',
-};
-
+}

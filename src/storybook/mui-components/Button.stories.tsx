@@ -1,7 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import Button from '@mui/material/Button';
-import {StoryblokIcon} from "../../icons";
+import Button from '@mui/material/Button'
+import { StoryblokIcon } from '../../icons'
 
 const Component = Button
 
@@ -13,58 +13,68 @@ export default {
   argTypes: {
     variant: {
       control: 'select',
-      options: [undefined, "contained","outlined","text"],
+      options: [undefined, 'contained', 'outlined', 'text'],
     },
     color: {
       control: 'select',
-      options: [undefined, "inherit", "primary","secondary","success", "info", "warning", "error"],
+      options: [
+        undefined,
+        'inherit',
+        'primary',
+        'secondary',
+        'success',
+        'info',
+        'warning',
+        'error',
+      ],
     },
   },
-} as ComponentMeta<typeof Component>;
+} as ComponentMeta<typeof Component>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args) => (
+  <Component {...args} />
+)
 
-export const Basic = Template.bind({});
+export const Basic = Template.bind({})
 Basic.args = {
   children: 'Button',
-};
-export const Small = Template.bind({});
+}
+export const Small = Template.bind({})
 Small.args = {
   children: 'Button',
   size: 'small',
-};
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
   children: 'Button',
   size: 'large',
-};
+}
 
-export const StartIcon = Template.bind({});
+export const StartIcon = Template.bind({})
 StartIcon.args = {
   children: 'Button',
   startIcon: <StoryblokIcon />,
-};
+}
 
-export const EndIcon = Template.bind({});
+export const EndIcon = Template.bind({})
 EndIcon.args = {
   children: 'Button',
   endIcon: <StoryblokIcon />,
-};
+}
 
-export const Text = Template.bind({});
+export const Text = Template.bind({})
 Text.args = {
-  variant: "text",
+  variant: 'text',
   children: 'Button',
   endIcon: <StoryblokIcon />,
-};
+}
 
-export const Outlined = Template.bind({});
+export const Outlined = Template.bind({})
 Outlined.args = {
-  variant: "outlined",
-  color: "inherit",
+  variant: 'outlined',
+  color: 'inherit',
   children: 'Button',
   endIcon: <StoryblokIcon />,
-};
-
+}

@@ -1,9 +1,8 @@
-import {light} from "@src/theme/design-tokens/palette";
+import { light } from '@src/theme/design-tokens/palette'
 
 export * from './palette'
 export * from './typography'
 export * from './transparency'
-
 
 // Avatar variables
 export const sb_avatar_small = `26px`
@@ -18,7 +17,6 @@ export const base_transition_duration = '0.1s'
 export const base_transition_easing = 'ease-in-out'
 export const base_transition = `all ${base_transition_duration} ${base_transition_easing}`
 export const base_border_radius = 5
-
 
 // Icon Sizes
 export const icon_small_size = '1.6rem'

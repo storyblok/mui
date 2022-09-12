@@ -1,4 +1,4 @@
-import {sb_dark_blue} from "@src/theme/design-tokens/palette";
+import { sb_dark_blue } from '@src/theme/design-tokens/palette'
 
 export const primary_font_family = "'Roboto', sans-serif"
 export const primary_text_color = sb_dark_blue
@@ -31,4 +31,3 @@ export const font_weight_light = 300
 export const font_weight_regular = 400
 export const font_weight_medium = 500
 export const font_weight_bold = 700
-

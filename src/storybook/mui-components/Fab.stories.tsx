@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import {Fab} from "@mui/material";
-import {CloseIcon} from "../../icons";
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Fab } from '@mui/material'
+import { CloseIcon } from '../../icons'
 
 const Component = Fab
 
@@ -12,28 +12,35 @@ export default {
   argTypes: {
     variant: {
       control: 'select',
-      options: [undefined, "contained","outlined","text"],
+      options: [undefined, 'contained', 'outlined', 'text'],
     },
     color: {
       control: 'select',
-      options: [undefined, "primary","secondary","success", "info", "warning", "error"],
+      options: [
+        undefined,
+        'primary',
+        'secondary',
+        'success',
+        'info',
+        'warning',
+        'error',
+      ],
     },
   },
-} as ComponentMeta<typeof Component>;
+} as ComponentMeta<typeof Component>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Component> = (args) => (
-    <Component {...args}>
-    </Component>
+  <Component {...args}></Component>
 )
 
-export const Basic = Template.bind({});
+export const Basic = Template.bind({})
 Basic.args = {
-  children: <CloseIcon/>
+  children: <CloseIcon />,
 }
 
-export const Small = Template.bind({});
+export const Small = Template.bind({})
 Small.args = {
   size: 'small',
-  children: <CloseIcon fontSize='small'/>
+  children: <CloseIcon fontSize="small" />,
 }

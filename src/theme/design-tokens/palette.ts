@@ -1,4 +1,3 @@
-
 // teal
 export const sb_green = '#00b3b0'
 export const sb_green_75 = '#40c6c4'
@@ -47,7 +46,6 @@ export const light_75 = '#e7eaee'
 export const light_50 = '#eff1f3'
 export const light_25 = '#f7f8f9'
 export const light_gray = '#b1b5be'
-
 
 export const black = '#101525'
 export const white = '#fff'
