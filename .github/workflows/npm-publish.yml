@@ -11,8 +11,20 @@ on:
   push:
 
 jobs:
+  build-storybook:
+    runs-on: ubuntu-latest
+    name: Build Storybook
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
+      - run: yarn build-storybook
   build:
     runs-on: ubuntu-latest
+    name: Build package
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -27,6 +39,7 @@ jobs:
           name: dist
           path: dist/
   publish-npm:
+    name: Publish to NPM
     needs: build
     runs-on: ubuntu-latest
     steps:
