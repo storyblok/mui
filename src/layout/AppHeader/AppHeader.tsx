@@ -1,4 +1,9 @@
-import { FunctionComponent, PropsWithChildren, ReactNode } from 'react'
+import {
+  ComponentProps,
+  FunctionComponent,
+  PropsWithChildren,
+  ReactNode,
+} from 'react'
 import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 import { Title } from '@src/components/Title/Title'
 
@@ -6,6 +11,7 @@ export type HeaderProps = {
   title?: ReactNode
   subtitle?: ReactNode
   icon?: ReactNode
+  actionsProps?: ComponentProps<typeof Box>
 }
 
 export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
@@ -29,7 +35,15 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
         </Typography>
       </Box>
       <Box sx={{ flexGrow: 1 }} />
-      {props.children}
+      <Box
+        alignItems="center"
+        display="flex"
+        gap={4}
+        className="SbAppHeader-actions"
+        {...props.actionsProps}
+      >
+        {props.children}
+      </Box>
     </Toolbar>
   </AppBar>
 )
