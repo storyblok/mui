@@ -9,6 +9,7 @@ type AppLayoutProps = HeaderProps & {
 
 export const AppLayout: FunctionComponent<AppLayoutProps> = (props) => (
   <Box
+    className="SbAppLayout-root"
     sx={{
       flexGrow: 1,
       px: {
@@ -24,14 +25,12 @@ export const AppLayout: FunctionComponent<AppLayoutProps> = (props) => (
       minHeight: '100vh',
     }}
   >
-    <AppHeader
-      title={props.title}
-      subtitle={props.subtitle}
-      icon={props.icon}
-    >
+    <AppHeader title={props.title} subtitle={props.subtitle} icon={props.icon}>
       {props.header}
     </AppHeader>
     <Box mt={10} />
-    {props.children}
+    {props.children && (
+      <main className="SbAppLayout-main">{props.children}</main>
+    )}
   </Box>
 )
