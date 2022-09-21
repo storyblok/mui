@@ -17,20 +17,11 @@ export type HeaderProps = {
 export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
   props,
 ) => (
-  <AppBar
-    position="static"
-    color="transparent"
-  >
+  <AppBar className="SbAppHeader-root" position="static" color="transparent">
     <Toolbar>
-      <Box
-        display="flex"
-        flexDirection="column"
-      >
+      <Box display="flex" flexDirection="column">
         <Title icon={props.icon}>{props.title}</Title>
-        <Typography
-          variant="subtitle2"
-          component="div"
-        >
+        <Typography variant="subtitle2" component="div">
           {props.subtitle}
         </Typography>
       </Box>
