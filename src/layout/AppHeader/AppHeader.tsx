@@ -5,7 +5,6 @@ import {
   ReactNode,
 } from 'react'
 import { AppBar, Box, Toolbar, Typography } from '@mui/material'
-import { Title } from '@src/components/Title/Title'
 
 export type HeaderProps = {
   title?: ReactNode
@@ -22,29 +21,63 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
     position="static"
     color="transparent"
   >
-    <Toolbar>
-      <Box
-        display="flex"
-        flexDirection="column"
-      >
-        <Title icon={props.icon}>{props.title}</Title>
-        <Typography
-          variant="subtitle2"
-          component="div"
+    <Toolbar
+      sx={{
+        display: 'grid',
+        gap: (theme) => theme.spacing(2),
+        gridTemplateColumns: 'repeat(1, min-content 1fr min-content)',
+      }}
+    >
+      {props.icon && (
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            fontSize: '42px',
+            gridColumn: '1',
+            gridRow: '1',
+          }}
         >
-          {props.subtitle}
+          {props.icon}
+        </Box>
+      )}
+      {props.title && (
+        <Typography
+          variant="h1"
+          sx={{
+            gridColumn: '2',
+            gridRow: '1',
+          }}
+        >
+          {props.title}
         </Typography>
-      </Box>
-      <Box sx={{ flexGrow: 1 }} />
+      )}
       <Box
         alignItems="center"
         display="flex"
         gap={4}
         className={`SbAppHeader-actions ${props.actionsProps?.className ?? ''}`}
         {...props.actionsProps}
+        sx={{
+          gridColumn: '3',
+          gridRow: '1',
+        }}
       >
         {props.children}
       </Box>
+      {props.subtitle && (
+        <Typography
+          variant="subtitle2"
+          component="p"
+          sx={{
+            color: 'text.secondary',
+            gridColumn: '2/ span 2',
+            gridRow: '2',
+          }}
+        >
+          {props.subtitle}
+        </Typography>
+      )}
     </Toolbar>
   </AppBar>
 )
