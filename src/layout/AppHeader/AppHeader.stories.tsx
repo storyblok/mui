@@ -1,7 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { AppHeader } from './AppHeader'
-import { SearchIcon, StoryblokIcon } from '../../icons'
+import { SearchIcon, SettingsIcon } from '../../icons'
 import Button from '@mui/material/Button'
+import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
+import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
+import { AppContainer } from '../AppContainer'
 
 const Component = AppHeader
 
@@ -11,26 +14,62 @@ export default {
 } as ComponentMeta<typeof Component>
 
 const Template: ComponentStory<typeof Component> = (args) => (
-  <Component
-    title="Title"
-    {...args}
-  />
+  <AppContainer>
+    <Component {...args} />
+  </AppContainer>
+)
+
+const actions = (
+  <>
+    <Button
+      startIcon={<SettingsIcon />}
+      variant="outlined"
+      color="secondary"
+    >
+      Settings
+    </Button>
+    <Button startIcon={<SearchIcon />}>Search</Button>
+  </>
 )
 
 export const Basic = Template.bind({})
-export const Subtitle = Template.bind({})
-Subtitle.args = {
+Basic.args = {
+  title: 'Title',
   subtitle: 'Subtitle',
+  icon: <DemoIcon />,
 }
 
-export const Icon = Template.bind({})
-Icon.args = {
+export const NoIcon = Template.bind({})
+NoIcon.args = {
+  title: 'Title',
   subtitle: 'Subtitle',
-  icon: <StoryblokIcon />,
+  children: actions,
 }
 
-export const Actions = Template.bind({})
-Actions.args = {
+export const LongSubtitle = Template.bind({})
+LongSubtitle.args = {
+  title: 'Title',
+  icon: <DemoIcon />,
+  subtitle: loremIpsum,
+  children: actions,
+}
+
+export const ManyActions = Template.bind({})
+ManyActions.args = {
+  title: 'Title',
   subtitle: 'Subtitle',
-  children: <Button startIcon={<SearchIcon />}>Settings</Button>,
+  icon: <DemoIcon />,
+  children: (
+    <>
+      <Button
+        startIcon={<SettingsIcon />}
+        variant="outlined"
+        color="secondary"
+      >
+        Settings
+      </Button>
+      <Button>Button with many words</Button>
+      <Button startIcon={<SearchIcon />}>Search</Button>
+    </>
+  ),
 }

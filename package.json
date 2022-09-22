@@ -1,7 +1,7 @@
 {
   "name": "@storyblok/mui",
   "description": "A MUI theme and several components for Storyblok.",
-  "version": "0.0.10-alpha",
+  "version": "0.0.11-alpha",
   "author": {
     "name": "Johannes Lindgren",
     "email": "johannes.lindgren@storyblok.com"
@@ -25,7 +25,7 @@
     "start": "rollup -c -w",
     "test": "echo TODO tests",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
-    "build-storybook": "build-storybook --disable-telemetry --quiet"
+    "build:storybook": "build-storybook --disable-telemetry --quiet"
   },
   "dependencies": {},
   "devDependencies": {

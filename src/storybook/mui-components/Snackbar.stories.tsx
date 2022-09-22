@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Alert, Box, Snackbar } from '@mui/material'
-import { loremIpsum } from '../utils/loremIpsum'
+import { loremIpsum } from '../demo-utils/loremIpsum'
 import Button from '@mui/material/Button'
 import { useState } from 'react'
 

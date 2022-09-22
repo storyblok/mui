@@ -1,37 +1,34 @@
-import { FunctionComponent, ReactNode } from 'react'
-import { Box } from '@mui/material'
+import { ComponentProps, FunctionComponent, ReactNode } from 'react'
 import { AppHeader, HeaderProps } from '@src/layout/AppHeader/AppHeader'
+import { AppContainer } from '@src/layout/AppContainer'
+import { AppContent } from '@src/layout/AppContent'
 
 type AppLayoutProps = HeaderProps & {
+  className?: string
   header?: ReactNode
   children?: ReactNode
+  containerProps?: ComponentProps<typeof AppContainer>
+  headerProps?: ComponentProps<typeof AppHeader>
+  contentProps?: ComponentProps<typeof AppContent>
 }
 
-export const AppLayout: FunctionComponent<AppLayoutProps> = (props) => (
-  <Box
-    sx={{
-      flexGrow: 1,
-      px: {
-        xs: 4,
-        sm: 8,
-        md: 16,
-      },
-      py: {
-        xs: 4,
-        sm: 7,
-        md: 9,
-      },
-      minHeight: '100vh',
-    }}
-  >
-    <AppHeader
-      title={props.title}
-      subtitle={props.subtitle}
-      icon={props.icon}
+export const AppLayout: FunctionComponent<AppLayoutProps> = (props) => {
+  return (
+    <AppContainer
+      className={`SbAppLayout-root ${props.className ?? ''}`}
+      {...props.containerProps}
     >
-      {props.header}
-    </AppHeader>
-    <Box mt={10} />
-    {props.children}
-  </Box>
-)
+      <AppHeader
+        title={props.title}
+        subtitle={props.subtitle}
+        icon={props.icon}
+        {...props.headerProps}
+      >
+        {props.header}
+      </AppHeader>
+      {props.children && (
+        <AppContent {...props.contentProps}>{props.children}</AppContent>
+      )}
+    </AppContainer>
+  )
+}

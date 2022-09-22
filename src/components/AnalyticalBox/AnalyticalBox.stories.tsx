@@ -9,7 +9,7 @@ import {
   StatusIcon,
 } from '../../icons'
 import { Typography } from '@mui/material'
-import { loremIpsum } from '../../storybook/utils/loremIpsum'
+import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
 
 const Component = AnalyticalBox
 
