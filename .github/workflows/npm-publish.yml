@@ -21,7 +21,7 @@ jobs:
           node-version: 16
           cache: 'yarn'
       - run: yarn install --frozen-lockfile
-      - run: yarn build-storybook
+      - run: yarn build:storybook
   build:
     runs-on: ubuntu-latest
     name: Build package
