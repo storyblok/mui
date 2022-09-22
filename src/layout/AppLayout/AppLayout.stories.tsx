@@ -32,15 +32,8 @@ const Template: ComponentStory<typeof Component> = (args) => (
     icon={<StoryblokIcon />}
     title="App Name"
     subtitle="Created by Johannes Lindgren"
-    header={
-      <Box
-        display="flex"
-        gap={4}
-        alignItems="center"
-      >
-        <Button startIcon={<SearchIcon />}>Settings</Button>
-      </Box>
-    }
+    containerProps={{ className: 'AppLayout-custom' }}
+    header={<Button startIcon={<SearchIcon />}>Settings</Button>}
     {...args}
   >
     <ContentArea />
@@ -56,15 +49,8 @@ export const Drawer = () => {
       icon={<StoryblokIcon />}
       title="App Name"
       subtitle="Created by Johannes Lindgren"
-      header={
-        <Box
-          display="flex"
-          gap={4}
-          alignItems="center"
-        >
-          <Button onClick={() => setDrawerOpen(true)}>Open Drawer</Button>
-        </Box>
-      }
+      containerProps={{ className: 'AppLayout-custom' }}
+      header={<Button onClick={() => setDrawerOpen(true)}>Open Drawer</Button>}
     >
       <AppDrawer
         open={drawerOpen ?? false}
@@ -82,15 +68,8 @@ export const BigIcon = () => {
       icon={<StoryblokIcon sx={{ width: '42px', height: '42px' }} />}
       title="App Name"
       subtitle="Created by Johannes Lindgren"
-      header={
-        <Box
-          display="flex"
-          gap={4}
-          alignItems="center"
-        >
-          <Button startIcon={<SearchIcon />}>Settings</Button>
-        </Box>
-      }
+      containerProps={{ className: 'AppLayout-custom' }}
+      header={<Button startIcon={<SearchIcon />}>Settings</Button>}
     >
       <ContentArea />
     </AppLayout>
