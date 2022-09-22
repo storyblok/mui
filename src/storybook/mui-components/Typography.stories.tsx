@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Typography } from '@mui/material'
-import { loremIpsum } from '../utils/loremIpsum'
+import { loremIpsum } from '../demo-utils/loremIpsum'
 
 const Component = Typography
 

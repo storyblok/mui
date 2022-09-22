@@ -24,8 +24,8 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
     <Toolbar
       sx={{
         display: 'grid',
-        gap: (theme) => theme.spacing(2),
-        gridTemplateColumns: 'repeat(1, min-content 1fr min-content)',
+        gap: (theme) => `${theme.spacing(2)} ${theme.spacing(3)}`,
+        gridTemplateColumns: 'repeat(1, min-content 1fr auto)',
       }}
     >
       {props.icon && (
@@ -47,6 +47,7 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
           sx={{
             gridColumn: '2',
             gridRow: '1',
+            margin: 0,
           }}
         >
           {props.title}

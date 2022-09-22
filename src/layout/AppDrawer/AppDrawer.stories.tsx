@@ -15,7 +15,7 @@ import {
 } from '@mui/material'
 import Button from '@mui/material/Button'
 import { AppDrawer } from './AppDrawer'
-import { loremIpsum } from '../../storybook/utils/loremIpsum'
+import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
 
 const Component = AppDrawer
 

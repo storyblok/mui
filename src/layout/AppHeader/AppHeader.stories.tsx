@@ -1,8 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { AppHeader } from './AppHeader'
-import { SearchIcon, SettingsIcon, StoryblokIcon } from '../../icons'
+import { SearchIcon, SettingsIcon } from '../../icons'
 import Button from '@mui/material/Button'
-import { loremIpsum } from '../../storybook/utils/loremIpsum'
+import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
+import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
+import { AppContainer } from '../AppContainer'
 
 const Component = AppHeader
 
@@ -12,20 +14,9 @@ export default {
 } as ComponentMeta<typeof Component>
 
 const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
-
-const icon = (
-  <StoryblokIcon
-    fontSize="inherit"
-    sx={{
-      padding: '20%',
-      color: 'secondary.contrastText',
-      background: ({ palette }) =>
-        `linear-gradient(0deg, ${palette.primary.dark} 0%, ${palette.primary.main} 100%)`,
-      borderRadius: 2,
-    }}
-  />
+  <AppContainer>
+    <Component {...args} />
+  </AppContainer>
 )
 
 const actions = (
@@ -45,7 +36,7 @@ export const Basic = Template.bind({})
 Basic.args = {
   title: 'Title',
   subtitle: 'Subtitle',
-  icon: icon,
+  icon: <DemoIcon />,
 }
 
 export const NoIcon = Template.bind({})
@@ -58,15 +49,27 @@ NoIcon.args = {
 export const LongSubtitle = Template.bind({})
 LongSubtitle.args = {
   title: 'Title',
-  icon: icon,
+  icon: <DemoIcon />,
   subtitle: loremIpsum,
   children: actions,
 }
 
-export const Actions = Template.bind({})
-Actions.args = {
+export const ManyActions = Template.bind({})
+ManyActions.args = {
   title: 'Title',
   subtitle: 'Subtitle',
-  icon: icon,
-  children: actions,
+  icon: <DemoIcon />,
+  children: (
+    <>
+      <Button
+        startIcon={<SettingsIcon />}
+        variant="outlined"
+        color="secondary"
+      >
+        Settings
+      </Button>
+      <Button>Button with many words</Button>
+      <Button startIcon={<SearchIcon />}>Search</Button>
+    </>
+  ),
 }
