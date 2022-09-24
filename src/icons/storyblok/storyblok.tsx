@@ -1053,17 +1053,27 @@ export const SquareErrorIcon: IconComponent = (props) => (
       fill="none"
       fillRule="evenodd"
     >
+      <mask id="myMask">
+        <rect
+          fill="white"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+        />
+        <path
+          fill="black"
+          d="M12 13a1 1 0 0 1-1-1V9a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1zm0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+        />
+      </mask>
       <rect
+        mask="url(#myMask)"
         width="16"
         height="16"
         x="4"
         y="4"
         fill="currentColor"
         rx="3"
-      />
-      <path
-        fill="#FFF"
-        d="M12 13a1 1 0 0 1-1-1V9a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1zm0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
       />
     </g>
   </SvgIcon>
@@ -1079,17 +1089,27 @@ export const SquareInfoIcon: IconComponent = (props) => (
       fill="none"
       fillRule="evenodd"
     >
+      <mask id="myMask">
+        <rect
+          fill="white"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+        />
+        <path
+          fill="black"
+          d="M12 11a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0v-3a1 1 0 0 1 1-1zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        />
+      </mask>
       <rect
+        mask="url(#myMask)"
         width="16"
         height="16"
         x="4"
         y="4"
         fill="currentColor"
         rx="3"
-      />
-      <path
-        fill="#FFF"
-        d="M12 11a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0v-3a1 1 0 0 1 1-1zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
       />
     </g>
   </SvgIcon>
@@ -1105,17 +1125,27 @@ export const SquareSuccessIcon: IconComponent = (props) => (
       fill="none"
       fillRule="evenodd"
     >
+      <mask id="myMask">
+        <rect
+          fill="white"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+        />
+        <path
+          fill="black"
+          d="M15.611 9.27l.008.009c.37.374.37.977 0 1.352l-4.004 4.054a.934.934 0 0 1-.496.264l-.11.013-.111.001a.935.935 0 0 1-.618-.278l-2.003-2.027a.962.962 0 0 1 0-1.352.938.938 0 0 1 1.327-.008l.008.008 1.335 1.351 3.337-3.378a.938.938 0 0 1 1.327-.008z"
+        />
+      </mask>
       <rect
+        mask="url(#myMask)"
         width="16"
         height="16"
         x="4"
         y="4"
         fill="currentColor"
         rx="3"
-      />
-      <path
-        fill="#FFF"
-        d="M15.611 9.27l.008.009c.37.374.37.977 0 1.352l-4.004 4.054a.934.934 0 0 1-.496.264l-.11.013-.111.001a.935.935 0 0 1-.618-.278l-2.003-2.027a.962.962 0 0 1 0-1.352.938.938 0 0 1 1.327-.008l.008.008 1.335 1.351 3.337-3.378a.938.938 0 0 1 1.327-.008z"
       />
     </g>
   </SvgIcon>
@@ -1131,17 +1161,27 @@ export const SquareWarningIcon: IconComponent = (props) => (
       fill="none"
       fillRule="evenodd"
     >
+      <mask id="myMask">
+        <rect
+          fill="white"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+        />
+        <path
+          fill="black"
+          d="M12.894 7.789l3.382 6.764A1 1 0 0 1 15.382 16H8.618a1 1 0 0 1-.894-1.447l3.382-6.764a1 1 0 0 1 1.788 0z"
+        />
+      </mask>
       <rect
+        mask="url(#myMask)"
         width="16"
         height="16"
         x="4"
         y="4"
         fill="currentColor"
         rx="3"
-      />
-      <path
-        fill="#FFF"
-        d="M12.894 7.789l3.382 6.764A1 1 0 0 1 15.382 16H8.618a1 1 0 0 1-.894-1.447l3.382-6.764a1 1 0 0 1 1.788 0z"
       />
     </g>
   </SvgIcon>
