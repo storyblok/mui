@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FunctionComponent, ReactNode } from 'react'
-import { alpha, Box, styled, Theme } from '@mui/material'
+import { Box, styled } from '@mui/material'
+import { IconBox } from '@src/components/IconBox/IconBox'
 
 const Root = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -9,55 +10,6 @@ const Root = styled(Box)(({ theme }) => ({
   color: 'inherit',
   borderRadius: theme.shape.borderRadius,
 }))
-
-const IconContainer = styled(Box, {
-  shouldForwardProp: (prop) => prop !== 'color' && prop !== 'size',
-})<{
-  color?: IconColor
-  size?: IconSize
-}>(({ theme, color, size }) => ({
-  marginRight: theme.spacing(3),
-  color: isPaletteColor(color)
-    ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore TODO remove ts-ignore
-      theme.palette[color].main
-    : defaultColor(theme),
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore TODO remove ts-ignore. This should work...
-  backgroundColor: alpha(
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore TODO remove ts-ignore
-    isPaletteColor(color) ? theme.palette[color].main : defaultColor(theme),
-    theme.palette.action.selectedOpacity,
-  ),
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  minHeight: scalar(size) * 40,
-  minWidth: scalar(size) * 40,
-  fontSize: `${scalar(size) * 2}rem`,
-  borderRadius:
-    typeof theme.shape.borderRadius === 'number'
-      ? theme.shape.borderRadius * 2
-      : '10px',
-}))
-
-const scalar = (size: IconSize | undefined): number => {
-  switch (size) {
-    case 'large':
-      return 1.4
-    default:
-    case 'medium':
-      return 1.2
-    case 'small':
-      return 1
-  }
-}
-
-const isPaletteColor = (color: IconColor | undefined): color is PaletteColor =>
-  typeof color !== 'undefined' && color !== 'default'
-
-const defaultColor = (theme: Theme): string => theme.palette.secondary.main
 
 const TextContainer = styled(Box)(() => ({
   display: 'flex',
@@ -83,12 +35,12 @@ type Props = {
 
 export const AnalyticalBox: FunctionComponent<Props> = (props) => (
   <Root>
-    <IconContainer
+    <IconBox
       color={props.color}
-      size={props.size}
+      size={props.size ?? 'large'}
     >
       {props.icon}
-    </IconContainer>
+    </IconBox>
     {props.children && <TextContainer>{props.children}</TextContainer>}
   </Root>
 )

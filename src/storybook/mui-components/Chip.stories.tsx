@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Chip } from '@mui/material'
-import { CheckMarkIcon, CloseIcon } from '../../icons'
+import { CheckMarkIcon } from '../../icons'
 
 const Component = Chip
 
