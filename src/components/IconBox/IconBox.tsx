@@ -87,7 +87,12 @@ export const IconBox = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'color' && prop !== 'size',
 })<Props>(({ theme, color: optionalColor, size: optionalSize }) => {
   const size: IconSize = optionalSize ?? 'medium'
-  const color: PaletteColor = optionalColor ?? 'primary'
+  const defaultColor = 'primary'
+  const color: PaletteColor = Array.isArray(optionalColor)
+    ? 'primary'
+    : optionalColor !== 'default' && typeof optionalColor !== 'undefined'
+    ? optionalColor
+    : defaultColor
   return {
     marginRight: theme.spacing(3),
     color: fontColor(theme, color, size),

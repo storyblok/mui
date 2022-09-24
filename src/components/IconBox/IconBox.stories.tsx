@@ -70,18 +70,18 @@ Error.args = {
 
 export const InitialsSmall = Template.bind({})
 InitialsSmall.args = {
-  children: <>Rt</>,
+  children: 'Rt',
   size: 'small',
 }
 
 export const InitialsMedium = Template.bind({})
 InitialsMedium.args = {
-  children: <>Rt</>,
+  children: 'Rt',
   size: 'medium',
 }
 
 export const InitialsLarge = Template.bind({})
 InitialsLarge.args = {
-  children: <>Rt</>,
+  children: 'Rt',
   size: 'large',
 }
