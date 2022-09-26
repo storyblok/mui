@@ -7,6 +7,7 @@ import {
   SquareInfoIcon,
   SquareSuccessIcon,
   SquareWarningIcon,
+  WarningIcon,
 } from '../../icons'
 
 const Component = IconBox
@@ -32,19 +33,35 @@ export const Small = Template.bind({})
 Small.args = {
   children: <ContentStoryFillIcon />,
   size: 'small',
-  color: 'primary',
 }
 export const Medium = Template.bind({})
 Medium.args = {
   children: <ContentStoryFillIcon />,
   size: 'medium',
-  color: 'primary',
 }
 export const Large = Template.bind({})
 Large.args = {
   children: <ContentStoryFillIcon />,
   size: 'large',
-  color: 'primary',
+}
+
+export const SmallColor = Template.bind({})
+SmallColor.args = {
+  children: <WarningIcon />,
+  size: 'small',
+  color: 'warning',
+}
+export const MediumColor = Template.bind({})
+MediumColor.args = {
+  children: <WarningIcon />,
+  size: 'medium',
+  color: 'warning',
+}
+export const LargeColor = Template.bind({})
+LargeColor.args = {
+  children: <WarningIcon />,
+  size: 'large',
+  color: 'warning',
 }
 
 export const Success = Template.bind({})

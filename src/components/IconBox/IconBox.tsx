@@ -38,31 +38,39 @@ const fontSize = (size: IconSize): number | string => {
 
 const fontColor = (
   theme: Theme,
-  color: PaletteColor,
+  color: PaletteColor | 'default',
   size: IconSize,
 ): string => {
-  const paletteColor = theme.palette[color]
+  const contrastText =
+    color === 'default'
+      ? theme.palette.text.primary
+      : size === 'large'
+      ? theme.palette[color].main
+      : theme.palette[color].contrastText
   switch (size) {
     case 'small':
     case 'medium':
-      return paletteColor.contrastText
+      return contrastText
     case 'large':
-      return paletteColor.main
+      return contrastText
   }
 }
 
 const backgroundColor = (
   theme: Theme,
-  color: PaletteColor,
+  color: PaletteColor | 'default',
   size: IconSize,
 ): string => {
-  const paletteColor = theme.palette[color]
+  const bgColor =
+    color === 'default' ? theme.palette.grey.A100 : theme.palette[color].main
   switch (size) {
     case 'small':
     case 'medium':
-      return paletteColor.main
+      return bgColor
     case 'large':
-      return alpha(paletteColor.main, theme.palette.action.selectedOpacity)
+      return color === 'default'
+        ? bgColor
+        : alpha(bgColor, theme.palette.action.selectedOpacity)
   }
 }
 
@@ -87,12 +95,12 @@ export const IconBox = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'color' && prop !== 'size',
 })<Props>(({ theme, color: optionalColor, size: optionalSize }) => {
   const size: IconSize = optionalSize ?? 'medium'
-  const defaultColor = 'primary'
-  const color: PaletteColor = Array.isArray(optionalColor)
-    ? 'primary'
-    : optionalColor !== 'default' && typeof optionalColor !== 'undefined'
-    ? optionalColor
-    : defaultColor
+  const defaultColor = 'default'
+  const color: PaletteColor | 'default' = Array.isArray(optionalColor)
+    ? defaultColor
+    : typeof optionalColor === 'undefined'
+    ? defaultColor
+    : optionalColor
   return {
     marginRight: theme.spacing(3),
     color: fontColor(theme, color, size),
