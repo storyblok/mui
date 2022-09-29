@@ -679,6 +679,20 @@ const lightTheme = createTheme({
         },
       },
     },
+    MuiCircularProgress: {
+      defaultProps: {
+        disableShrink: true,
+        size: 50,
+        thickness: 5,
+      },
+      styleOverrides: {
+        circle: {
+          stroke: 'currentcolor',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+        },
+      },
+    },
     MuiChip: {
       defaultProps: {
         deleteIcon: <CloseIcon />,
