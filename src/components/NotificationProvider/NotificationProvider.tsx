@@ -1,7 +1,6 @@
 import {
   createContext,
   FunctionComponent,
-  PropsWithChildren,
   ReactNode,
   useCallback,
   useContext,
@@ -30,9 +29,9 @@ const notificationContext = createContext<Notifications>({
   error: () => undefined,
 })
 
-export const NotificationProvider: FunctionComponent<
-  PropsWithChildren<Record<string, never>>
-> = (props) => {
+export const NotificationProvider: FunctionComponent<{
+  children: ReactNode
+}> = (props) => {
   const [notification, setNotification] = useState<{
     message: Message
     severity: Severity
