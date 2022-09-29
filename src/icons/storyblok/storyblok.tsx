@@ -243,20 +243,6 @@ export const CalendarIcon: IconComponent = (props) => (
   </SvgIcon>
 )
 
-export const CheckMarkIcon: IconComponent = (props) => (
-  <SvgIcon
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    {...props}
-  >
-    <path
-      fill="currentColor"
-      fillRule="evenodd"
-      d="M7.697 13.39a1 1 0 1 1 1.414-1.415l2.12 2.12 4.244-4.241a1 1 0 0 1 1.414 1.414l-4.938 4.937a1 1 0 0 1-1.426.012L7.697 13.39z"
-    />
-  </SvgIcon>
-)
-
 export const ChevronBackIcon: IconComponent = (props) => (
   <SvgIcon
     xmlns="http://www.w3.org/2000/svg"
@@ -351,21 +337,6 @@ export const ChevronClipboardIcon: IconComponent = (props) => (
       fill="currentColor"
       fillRule="evenodd"
       d="M13.586 12.172L15 13.586l1.414-1.414a1 1 0 1 1 1.414 1.414L16.414 15l1.414 1.414a1 1 0 1 1-1.414 1.414L15 16.414l-1.414 1.414a1 1 0 1 1-1.414-1.414L13.586 15l-1.414-1.414a1 1 0 1 1 1.414-1.414zM14.462 5a2.539 2.539 0 0 1 2.533 2.372l.005.166v.77a1 1 0 0 1-1.993.116L15 8.308v-.77a.539.539 0 0 0-.451-.531L14.462 7H7.538a.539.539 0 0 0-.531.451L7 7.538v6.924c0 .267.195.49.451.531l.087.007h.77a1 1 0 0 1 .116 1.993L8.308 17h-.77a2.539 2.539 0 0 1-2.533-2.372L5 14.462V7.538a2.539 2.539 0 0 1 2.372-2.533L7.538 5h6.924z"
-    />
-  </SvgIcon>
-)
-
-export const CircularInfoIcon: IconComponent = (props) => (
-  <SvgIcon
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    {...props}
-  >
-    <path
-      fill="currentColor"
-      fillRule="evenodd"
-      d="M12,5 C15.8659932,5 19,8.13400675 19,12 C19,15.8659932 15.8659932,19 12,19 C8.13400675,19 5,15.8659932 5,12 C5,8.13400675 8.13400675,5 12,5 Z M12,11 C11.4477153,11 11,11.4477153 11,12 L11,12 L11,15 C11,15.5522847 11.4477153,16 12,16 C12.5522847,16 13,15.5522847 13,15 L13,15 L13,12 C13,11.4477153 12.5522847,11 12,11 Z M12,8 C11.4477153,8 11,8.44771525 11,9 C11,9.55228475 11.4477153,10 12,10 C12.5522847,10 13,9.55228475 13,9 C13,8.44771525 12.5522847,8 12,8 Z"
-      transform="translate(-4.5 -5)"
     />
   </SvgIcon>
 )
@@ -1043,7 +1014,7 @@ export const SidebarIcon: IconComponent = (props) => (
   </SvgIcon>
 )
 
-export const SquareErrorIcon: IconComponent = (props) => (
+export const SquareSuccessIcon: IconComponent = (props) => (
   <SvgIcon
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -1053,7 +1024,7 @@ export const SquareErrorIcon: IconComponent = (props) => (
       fill="none"
       fillRule="evenodd"
     >
-      <mask id="myMask">
+      <mask id="SquareSuccessIcon-mask">
         <rect
           fill="white"
           x="0"
@@ -1063,11 +1034,11 @@ export const SquareErrorIcon: IconComponent = (props) => (
         />
         <path
           fill="black"
-          d="M12 13a1 1 0 0 1-1-1V9a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1zm0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+          d="M15.611 9.27l.008.009c.37.374.37.977 0 1.352l-4.004 4.054a.934.934 0 0 1-.496.264l-.11.013-.111.001a.935.935 0 0 1-.618-.278l-2.003-2.027a.962.962 0 0 1 0-1.352.938.938 0 0 1 1.327-.008l.008.008 1.335 1.351 3.337-3.378a.938.938 0 0 1 1.327-.008z"
         />
       </mask>
       <rect
-        mask="url(#myMask)"
+        mask="url(#SquareSuccessIcon-mask)"
         width="16"
         height="16"
         x="4"
@@ -1089,7 +1060,7 @@ export const SquareInfoIcon: IconComponent = (props) => (
       fill="none"
       fillRule="evenodd"
     >
-      <mask id="myMask">
+      <mask id="SquareInfoIcon-mask">
         <rect
           fill="white"
           x="0"
@@ -1103,43 +1074,7 @@ export const SquareInfoIcon: IconComponent = (props) => (
         />
       </mask>
       <rect
-        mask="url(#myMask)"
-        width="16"
-        height="16"
-        x="4"
-        y="4"
-        fill="currentColor"
-        rx="3"
-      />
-    </g>
-  </SvgIcon>
-)
-
-export const SquareSuccessIcon: IconComponent = (props) => (
-  <SvgIcon
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    {...props}
-  >
-    <g
-      fill="none"
-      fillRule="evenodd"
-    >
-      <mask id="myMask">
-        <rect
-          fill="white"
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-        />
-        <path
-          fill="black"
-          d="M15.611 9.27l.008.009c.37.374.37.977 0 1.352l-4.004 4.054a.934.934 0 0 1-.496.264l-.11.013-.111.001a.935.935 0 0 1-.618-.278l-2.003-2.027a.962.962 0 0 1 0-1.352.938.938 0 0 1 1.327-.008l.008.008 1.335 1.351 3.337-3.378a.938.938 0 0 1 1.327-.008z"
-        />
-      </mask>
-      <rect
-        mask="url(#myMask)"
+        mask="url(#SquareInfoIcon-mask)"
         width="16"
         height="16"
         x="4"
@@ -1161,7 +1096,7 @@ export const SquareWarningIcon: IconComponent = (props) => (
       fill="none"
       fillRule="evenodd"
     >
-      <mask id="myMask">
+      <mask id="SquareWarningIcon-mask">
         <rect
           fill="white"
           x="0"
@@ -1175,7 +1110,7 @@ export const SquareWarningIcon: IconComponent = (props) => (
         />
       </mask>
       <rect
-        mask="url(#myMask)"
+        mask="url(#SquareWarningIcon-mask)"
         width="16"
         height="16"
         x="4"
@@ -1184,6 +1119,85 @@ export const SquareWarningIcon: IconComponent = (props) => (
         rx="3"
       />
     </g>
+  </SvgIcon>
+)
+
+export const SquareErrorIcon: IconComponent = (props) => (
+  <SvgIcon
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <g
+      fill="none"
+      fillRule="evenodd"
+    >
+      <mask id="SquareErrorIcon-mask">
+        <rect
+          fill="white"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+        />
+        <path
+          fill="black"
+          d="M12 13a1 1 0 0 1-1-1V9a1 1 0 0 1 2 0v3a1 1 0 0 1-1 1zm0 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+        />
+      </mask>
+      <rect
+        mask="url(#SquareErrorIcon-mask)"
+        width="16"
+        height="16"
+        x="4"
+        y="4"
+        fill="currentColor"
+        rx="3"
+      />
+    </g>
+  </SvgIcon>
+)
+
+export const CheckMarkIcon: IconComponent = (props) => (
+  <SvgIcon
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M7.697 13.39a1 1 0 1 1 1.414-1.415l2.12 2.12 4.244-4.241a1 1 0 0 1 1.414 1.414l-4.938 4.937a1 1 0 0 1-1.426.012L7.697 13.39z"
+    />
+  </SvgIcon>
+)
+
+export const WarningIcon: IconComponent = (props) => (
+  <SvgIcon
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M12.941 6.485a2 2 0 0 1 .824.824l4.666 8.75A2 2 0 0 1 16.667 19H7.333a2 2 0 0 1-1.764-2.941l4.666-8.75a2 2 0 0 1 2.706-.824zM12 15a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0-6a1 1 0 0 0-1 1v3a1 1 0 0 0 2 0v-3a1 1 0 0 0-1-1z"
+    />
+  </SvgIcon>
+)
+
+export const CircularInfoIcon: IconComponent = (props) => (
+  <SvgIcon
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M12,5 C15.8659932,5 19,8.13400675 19,12 C19,15.8659932 15.8659932,19 12,19 C8.13400675,19 5,15.8659932 5,12 C5,8.13400675 8.13400675,5 12,5 Z M12,11 C11.4477153,11 11,11.4477153 11,12 L11,12 L11,15 C11,15.5522847 11.4477153,16 12,16 C12.5522847,16 13,15.5522847 13,15 L13,15 L13,12 C13,11.4477153 12.5522847,11 12,11 Z M12,8 C11.4477153,8 11,8.44771525 11,9 C11,9.55228475 11.4477153,10 12,10 C12.5522847,10 13,9.55228475 13,9 C13,8.44771525 12.5522847,8 12,8 Z"
+      transform="translate(-4.5 -5)"
+    />
   </SvgIcon>
 )
 
@@ -1664,20 +1678,6 @@ export const TableRowDownIcon: IconComponent = (props) => (
       fill="currentColor"
       fillRule="evenodd"
       d="M17 16a1 1 0 010 2H4a1 1 0 010-2h13zm-7-7a1 1 0 010 2H4a1 1 0 010-2h6zm3.293.293a1 1 0 011.32-.083l.094.083L16 10.586V7a1 1 0 012 0v3.586l1.293-1.293a1 1 0 011.32-.083l.094.083a1 1 0 01.083 1.32l-.083.094-3 3a1 1 0 01-1.32.083l-.094-.083-3-3a1 1 0 010-1.414z"
-    />
-  </SvgIcon>
-)
-
-export const WarningIcon: IconComponent = (props) => (
-  <SvgIcon
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    {...props}
-  >
-    <path
-      fill="currentColor"
-      fillRule="evenodd"
-      d="M12.941 6.485a2 2 0 0 1 .824.824l4.666 8.75A2 2 0 0 1 16.667 19H7.333a2 2 0 0 1-1.764-2.941l4.666-8.75a2 2 0 0 1 2.706-.824zM12 15a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0-6a1 1 0 0 0-1 1v3a1 1 0 0 0 2 0v-3a1 1 0 0 0-1-1z"
     />
   </SvgIcon>
 )
