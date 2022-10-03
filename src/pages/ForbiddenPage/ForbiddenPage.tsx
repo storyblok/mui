@@ -8,9 +8,7 @@ type Props = {
 
 export const ForbiddenPage: FunctionComponent<Props> = (props) => (
   <ErrorPage
-    pictogram={
-      <AccessDeniedPictogram sx={{ height: 'inherit', width: 'auto' }} />
-    }
+    pictogram={<AccessDeniedPictogram fontSize="pictogram" />}
     title="Forbidden"
     message={props.message ?? 'You are not authorized to display this page.'}
   />
