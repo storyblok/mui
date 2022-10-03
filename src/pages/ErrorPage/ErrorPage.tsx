@@ -34,7 +34,9 @@ const PictogramContainer = styled(Box)({
 
 export const ErrorPage: FunctionComponent<ErrorPageProps> = (props) => (
   <Root>
-    <PictogramContainer>{props.pictogram}</PictogramContainer>
+    {props.pictogram && (
+      <PictogramContainer>{props.pictogram}</PictogramContainer>
+    )}
     <Typography variant="h1">{props.title}</Typography>
     <Typography
       variant="body1"
