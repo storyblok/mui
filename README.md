@@ -41,13 +41,13 @@ First of all, set up MUI with the help of [MUI's official documentation](https:/
 Install `@storyblok/mui`:
 
 ````shell
-npm install @storyblok/mui
+npm install --save-exact @storyblok/mui
 ````
 
 With yarn:
 
 ````shell
-yarn add @storyblok/mui
+yarn add --exact @storyblok/mui
 ````
 
 Wrap your application within a `<ThemeProvider /> component`:
