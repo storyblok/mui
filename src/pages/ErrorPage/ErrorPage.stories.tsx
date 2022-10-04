@@ -15,9 +15,7 @@ const Template: ComponentStory<typeof Component> = (args) => (
 
 export const Basic = Template.bind({})
 Basic.args = {
-  pictogram: (
-    <InternalServerErrorPictogram sx={{ height: 'inherit', width: 'auto' }} />
-  ),
+  pictogram: <InternalServerErrorPictogram fontSize="pictogram" />,
   title: 'Error',
   message: 'This is a user-friendly message.',
   details:

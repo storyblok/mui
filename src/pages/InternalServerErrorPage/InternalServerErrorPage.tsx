@@ -9,9 +9,7 @@ type Props = {
 
 export const InternalServerErrorPage: FunctionComponent<Props> = (props) => (
   <ErrorPage
-    pictogram={
-      <InternalServerErrorPictogram sx={{ height: 'inherit', width: 'auto' }} />
-    }
+    pictogram={<InternalServerErrorPictogram fontSize="pictogram" />}
     title="Internal Server Error"
     message={props.message}
     details={props.details}

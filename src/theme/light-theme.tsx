@@ -45,6 +45,7 @@ import {
   CheckedCheckboxIcon,
   CheckedRadioIcon,
   ChevronDownIcon,
+  CloseIcon,
   IndeterminateCheckboxIcon,
   SquareErrorIcon,
   SquareInfoIcon,
@@ -675,6 +676,47 @@ const lightTheme = createTheme({
           info: <SquareInfoIcon />,
           warning: <SquareWarningIcon />,
           error: <SquareErrorIcon />,
+        },
+      },
+    },
+    MuiCircularProgress: {
+      defaultProps: {
+        disableShrink: true,
+        size: 50,
+        thickness: 5,
+      },
+      styleOverrides: {
+        circle: {
+          stroke: 'currentcolor',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+        },
+      },
+    },
+    MuiChip: {
+      defaultProps: {
+        deleteIcon: <CloseIcon />,
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: base_border_radius,
+          paddingLeft: spacing,
+          paddingRight: spacing,
+          height: 24,
+          fontWeight: typography.fontWeightBold,
+          fontSize: font_13,
+          lineHeight: font_13,
+        },
+        label: {
+          padding: 0,
+          marginLeft: spacing,
+          marginRight: spacing,
+        },
+        icon: {
+          margin: 0,
+        },
+        deleteIcon: {
+          margin: 0,
         },
       },
     },

@@ -1,8 +1,23 @@
-import { IconComponent } from '@src/icons'
-import { SvgIcon } from '@mui/material'
+import { styled, SvgIcon, SvgIconProps } from '@mui/material'
+import { FunctionComponent } from 'react'
 
-export const EmptyStatePictogram: IconComponent = (props) => (
-  <SvgIcon
+const PictogramSvgIcon = styled(SvgIcon, {
+  shouldForwardProp: (prop) => prop !== 'fontSize',
+})<PictogramProps>(({ fontSize }) => ({
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  fontSize: fontSize === 'pictogram' ? '120px' : undefined,
+})) as PictogramComponent
+
+// TODO override SvgIconPropsSizeOverrides in the theme instead, to add a 'pictogram' fontSize
+type PictogramProps = Omit<SvgIconProps, 'fontSize'> & {
+  fontSize?: undefined | 'small' | 'medium' | 'large' | 'pictogram' | 'inherit'
+}
+
+export type PictogramComponent = FunctionComponent<PictogramProps>
+
+export const EmptyStatePictogram: PictogramComponent = (props) => (
+  <PictogramSvgIcon
     xmlns="http://www.w3.org/2000/svg"
     role="presentation"
     viewBox="0 0 142 110"
@@ -162,11 +177,11 @@ export const EmptyStatePictogram: IconComponent = (props) => (
         </g>
       </g>
     </g>
-  </SvgIcon>
+  </PictogramSvgIcon>
 )
 
-export const NoItemsAddedPictogram: IconComponent = (props) => (
-  <SvgIcon
+export const NoItemsAddedPictogram: PictogramComponent = (props) => (
+  <PictogramSvgIcon
     xmlns="http://www.w3.org/2000/svg"
     role="presentation"
     viewBox="0 0 116.0 110.0"
@@ -278,11 +293,11 @@ export const NoItemsAddedPictogram: IconComponent = (props) => (
         </g>
       </g>
     </g>
-  </SvgIcon>
+  </PictogramSvgIcon>
 )
 
-export const EmptyPictogram: IconComponent = (props) => (
-  <SvgIcon
+export const EmptyPictogram: PictogramComponent = (props) => (
+  <PictogramSvgIcon
     xmlns="http://www.w3.org/2000/svg"
     role="presentation"
     viewBox="0 0 116.0 110.0"
@@ -421,11 +436,11 @@ export const EmptyPictogram: IconComponent = (props) => (
         ></circle>
       </g>
     </g>
-  </SvgIcon>
+  </PictogramSvgIcon>
 )
 
-export const EmptySearchPictogram: IconComponent = (props) => (
-  <SvgIcon
+export const EmptySearchPictogram: PictogramComponent = (props) => (
+  <PictogramSvgIcon
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 116 110"
     {...props}
@@ -580,11 +595,11 @@ export const EmptySearchPictogram: IconComponent = (props) => (
         d="M91.697 21.197a5 5 0 0 1 7.708 6.292l2.898 2.9a1 1 0 0 1-1.414 1.414l-2.9-2.899a5.002 5.002 0 0 1-6.292-7.707zm1.413 1.413a3 3 0 1 0 4.243 4.243 3 3 0 0 0-4.243-4.243z"
       />
     </g>
-  </SvgIcon>
+  </PictogramSvgIcon>
 )
 
-export const NotFoundPictogram: IconComponent = (props) => (
-  <SvgIcon
+export const NotFoundPictogram: PictogramComponent = (props) => (
+  <PictogramSvgIcon
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 206 123"
     {...props}
@@ -785,11 +800,11 @@ export const NotFoundPictogram: IconComponent = (props) => (
         </g>
       </g>
     </g>
-  </SvgIcon>
+  </PictogramSvgIcon>
 )
 
-export const InternalServerErrorPictogram: IconComponent = (props) => (
-  <SvgIcon
+export const InternalServerErrorPictogram: PictogramComponent = (props) => (
+  <PictogramSvgIcon
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 213 123"
     {...props}
@@ -1009,11 +1024,11 @@ export const InternalServerErrorPictogram: IconComponent = (props) => (
         </g>
       </g>
     </g>
-  </SvgIcon>
+  </PictogramSvgIcon>
 )
 
-export const AccessDeniedPictogram: IconComponent = (props) => (
-  <SvgIcon
+export const AccessDeniedPictogram: PictogramComponent = (props) => (
+  <PictogramSvgIcon
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 206 111"
     {...props}
@@ -1317,5 +1332,5 @@ export const AccessDeniedPictogram: IconComponent = (props) => (
         </g>
       </g>
     </g>
-  </SvgIcon>
+  </PictogramSvgIcon>
 )

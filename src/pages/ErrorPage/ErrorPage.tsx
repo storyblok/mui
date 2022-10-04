@@ -4,13 +4,13 @@ import {
   AccordionSummary,
   Alert,
   AlertTitle,
-  Box,
   Container,
-  styled,
   Typography,
 } from '@mui/material'
 import { FunctionComponent, ReactNode } from 'react'
 import { ChevronDownIcon, SquareErrorIcon } from '@src/icons'
+import { CenteredContent } from '@src/layout'
+import { AppContainer } from '@src/layout/AppContainer'
 
 export type ErrorPageProps = {
   title: ReactNode
@@ -19,31 +19,25 @@ export type ErrorPageProps = {
   pictogram?: ReactNode
 }
 
-const Root = styled(Container)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  maxWidth: theme.breakpoints.values.sm,
-}))
-
-const PictogramContainer = styled(Box)({
-  width: 'auto',
-  height: '120px',
-})
-
 export const ErrorPage: FunctionComponent<ErrorPageProps> = (props) => (
-  <Root>
-    <PictogramContainer>{props.pictogram}</PictogramContainer>
-    <Typography variant="h1">{props.title}</Typography>
-    <Typography
-      variant="body1"
-      sx={{ color: 'text.secondary' }}
-    >
-      {props.message}
-    </Typography>
-    {props.details && <DetailsAlert message={props.details} />}
-  </Root>
+  <AppContainer>
+    <CenteredContent>
+      <Container
+        maxWidth="sm"
+        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      >
+        {props.pictogram}
+        <Typography variant="h1">{props.title}</Typography>
+        <Typography
+          variant="body1"
+          sx={{ color: 'text.secondary' }}
+        >
+          {props.message}
+        </Typography>
+        {props.details && <DetailsAlert message={props.details} />}
+      </Container>
+    </CenteredContent>
+  </AppContainer>
 )
 
 const DetailsAlert: FunctionComponent<{
