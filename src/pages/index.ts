@@ -1,4 +1,5 @@
+export * from './ErrorPage'
 export * from './NotFoundPage'
 export * from './UnauthorizedPage'
 export * from './ForbiddenPage'
-export * from './ErrorPage'
+export * from './InternalServerErrorPage'
