@@ -13,8 +13,8 @@ import { CenteredContent } from '@src/layout'
 import { AppContainer } from '@src/layout/AppContainer'
 
 export type ErrorPageProps = {
-  title: ReactNode
-  message: ReactNode
+  title?: ReactNode
+  message?: ReactNode
   details?: ReactNode
   pictogram?: ReactNode
 }
@@ -27,13 +27,15 @@ export const ErrorPage: FunctionComponent<ErrorPageProps> = (props) => (
         sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
       >
         {props.pictogram}
-        <Typography variant="h1">{props.title}</Typography>
-        <Typography
-          variant="body1"
-          sx={{ color: 'text.secondary' }}
-        >
-          {props.message}
-        </Typography>
+        {props.title && <Typography variant="h1">{props.title}</Typography>}
+        {props.message && (
+          <Typography
+            variant="body1"
+            sx={{ color: 'text.secondary' }}
+          >
+            {props.message}
+          </Typography>
+        )}
         {props.details && <DetailsAlert message={props.details} />}
       </Container>
     </CenteredContent>

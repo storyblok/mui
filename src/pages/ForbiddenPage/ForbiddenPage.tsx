@@ -3,7 +3,7 @@ import { ErrorPage } from '@src/pages/ErrorPage'
 import { AccessDeniedPictogram } from '@src/icons'
 
 type Props = {
-  message: ReactNode
+  message?: ReactNode
 }
 
 export const ForbiddenPage: FunctionComponent<Props> = (props) => (

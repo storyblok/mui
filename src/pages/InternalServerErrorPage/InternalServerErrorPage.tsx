@@ -3,8 +3,8 @@ import { ErrorPage } from '@src/pages/ErrorPage'
 import { InternalServerErrorPictogram } from '@src/icons'
 
 type Props = {
-  message: ReactNode
-  details: ReactNode
+  message?: ReactNode
+  details?: ReactNode
 }
 
 export const InternalServerErrorPage: FunctionComponent<Props> = (props) => (
