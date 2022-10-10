@@ -15,71 +15,77 @@ export type HeaderProps = {
 
 export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
   props,
-) => (
-  <AppBar
-    className="SbAppHeader-root"
-    position="static"
-    color="transparent"
-  >
-    <Toolbar
-      disableGutters
-      sx={{
-        display: 'grid',
-        gap: (theme) => `${theme.spacing(2)} ${theme.spacing(3)}`,
-        gridTemplateColumns: 'repeat(1, min-content 1fr auto)',
-      }}
+) => {
+  const textColumm = props.icon ? '2' : '1'
+  const actionsColumm = props.icon ? '3' : '3'
+  return (
+    <AppBar
+      className="SbAppHeader-root"
+      position="static"
+      color="transparent"
     >
-      {props.icon && (
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            fontSize: '42px',
-            gridColumn: '1',
-            gridRow: '1',
-          }}
-        >
-          {props.icon}
-        </Box>
-      )}
-      {props.title && (
-        <Typography
-          variant="h1"
-          sx={{
-            gridColumn: '2',
-            gridRow: '1',
-            margin: 0,
-          }}
-        >
-          {props.title}
-        </Typography>
-      )}
-      <Box
-        alignItems="center"
-        display="flex"
-        gap={4}
-        className={`SbAppHeader-actions ${props.actionsProps?.className ?? ''}`}
-        {...props.actionsProps}
+      <Toolbar
+        disableGutters
         sx={{
-          gridColumn: '3',
-          gridRow: '1',
+          display: 'grid',
+          gap: (theme) => `${theme.spacing(2)} ${theme.spacing(3)}`,
+          gridTemplateColumns: 'repeat(1, min-content 1fr auto)',
         }}
       >
-        {props.children}
-      </Box>
-      {props.subtitle && (
-        <Typography
-          variant="subtitle2"
-          component="p"
+        {props.icon && (
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              fontSize: '42px',
+              gridColumn: '1',
+              gridRow: '1',
+            }}
+          >
+            {props.icon}
+          </Box>
+        )}
+        {props.title && (
+          <Typography
+            variant="h1"
+            sx={{
+              gridColumn: textColumm,
+              gridRow: '1',
+              margin: 0,
+            }}
+          >
+            {props.title}
+          </Typography>
+        )}
+        <Box
+          alignItems="center"
+          display="flex"
+          gap={4}
+          className={`SbAppHeader-actions ${
+            props.actionsProps?.className ?? ''
+          }`}
+          {...props.actionsProps}
           sx={{
-            color: 'text.secondary',
-            gridColumn: '2/ span 2',
-            gridRow: '2',
+            gridColumn: actionsColumm,
+            gridRow: '1',
           }}
         >
-          {props.subtitle}
-        </Typography>
-      )}
-    </Toolbar>
-  </AppBar>
-)
+          {props.children}
+        </Box>
+        {props.subtitle && (
+          <Typography
+            variant="subtitle2"
+            component="p"
+            sx={{
+              color: 'text.secondary',
+              gridColumn: `${textColumm}/ span 2`,
+              gridRow: '2',
+            }}
+          >
+            {props.subtitle}
+          </Typography>
+        )}
+      </Toolbar>
+    </AppBar>
+  )
+}
