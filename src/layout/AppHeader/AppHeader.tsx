@@ -22,6 +22,7 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
     color="transparent"
   >
     <Toolbar
+      disableGutters
       sx={{
         display: 'grid',
         gap: (theme) => `${theme.spacing(2)} ${theme.spacing(3)}`,
