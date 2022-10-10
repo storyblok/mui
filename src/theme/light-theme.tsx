@@ -523,6 +523,13 @@ const lightTheme = createTheme({
         shrink: false,
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginTop: spacing,
+        },
+      },
+    },
     MuiFormLabel: {
       styleOverrides: {
         root: {
