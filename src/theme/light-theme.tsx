@@ -727,6 +727,16 @@ const lightTheme = createTheme({
         },
       },
     },
+    MuiSkeleton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: theme.palette.grey.A100,
+        }),
+        rectangular: () => ({
+          borderRadius: base_border_radius * 2,
+        }),
+      },
+    },
   },
 })
 
