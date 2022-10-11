@@ -1,15 +1,9 @@
 import { FunctionComponent, ReactNode } from 'react'
-import {
-  Box,
-  Divider,
-  IconButton,
-  styled,
-  Typography,
-  useTheme,
-} from '@mui/material'
+import { Box, Divider, IconButton, styled, Typography } from '@mui/material'
 import { drawerWidth } from '@src/theme'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import { CloseIcon } from '@src/icons'
+import { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer/SwipeableDrawer'
 
 const drawerMargin = 4
 const drawerPadding = 6
@@ -22,56 +16,48 @@ const DrawerMargin = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.grey['50'],
 }))
 
-export const AppDrawer: FunctionComponent<{
-  open?: boolean
-  onClose?: () => void
-  onOpen?: () => void
+const Root = styled(SwipeableDrawer)(({ theme }) => ({
+  '& .MuiPaper-root': {
+    width: drawerWidth,
+    overflow: 'hidden',
+    [theme.breakpoints.up('xs')]: {
+      margin: 0,
+      maxWidth: '100%',
+      height: '100%',
+      borderRadius: 0,
+    },
+    [theme.breakpoints.up('sm')]: {
+      margin: theme.spacing(drawerMargin),
+      maxWidth: `calc(100% - ${theme.spacing(drawerMargin * 2)})`,
+      height: `calc(100% - ${theme.spacing(drawerMargin * 2)})`,
+      borderRadius: theme.shape.borderRadius,
+    },
+  },
+}))
+
+export type AppDrawerProps = {
   children?: ReactNode
   header?: ReactNode
   footer?: ReactNode
-}> = (props) => {
-  const theme = useTheme()
+} & SwipeableDrawerProps
+
+export const AppDrawer: FunctionComponent<AppDrawerProps> = (props) => {
+  const { header, footer, children, ...swipeableDrawerProps } = props
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    <SwipeableDrawer
+    <Root
       anchor="right"
-      open={props.open ?? false}
-      onClose={() => props.onClose?.()}
-      onOpen={() => props.onOpen?.()}
-      PaperProps={{
-        sx: {
-          width: drawerWidth,
-          overflow: 'hidden',
-          m: {
-            xs: 0,
-            sm: drawerMargin,
-          },
-          maxWidth: {
-            xs: '100%',
-            sm: `calc(100% - ${theme.spacing(drawerMargin * 2)})`,
-          },
-          height: {
-            xs: '100%',
-            sm: `calc(100% - ${theme.spacing(drawerMargin * 2)})`,
-          },
-          borderRadius: {
-            xs: 0,
-            sm: 1,
-          },
-        },
-      }}
+      {...swipeableDrawerProps}
     >
       <DrawerMargin>
-        <Typography variant="h2">&nbsp;{props.header}</Typography>
+        <Typography variant="h2">&nbsp;{header}</Typography>
         <IconButton
           onClick={props.onClose}
           sx={{
             color: 'inherit',
             borderRadius: 1,
             position: 'absolute',
-            top: theme.spacing(4),
-            right: theme.spacing(4),
+            top: (theme) => theme.spacing(4),
+            right: (theme) => theme.spacing(4),
           }}
         >
           <CloseIcon />
@@ -92,11 +78,11 @@ export const AppDrawer: FunctionComponent<{
             flex: 1,
           }}
         >
-          {props.children}
+          {children}
         </Box>
         <Divider />
-        {props.footer && <DrawerMargin>{props.footer}</DrawerMargin>}
+        {footer && <DrawerMargin>{footer}</DrawerMargin>}
       </Box>
-    </SwipeableDrawer>
+    </Root>
   )
 }
