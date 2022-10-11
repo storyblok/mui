@@ -22,6 +22,7 @@ export default {
       options: [
         undefined,
         'default',
+        'inherit',
         'primary',
         'secondary',
         'success',
@@ -149,6 +150,12 @@ export const Error = Template.bind({})
 Error.args = {
   children: <SquareErrorIcon fontSize="inherit" />,
   color: 'error',
+}
+
+export const Inherit = Template.bind({})
+Inherit.args = {
+  children: <SquareErrorIcon fontSize="inherit" />,
+  color: 'inherit',
 }
 
 export const InitialsSmall = Template.bind({})

@@ -12,7 +12,7 @@ type PaletteColor =
   | 'info'
   | 'warning'
   | 'error'
-type IconColor = PaletteColor | 'default'
+type IconColor = PaletteColor | 'default' | 'inherit'
 type IconSize = 'small' | 'medium' | 'large'
 type IconBoxVariant = 'default' | 'bordered' | 'light'
 
@@ -40,24 +40,33 @@ const fontSize = (size: IconSize): number | string => {
 
 const fontColor = (
   theme: Theme,
-  color: PaletteColor | 'default',
+  color: IconColor,
   variant: IconBoxVariant,
 ): string => {
-  return color === 'default'
+  return color === 'inherit'
+    ? 'inherit'
+    : color === 'default'
     ? theme.palette.text.primary
     : variant === 'light'
     ? theme.palette[color].main
     : theme.palette[color].contrastText
 }
 
-const mainColor = (theme: Theme, color: PaletteColor | 'default') =>
-  color === 'default' ? theme.palette.grey.A100 : theme.palette[color].main
+const mainColor = (theme: Theme, color: IconColor) =>
+  color === 'inherit'
+    ? 'inherit'
+    : color === 'default'
+    ? theme.palette.grey.A100
+    : theme.palette[color].main
 
 const backgroundColor = (
   theme: Theme,
-  color: PaletteColor | 'default',
+  color: IconColor,
   variant: IconBoxVariant,
 ): string => {
+  if (color === 'inherit') {
+    return 'transparent'
+  }
   const bgColor = mainColor(theme, color)
   return variant === 'light' ? faintColor(theme, bgColor) : bgColor
 }
@@ -95,7 +104,7 @@ export const IconBox = styled(Box, {
   }) => {
     const size: IconSize = optionalSize ?? 'medium'
     const defaultColor = 'default'
-    const color: PaletteColor | 'default' = Array.isArray(optionalColor)
+    const color: IconColor = Array.isArray(optionalColor)
       ? defaultColor
       : typeof optionalColor === 'undefined'
       ? defaultColor
@@ -104,8 +113,6 @@ export const IconBox = styled(Box, {
     return {
       marginRight: theme.spacing(3),
       color: fontColor(theme, color, variant),
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore TODO remove ts-ignore. This should work...
       backgroundColor: backgroundColor(theme, color, variant),
       display: 'flex',
       alignItems: 'center',

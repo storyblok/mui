@@ -17,6 +17,22 @@ const Component = AnalyticalBox
 export default {
   title: `Components/AnalyticalBox`,
   component: Component,
+  argTypes: {
+    color: {
+      control: 'select',
+      options: [
+        undefined,
+        'default',
+        'inherit',
+        'primary',
+        'secondary',
+        'success',
+        'info',
+        'warning',
+        'error',
+      ],
+    },
+  },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Component>
 
@@ -53,6 +69,13 @@ export const Error = Template.bind({})
 Error.args = {
   icon: <SquareErrorIcon />,
   color: 'error',
+  children: <Typography variant="body1">Error</Typography>,
+}
+
+export const Inherit = Template.bind({})
+Inherit.args = {
+  icon: <SquareErrorIcon />,
+  color: 'inherit',
   children: <Typography variant="body1">Error</Typography>,
 }
 

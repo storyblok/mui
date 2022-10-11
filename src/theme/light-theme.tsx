@@ -478,6 +478,23 @@ const lightTheme = createTheme({
       defaultProps: {
         variant: 'dense',
       },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          paddingTop: theme.spacing(2),
+          paddingBottom: theme.spacing(2),
+          gap: theme.spacing(3),
+          [theme.breakpoints.up('lg')]: {
+            gap: theme.spacing(4),
+          },
+        }),
+        gutters: ({ theme }) => ({
+          // Override default media query
+          [theme.breakpoints.up('xs')]: {
+            paddingLeft: theme.spacing(4),
+            paddingRight: theme.spacing(4),
+          },
+        }),
+      },
     },
     MuiAccordion: {
       defaultProps: {
