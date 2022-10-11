@@ -267,6 +267,7 @@ const lightTheme = createTheme({
   shadows,
   // shadows: TODO
   typography,
+  // TODO use ({theme}) => ({}) to defined styles with design tokens, rather than using the hard-coded values
   components: {
     MuiCssBaseline: {
       styleOverrides: {
