@@ -1,7 +1,7 @@
 {
   "name": "@storyblok/mui",
-  "description": "A MUI theme and several components for Storyblok.",
-  "version": "0.0.15-alpha",
+  "description": "A Storyblok MUI theme with reusable components.",
+  "version": "0.0.16-alpha",
   "author": {
     "name": "Johannes Lindgren",
     "email": "johannes.lindgren@storyblok.com"
