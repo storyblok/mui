@@ -1,4 +1,9 @@
-import { CheckMarkIcon, DotIcon, IconComponent, MinusIcon } from '@src/icons'
+import {
+  CheckMarkIcon,
+  DotIcon,
+  MinusIcon,
+} from '@src/icons/storyblok/storyblok'
+import { IconComponent } from '@src/icons/iconComponent'
 import { SvgIcon } from '@mui/material'
 import { ComponentProps } from 'react'
 

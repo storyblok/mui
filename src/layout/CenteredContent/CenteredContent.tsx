@@ -1,5 +1,5 @@
 import { styled } from '@mui/material'
-import { AppContent } from '@src/layout'
+import { AppContent } from '@src/layout/AppContent'
 
 export const CenteredContent = styled(AppContent)(({ theme }) => ({
   display: 'flex',

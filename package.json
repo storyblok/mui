@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "build": "rollup -c",
+    "build": "rollup -c --failAfterWarnings",
     "start": "rollup -c -w",
     "test": "echo TODO tests",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
