@@ -267,6 +267,7 @@ const lightTheme = createTheme({
   shadows,
   // shadows: TODO
   typography,
+  // TODO use ({theme}) => ({}) to defined styles with design tokens, rather than using the hard-coded values
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -725,6 +726,16 @@ const lightTheme = createTheme({
         deleteIcon: {
           margin: 0,
         },
+      },
+    },
+    MuiSkeleton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: theme.palette.grey.A100,
+        }),
+        rectangular: () => ({
+          borderRadius: base_border_radius * 2,
+        }),
       },
     },
   },

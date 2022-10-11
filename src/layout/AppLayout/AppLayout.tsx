@@ -1,9 +1,9 @@
 import { ComponentProps, FunctionComponent, ReactNode } from 'react'
-import { AppHeader, HeaderProps } from '@src/layout/AppHeader/AppHeader'
+import { AppHeader, AppHeaderProps } from '@src/layout/AppHeader/AppHeader'
 import { AppContainer } from '@src/layout/AppContainer'
 import { AppContent } from '@src/layout/AppContent'
 
-type AppLayoutProps = HeaderProps & {
+type AppLayoutProps = AppHeaderProps & {
   className?: string
   header?: ReactNode
   children?: ReactNode

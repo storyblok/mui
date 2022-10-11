@@ -4,30 +4,37 @@ import {
   PropsWithChildren,
   ReactNode,
 } from 'react'
-import { AppBar, Box, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, styled, Typography } from '@mui/material'
+import { AppBarProps } from '@mui/material/AppBar/AppBar'
 
-export type HeaderProps = {
+export type AppHeaderProps = {
   title?: ReactNode
   subtitle?: ReactNode
   icon?: ReactNode
   actionsProps?: ComponentProps<typeof Box>
-}
+} & AppBarProps
 
-export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  marginBottom: theme.spacing(10),
+  display: 'grid',
+  gap: `${theme.spacing(2)} ${theme.spacing(3)}`,
+  gridTemplateColumns: 'repeat(1, min-content 1fr auto)',
+  alignItems: 'center',
+}))
+
+export const AppHeader: FunctionComponent<PropsWithChildren<AppHeaderProps>> = (
   props,
-) => (
-  <AppBar
-    className="SbAppHeader-root"
-    position="static"
-    color="transparent"
-  >
-    <Toolbar
-      disableGutters
-      sx={{
-        display: 'grid',
-        gap: (theme) => `${theme.spacing(2)} ${theme.spacing(3)}`,
-        gridTemplateColumns: 'repeat(1, min-content 1fr auto)',
-      }}
+) => {
+  const textColumm = props.icon ? '2' : '1'
+  const actionsColumm = props.icon ? '3' : '3'
+  const { title, subtitle, icon, actionsProps, className, ...appBarProps } =
+    props
+  return (
+    <StyledAppBar
+      className={`SbAppHeader-root ${className ?? ''}`}
+      position="static"
+      color="transparent"
+      {...appBarProps}
     >
       {props.icon && (
         <Box
@@ -46,7 +53,7 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
         <Typography
           variant="h1"
           sx={{
-            gridColumn: '2',
+            gridColumn: textColumm,
             gridRow: '1',
             margin: 0,
           }}
@@ -61,7 +68,7 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
         className={`SbAppHeader-actions ${props.actionsProps?.className ?? ''}`}
         {...props.actionsProps}
         sx={{
-          gridColumn: '3',
+          gridColumn: actionsColumm,
           gridRow: '1',
         }}
       >
@@ -73,13 +80,13 @@ export const AppHeader: FunctionComponent<PropsWithChildren<HeaderProps>> = (
           component="p"
           sx={{
             color: 'text.secondary',
-            gridColumn: '2/ span 2',
+            gridColumn: `${textColumm}/ span 2`,
             gridRow: '2',
           }}
         >
           {props.subtitle}
         </Typography>
       )}
-    </Toolbar>
-  </AppBar>
-)
+    </StyledAppBar>
+  )
+}

@@ -5,6 +5,7 @@ import Button from '@mui/material/Button'
 import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
 import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
 import { AppContainer } from '../AppContainer'
+import { ContentDemoArea } from '../../storybook/demo-utils/ContentDemoArea'
 
 const Component = AppHeader
 
@@ -16,6 +17,7 @@ export default {
 const Template: ComponentStory<typeof Component> = (args) => (
   <AppContainer>
     <Component {...args} />
+    <ContentDemoArea />
   </AppContainer>
 )
 
