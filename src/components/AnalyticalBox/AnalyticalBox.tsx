@@ -6,7 +6,6 @@ import { IconBox } from '@src/components/IconBox/IconBox'
 const Root = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  minWidth: '150px',
   color: 'inherit',
   borderRadius: theme.shape.borderRadius,
 }))
@@ -23,7 +22,7 @@ type PaletteColor =
   | 'info'
   | 'warning'
   | 'error'
-type IconColor = PaletteColor | 'default'
+type IconColor = PaletteColor | 'inherit' | 'default'
 type IconSize = 'small' | 'medium' | 'large'
 
 type Props = {
