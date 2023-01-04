@@ -93,7 +93,7 @@ export const NotificationProvider: FunctionComponent<{
       <Snackbar
         open={open}
         onClose={handleClose}
-        autoHideDuration={50000}
+        autoHideDuration={5000}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'center',
