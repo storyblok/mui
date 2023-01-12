@@ -11,10 +11,17 @@
     "type": "git",
     "url": "https://github.com/storyblok/mui.git"
   },
-  "main": "dist/mui.umd.js",
-  "module": "dist/mui.mjs",
-  "types": "dist/index.d.ts",
   "sideEffects": false,
+  "type": "module",
+  "module": "dist/mui.js",
+  "main": "dist/mui.umd.cjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/mui.js",
+      "require": "./dist/mui.umd.cjs"
+    }
+  },
   "files": [
     "dist/"
   ],
