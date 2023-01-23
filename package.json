@@ -1,7 +1,7 @@
 {
   "name": "@storyblok/mui",
   "description": "A Storyblok MUI theme with reusable components.",
-  "version": "0.0.18-alpha",
+  "version": "0.0.19-alpha",
   "author": {
     "name": "Johannes Lindgren",
     "email": "johannes.lindgren@storyblok.com"
@@ -11,18 +11,24 @@
     "type": "git",
     "url": "https://github.com/storyblok/mui.git"
   },
-  "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "sideEffects": false,
+  "type": "module",
+  "module": "dist/mui.js",
+  "main": "dist/mui.umd.cjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/mui.js",
+      "require": "./dist/mui.umd.cjs"
+    }
+  },
   "files": [
     "dist/"
   ],
   "scripts": {
     "lint": "eslint .",
-    "build": "rollup -c --failAfterWarnings",
-    "start": "rollup -c -w",
+    "build": "vite build",
+    "dev": "vite build --watch",
     "test": "echo TODO tests",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
     "build:storybook": "build-storybook --disable-telemetry --quiet"
@@ -33,8 +39,6 @@
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@mui/material": "5.6.1",
-    "@rollup/plugin-commonjs": "21.0.1",
-    "@rollup/plugin-node-resolve": "13.1.3",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -43,6 +47,7 @@
     "@storybook/manager-webpack4": "^6.5.9",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "@types/node": "18.11.18",
     "@types/react": "latest",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
@@ -56,15 +61,13 @@
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^2.64.0",
-    "rollup-plugin-peer-deps-external": "2.2.4",
-    "rollup-plugin-summary": "^1.4.3",
-    "rollup-plugin-typescript2": "^0.31.1",
-    "rollup-plugin-visualizer": "^5.8.1",
+    "rollup-plugin-visualizer": "5.9.0",
     "storybook-addon-material-ui": "^0.9.0-alpha.24",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "tsutils": "^3.21.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "vite": "4.0.4",
+    "vite-plugin-dts": "1.7.1"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.9.3",
