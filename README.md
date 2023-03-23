@@ -36,6 +36,16 @@ The steps below explains how to include `@storyblok/mui` in your project.
 
 First of all, set up MUI with the help of [MUI's official documentation](https://mui.com/).
 
+With npm:
+```shell
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+With yarn:
+```shell
+yarn add @mui/material @emotion/react @emotion/styled
+```
+
 ### Installation
 
 Install `@storyblok/mui`:
