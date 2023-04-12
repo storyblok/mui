@@ -289,7 +289,7 @@ const lightTheme = createTheme({
           backgroundColor: palette.primary.main,
         },
         html: {
-          fontSize: typography.htmlFontSize,
+          fontSize: '62.5%',
         },
         body: {},
         a: {
