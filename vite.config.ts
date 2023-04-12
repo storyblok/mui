@@ -17,10 +17,22 @@ export default defineConfig({
       name: 'storyblokMui',
     },
     rollupOptions: {
-      external: ['react', 'react-proptypes', 'react-dom', '@mui/material', '@mui/system'],
-      output: {
-        // preserveModules: true,
-      },
+      external: [
+        'react',
+        'react-proptypes',
+        'react-dom',
+        '@mui/material',
+        '@mui/system',
+      ],
+      output: [
+        {
+          format: 'cjs',
+        },
+        {
+          preserveModules: true,
+          format: 'es',
+        },
+      ],
     },
     emptyOutDir: false,
   },
