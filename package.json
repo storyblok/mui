@@ -13,12 +13,12 @@
   },
   "sideEffects": false,
   "type": "module",
-  "module": "dist/src/index.js",
+  "module": "dist/index.js",
   "main": "dist/mui.umd.cjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/src/index.js",
+      "import": "./dist/index.js",
       "require": "./dist/mui.umd.cjs"
     }
   },
@@ -30,6 +30,7 @@
     "build": "vite build",
     "dev": "vite build --watch",
     "test": "echo TODO tests",
+    "check:types": "tsc --noEmit",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
     "build:storybook": "build-storybook --disable-telemetry --quiet"
   },
@@ -39,6 +40,8 @@
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@mui/material": "5.6.1",
+    "@mui/utils": ">=5.6.1",
+    "@mui/system": ">=5.6.1",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -66,13 +69,15 @@
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "tsutils": "^3.21.0",
     "typescript": "^4.8.3",
-    "vite": "4.0.4",
+    "vite": "4.2.1",
     "vite-plugin-dts": "1.7.1"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.9.3",
     "@emotion/styled": ">=11.9.3",
     "@mui/material": ">=5.6.1",
+    "@mui/utils": ">=5.6.1",
+    "@mui/system": ">=5.6.1",
     "react": ">=15.3.2",
     "react-dom": ">=15.3.2"
   }

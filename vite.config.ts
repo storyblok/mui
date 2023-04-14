@@ -2,6 +2,14 @@ import { defineConfig } from 'vite'
 import { fileURLToPath } from 'url'
 import dts from 'vite-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
+import pkg from './package.json'
+
+const externalPackages = Object.keys(pkg.peerDependencies ?? {})
+// Creating regexes of the packages to make sure subpaths of the
+// packages are also treated as external
+const regexesOfPackages = externalPackages.map(
+  (packageName) => new RegExp(`^${packageName}(/.*)?`),
+)
 
 export default defineConfig({
   plugins: [
@@ -16,15 +24,7 @@ export default defineConfig({
       entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
     },
     rollupOptions: {
-      external: [
-        'react',
-        'react-proptypes',
-        'react-dom',
-        '@mui/material',
-        '@mui/system',
-        '@emotion/styled',
-        '@emotion/react',
-      ],
+      external: regexesOfPackages,
       output: [
         {
           format: 'umd',
@@ -32,6 +32,7 @@ export default defineConfig({
         },
         {
           preserveModules: true,
+          preserveModulesRoot: 'src',
           format: 'es',
           dir: 'dist',
           entryFileNames: '[name].js',
