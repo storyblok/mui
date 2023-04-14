@@ -14,10 +14,29 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
-      name: 'storyblokMui',
     },
     rollupOptions: {
-      external: ['react', 'react-proptypes', 'react-dom', '@mui/material'],
+      external: [
+        'react',
+        'react-proptypes',
+        'react-dom',
+        '@mui/material',
+        '@mui/system',
+        '@emotion/styled',
+        '@emotion/react',
+      ],
+      output: [
+        {
+          format: 'umd',
+          name: 'mui',
+        },
+        {
+          preserveModules: true,
+          format: 'es',
+          dir: 'dist',
+          entryFileNames: '[name].js',
+        },
+      ],
     },
     emptyOutDir: false,
   },

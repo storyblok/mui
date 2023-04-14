@@ -1,7 +1,7 @@
 {
   "name": "@storyblok/mui",
   "description": "A Storyblok MUI theme with reusable components.",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "author": {
     "name": "Johannes Lindgren",
     "email": "johannes.lindgren@storyblok.com"
@@ -13,12 +13,12 @@
   },
   "sideEffects": false,
   "type": "module",
-  "module": "dist/mui.js",
+  "module": "dist/src/index.js",
   "main": "dist/mui.umd.cjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/mui.js",
+      "import": "./dist/src/index.js",
       "require": "./dist/mui.umd.cjs"
     }
   },
