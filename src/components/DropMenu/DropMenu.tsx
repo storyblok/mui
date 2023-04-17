@@ -1,6 +1,6 @@
 import { ButtonProps, Menu as MuiMenu, styled } from '@mui/material'
 import React, { FunctionComponent, ReactNode, useMemo, useState } from 'react'
-import Button from '@mui/material/Button'
+import { Button } from '@mui/material'
 import { ChevronDownIcon } from '@src/icons'
 
 const StyledMenu = styled(MuiMenu)(({ theme }) => ({

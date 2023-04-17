@@ -11,8 +11,6 @@ import {
 } from '@mui/material'
 import { ReactNode, useState } from 'react'
 import { AvatarFallbackIcon, FolderFillIcon, StatusIcon } from '../../icons'
-// import {ThemeProvider} from "@mui/material/styles";
-// import {lightTheme} from "@src/browser";
 
 const Component = List
 

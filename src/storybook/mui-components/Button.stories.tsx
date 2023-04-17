@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import Button from '@mui/material/Button'
+import { Button } from '@mui/material'
 import { StoryblokIcon } from '../../icons'
 
 const Component = Button

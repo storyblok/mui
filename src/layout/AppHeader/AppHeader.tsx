@@ -4,8 +4,7 @@ import {
   PropsWithChildren,
   ReactNode,
 } from 'react'
-import { AppBar, Box, styled, Typography } from '@mui/material'
-import { AppBarProps } from '@mui/material/AppBar/AppBar'
+import { AppBar, Box, styled, Typography, AppBarProps } from '@mui/material'
 
 export type AppHeaderProps = {
   title?: ReactNode

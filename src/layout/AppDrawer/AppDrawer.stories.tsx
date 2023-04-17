@@ -13,7 +13,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import Button from '@mui/material/Button'
+import { Button } from '@mui/material'
 import { AppDrawer } from './AppDrawer'
 import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
 

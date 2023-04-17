@@ -1,5 +1,5 @@
 import { Box, BoxProps, styled, Theme } from '@mui/material'
-import { lighten } from '@mui/system/colorManipulator'
+import { lighten } from '@mui/system'
 import { FunctionComponent } from 'react'
 
 // block: 24, 24
