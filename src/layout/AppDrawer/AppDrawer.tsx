@@ -1,9 +1,8 @@
 import { FunctionComponent, ReactNode } from 'react'
 import { Box, Divider, IconButton, styled, Typography } from '@mui/material'
 import { drawerWidth } from '@src/theme'
-import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import { CloseIcon } from '@src/icons'
-import { SwipeableDrawerProps } from '@mui/material/SwipeableDrawer/SwipeableDrawer'
+import { SwipeableDrawer, SwipeableDrawerProps } from '@mui/material'
 
 const drawerMargin = 4
 const drawerPadding = 6

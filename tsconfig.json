@@ -7,6 +7,10 @@
       "es2017",
       "dom"
     ],
+    // ensure that nobody can accidentally use this config for a build
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": true,
@@ -19,7 +23,6 @@
     "noUnusedParameters": true,
     "skipLibCheck": true,
     "declaration": true,
-    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
@@ -37,7 +40,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "**/*.test.ts",
-    "**/*.stories*"
-  ]
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

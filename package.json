@@ -1,7 +1,7 @@
 {
   "name": "@storyblok/mui",
   "description": "A Storyblok MUI theme with reusable components.",
-  "version": "0.0.21",
+  "version": "0.0.22-beta.0",
   "author": {
     "name": "Johannes Lindgren",
     "email": "johannes.lindgren@storyblok.com"
@@ -13,13 +13,14 @@
   },
   "sideEffects": false,
   "type": "module",
-  "module": "dist/src/index.js",
-  "main": "dist/mui.umd.cjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/src/index.js",
-      "require": "./dist/mui.umd.cjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
@@ -30,15 +31,21 @@
     "build": "vite build",
     "dev": "vite build --watch",
     "test": "echo TODO tests",
+    "check:types": "tsc --noEmit",
     "storybook": "start-storybook -p 6006 --disable-telemetry",
     "build:storybook": "build-storybook --disable-telemetry --quiet"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@mui/system": "^5.6.1",
+    "@mui/utils": "^5.6.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@mui/material": "5.6.1",
+    "@mui/utils": ">=5.6.1",
+    "@mui/system": ">=5.6.1",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -48,7 +55,8 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@types/node": "18.11.18",
-    "@types/react": "latest",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "babel-loader": "^8.2.5",
@@ -62,18 +70,19 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-visualizer": "5.9.0",
+    "@rollup/plugin-node-resolve": "15.02",
     "storybook-addon-material-ui": "^0.9.0-alpha.24",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "tsutils": "^3.21.0",
     "typescript": "^4.8.3",
-    "vite": "4.0.4",
+    "vite": "4.2.1",
     "vite-plugin-dts": "1.7.1"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.9.3",
     "@emotion/styled": ">=11.9.3",
     "@mui/material": ">=5.6.1",
-    "react": ">=15.3.2",
-    "react-dom": ">=15.3.2"
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
   }
 }

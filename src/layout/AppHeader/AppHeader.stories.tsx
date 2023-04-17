@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { AppHeader } from './AppHeader'
 import { SearchIcon, SettingsIcon } from '../../icons'
-import Button from '@mui/material/Button'
+import { Button } from '@mui/material'
 import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
 import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
 import { AppContainer } from '../AppContainer'

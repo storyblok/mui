@@ -1,5 +1,6 @@
-import { Box, styled, Theme } from '@mui/material'
-import { lighten } from '@mui/system/colorManipulator'
+import { Box, BoxProps, styled, Theme } from '@mui/material'
+import { lighten } from '@mui/system'
+import { FunctionComponent } from 'react'
 
 // block: 24, 24
 // list: 36, 18
@@ -86,16 +87,16 @@ const borderRadius = (theme: Theme, size: IconSize): number | string => {
   }
 }
 
-type Props = {
+type IconBoxProps = {
   color?: IconColor
   size?: IconSize
   variant?: IconBoxVariant
 }
 
-export const IconBox = styled(Box, {
+export const IconBox: FunctionComponent<BoxProps & IconBoxProps> = styled(Box, {
   shouldForwardProp: (prop) =>
     prop !== 'color' && prop !== 'size' && prop !== 'variant',
-})<Props>(
+})<IconBoxProps>(
   ({
     theme,
     color: optionalColor,

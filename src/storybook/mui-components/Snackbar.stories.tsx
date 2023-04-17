@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Alert, Box, Snackbar } from '@mui/material'
 import { loremIpsum } from '../demo-utils/loremIpsum'
-import Button from '@mui/material/Button'
+import { Button } from '@mui/material'
 import { useState } from 'react'
 
 const Component = Snackbar

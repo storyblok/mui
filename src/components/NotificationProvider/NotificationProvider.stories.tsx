@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { NotificationProvider, useNotifications } from './NotificationProvider'
 import { FunctionComponent, useMemo, useState } from 'react'
-import Button from '@mui/material/Button'
+import { Button } from '@mui/material'
 
 const Component = NotificationProvider
 

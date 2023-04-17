@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { useState } from 'react'
-import Button from '@mui/material/Button'
+import { Button } from '@mui/material'
 import { AppLayout } from './AppLayout'
 import { SearchIcon } from '../../icons'
 import { AppDrawer } from '../AppDrawer'

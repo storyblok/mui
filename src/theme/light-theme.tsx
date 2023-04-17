@@ -1,4 +1,3 @@
-import { createTheme } from '@mui/material/styles'
 import {
   activatedOpacity,
   backgroundOpacity,
@@ -36,10 +35,8 @@ import {
   selectedOpacity,
   white,
 } from '@src/theme/design-tokens'
-import { TypographyOptions } from '@mui/material/styles/createTypography'
-import { Shadows } from '@mui/material/styles/shadows'
-import { alpha } from '@mui/material'
-import { ShapeOptions } from '@mui/system/createTheme/shape'
+import { alpha, createTheme, Theme, ThemeOptions } from '@mui/material'
+import { ShapeOptions } from '@mui/system'
 import { sidebarWidthNarrow } from '@src/theme/constants'
 import {
   CheckedCheckboxIcon,
@@ -66,7 +63,7 @@ const shadows = [
       (v) =>
         `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(sb_dark_blue, 0.07)}`,
     ),
-] as Shadows
+] as Theme['shadows']
 
 const spacing = 5
 
@@ -138,7 +135,7 @@ const palette = {
   },
 } as const
 
-const typography: TypographyOptions = {
+const typography: ThemeOptions['typography'] = {
   htmlFontSize: 10,
   fontSize: 14,
   fontWeightLight: font_weight_light,
