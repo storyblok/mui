@@ -36,8 +36,8 @@
     "build:storybook": "build-storybook --disable-telemetry --quiet"
   },
   "dependencies": {
-    "@mui/system": "^5.10.0",
-    "@mui/utils": "^5.9.3"
+    "@mui/system": "^5.6.1",
+    "@mui/utils": "^5.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
