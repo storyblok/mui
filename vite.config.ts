@@ -3,8 +3,12 @@ import { fileURLToPath } from 'url'
 import dts from 'vite-plugin-dts'
 import { visualizer } from 'rollup-plugin-visualizer'
 import pkg from './package.json'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 
-const externalPackages = Object.keys(pkg.peerDependencies ?? {})
+const externalPackages = [
+  ...Object.keys(pkg.peerDependencies ?? {}),
+  ...Object.keys(pkg.dependencies ?? {}),
+]
 // Creating regexes of the packages to make sure subpaths of the
 // packages are also treated as external
 const regexesOfPackages = externalPackages.map(
@@ -17,6 +21,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
+    nodeResolve(),
   ],
   build: {
     lib: {
@@ -31,11 +36,18 @@ export default defineConfig({
           name: 'mui',
         },
         {
+          format: 'commonjs',
           preserveModules: true,
           preserveModulesRoot: 'src',
-          format: 'es',
           dir: 'dist',
-          entryFileNames: '[name].js',
+          entryFileNames: '[name].cjs',
+        },
+        {
+          format: 'es',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+          dir: 'dist',
+          entryFileNames: '[name].mjs',
         },
       ],
     },
