@@ -410,11 +410,6 @@ const lightTheme = createTheme({
         },
       },
     },
-    MuiIconButton: {
-      defaultProps: {
-        color: 'secondary',
-      },
-    },
     MuiFab: {
       defaultProps: {
         color: 'primary',
