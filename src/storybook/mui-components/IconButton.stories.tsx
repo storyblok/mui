@@ -32,7 +32,20 @@ const Template: ComponentStory<typeof Component> = (args) => (
   <Component {...args} />
 )
 
-export const Icon_Button = Template.bind({})
-Icon_Button.args = {
+export const Default = Template.bind({})
+Default.args = {
+  color: 'default',
+  children: <ArrowForwardIcon />,
+}
+
+export const Primary = Template.bind({})
+Primary.args = {
+  color: 'primary',
+  children: <ArrowForwardIcon />,
+}
+
+export const Secondary = Template.bind({})
+Secondary.args = {
+  color: 'secondary',
   children: <ArrowForwardIcon />,
 }
