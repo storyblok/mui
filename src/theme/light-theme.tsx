@@ -399,6 +399,9 @@ const lightTheme = createTheme({
           fontSize: font_16,
           padding: `20px 43px`,
         },
+        containedInherit: {
+          backgroundColor: light_25,
+        },
         outlinedInherit: {
           borderColor: palette.divider,
         },
