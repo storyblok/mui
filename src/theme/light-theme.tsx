@@ -239,8 +239,8 @@ const errorAlertMixin = {
   ...errorIconMixin,
 }
 
-const focusShadow = (color: string) =>
-  `0px 0px 0px 3px ${alpha(color, backgroundOpacity)}`
+const focusShadow = (color: string, width: number = 3) =>
+  `0px 0px 0px ${width}px ${alpha(color, backgroundOpacity)}`
 
 // Create a theme instance.
 const lightTheme = createTheme({
@@ -336,6 +336,49 @@ const lightTheme = createTheme({
             sx={{ height: 18, width: 18, color: 'primary.main' }}
           />
         ),
+      },
+    },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          overflow: 'visible',
+          padding: 0,
+          width: 40,
+          height: 24,
+          '.Mui-focusVisible+.MuiSwitch-track': {
+            boxShadow: focusShadow(palette.primary.main, 2),
+          },
+        },
+        track: ({ theme }) => ({
+          backgroundColor: theme.palette.grey.A200,
+          opacity: 1,
+          borderRadius: '20px',
+        }),
+        switchBase: ({ theme }) => ({
+          padding: 0,
+          top: '50%',
+          left: 4,
+          transform: 'translate(0, -50%)',
+          '&.Mui-disabled+.MuiSwitch-track': {
+            opacity: 0.5,
+          },
+          '&.Mui-checked': {
+            transform: 'translate(100%, -50%)',
+            '&.Mui-disabled+.MuiSwitch-track': {
+              opacity: theme.palette.action.disabledOpacity,
+            },
+            '&+.MuiSwitch-track': {
+              opacity: 1,
+            },
+          },
+        }),
+        thumb: ({ theme }) => ({
+          color: theme.palette.background.paper,
+          width: 16,
+          height: 16,
+          borderRadius: 8,
+          boxShadow: theme.shadows[0],
+        }),
       },
     },
     MuiCheckbox: {
