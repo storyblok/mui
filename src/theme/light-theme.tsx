@@ -268,13 +268,15 @@ const lightTheme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        code: {
+        '&:not(pre)>code': {
           fontFamily: `ui-monospace,Menlo,Monaco,"Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Droid Sans Mono","Courier New",monospace`,
           color: sb_dark_blue,
           backgroundColor: palette.grey['50'],
           borderRadius: shape.borderRadius,
           padding: '3px 5px',
-          fontSize: font_13,
+        },
+        pre: {
+          margin: 0,
         },
         mark: {
           backgroundColor: palette.action.selected,
