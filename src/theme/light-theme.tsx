@@ -418,6 +418,12 @@ const lightTheme = createTheme({
             backgroundColor: theme.palette.action.hover,
           },
         }),
+        sizeSmall: {
+          padding: '6px',
+        },
+      },
+      defaultProps: {
+        size: 'small',
       },
     },
     MuiFab: {
