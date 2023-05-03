@@ -42,6 +42,7 @@ import {
   CheckedCheckboxIcon,
   CheckedRadioIcon,
   ChevronDownIcon,
+  ChevronRightIcon,
   CloseIcon,
   IndeterminateCheckboxIcon,
   SquareErrorIcon,
@@ -201,44 +202,6 @@ const shape: ShapeOptions = {
   borderRadius: base_border_radius as number,
 }
 
-const successIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.success.main,
-  },
-}
-const infoIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.info.main,
-  },
-}
-const warningIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.warning.main,
-  },
-}
-const errorIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.error.main,
-  },
-}
-
-const successAlertMixin = {
-  backgroundColor: alpha(palette.success.main, backgroundOpacity),
-  ...successIconMixin,
-}
-const infoAlertMixin = {
-  backgroundColor: alpha(palette.info.main, backgroundOpacity),
-  ...infoIconMixin,
-}
-const warningAlertMixin = {
-  backgroundColor: alpha(palette.warning.main, backgroundOpacity),
-  ...warningIconMixin,
-}
-const errorAlertMixin = {
-  backgroundColor: alpha(palette.error.main, backgroundOpacity),
-  ...errorIconMixin,
-}
-
 const focusShadow = (color: string, width: number = 3) =>
   `0px 0px 0px ${width}px ${alpha(color, backgroundOpacity)}`
 
@@ -268,13 +231,15 @@ const lightTheme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        code: {
+        '&:not(pre)>code': {
           fontFamily: `ui-monospace,Menlo,Monaco,"Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Droid Sans Mono","Courier New",monospace`,
           color: sb_dark_blue,
           backgroundColor: palette.grey['50'],
           borderRadius: shape.borderRadius,
           padding: '3px 5px',
-          fontSize: font_13,
+        },
+        pre: {
+          margin: 0,
         },
         mark: {
           backgroundColor: palette.action.selected,
@@ -453,6 +418,22 @@ const lightTheme = createTheme({
         },
       },
     },
+    MuiIconButton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: theme.shape.borderRadius,
+          '&:hover, &.Mui-focusVisible': {
+            backgroundColor: theme.palette.action.hover,
+          },
+        }),
+        sizeSmall: {
+          padding: '6px',
+        },
+      },
+      defaultProps: {
+        size: 'small',
+      },
+    },
     MuiFab: {
       defaultProps: {
         color: 'primary',
@@ -540,8 +521,36 @@ const lightTheme = createTheme({
       },
     },
     MuiAccordion: {
+      styleOverrides: {
+        root: {
+          '&::before': {
+            // Divider always visible
+            opacity: '1 !important',
+          },
+        },
+      },
       defaultProps: {
         elevation: 0,
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          flexDirection: 'row-reverse',
+          '&:hover': {
+            color: theme.palette.primary.main,
+          },
+        }),
+        expanded: {},
+        expandIconWrapper: {
+          color: 'inherit',
+          '&.Mui-expanded': {
+            transform: `rotate(90deg)`,
+          },
+        },
+      },
+      defaultProps: {
+        expandIcon: <ChevronRightIcon color="inherit" />,
       },
     },
     MuiInputBase: {
@@ -717,26 +726,10 @@ const lightTheme = createTheme({
     },
     MuiAlert: {
       styleOverrides: {
-        standardSuccess: successAlertMixin,
-        filledSuccess: successAlertMixin,
-        outlinedSuccess: successIconMixin,
-
-        standardInfo: infoAlertMixin,
-        filledInfo: infoAlertMixin,
-        outlinedInfo: infoIconMixin,
-
-        standardWarning: warningAlertMixin,
-        filledWarning: warningAlertMixin,
-        outlinedWarning: warningIconMixin,
-
-        standardError: errorAlertMixin,
-        filledError: errorAlertMixin,
-        outlinedError: errorIconMixin,
-
-        outlined: {
-          borderColor: palette.divider,
-          boxShadow: shadows[12],
-        },
+        outlined: ({ theme }) => ({
+          borderColor: theme.palette.divider,
+          boxShadow: theme.shadows[12],
+        }),
       },
       defaultProps: {
         iconMapping: {
