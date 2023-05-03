@@ -374,6 +374,22 @@ const lightTheme = createTheme({
         },
       },
     },
+    MuiIconButton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          borderRadius: theme.shape.borderRadius,
+          '&:hover, &.Mui-focusVisible': {
+            backgroundColor: theme.palette.action.hover,
+          },
+        }),
+        sizeSmall: {
+          padding: '6px',
+        },
+      },
+      defaultProps: {
+        size: 'small',
+      },
+    },
     MuiFab: {
       defaultProps: {
         color: 'primary',
