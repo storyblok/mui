@@ -201,44 +201,6 @@ const shape: ShapeOptions = {
   borderRadius: base_border_radius as number,
 }
 
-const successIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.success.main,
-  },
-}
-const infoIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.info.main,
-  },
-}
-const warningIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.warning.main,
-  },
-}
-const errorIconMixin = {
-  '& .MuiAlert-icon': {
-    color: palette.error.main,
-  },
-}
-
-const successAlertMixin = {
-  backgroundColor: alpha(palette.success.main, backgroundOpacity),
-  ...successIconMixin,
-}
-const infoAlertMixin = {
-  backgroundColor: alpha(palette.info.main, backgroundOpacity),
-  ...infoIconMixin,
-}
-const warningAlertMixin = {
-  backgroundColor: alpha(palette.warning.main, backgroundOpacity),
-  ...warningIconMixin,
-}
-const errorAlertMixin = {
-  backgroundColor: alpha(palette.error.main, backgroundOpacity),
-  ...errorIconMixin,
-}
-
 const focusShadow = (color: string) =>
   `0px 0px 0px 3px ${alpha(color, backgroundOpacity)}`
 
@@ -674,26 +636,10 @@ const lightTheme = createTheme({
     },
     MuiAlert: {
       styleOverrides: {
-        standardSuccess: successAlertMixin,
-        filledSuccess: successAlertMixin,
-        outlinedSuccess: successIconMixin,
-
-        standardInfo: infoAlertMixin,
-        filledInfo: infoAlertMixin,
-        outlinedInfo: infoIconMixin,
-
-        standardWarning: warningAlertMixin,
-        filledWarning: warningAlertMixin,
-        outlinedWarning: warningIconMixin,
-
-        standardError: errorAlertMixin,
-        filledError: errorAlertMixin,
-        outlinedError: errorIconMixin,
-
-        outlined: {
-          borderColor: palette.divider,
-          boxShadow: shadows[12],
-        },
+        outlined: ({ theme }) => ({
+          borderColor: theme.palette.divider,
+          boxShadow: theme.shadows[12],
+        }),
       },
       defaultProps: {
         iconMapping: {
