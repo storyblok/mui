@@ -42,6 +42,7 @@ import {
   CheckedCheckboxIcon,
   CheckedRadioIcon,
   ChevronDownIcon,
+  ChevronRightIcon,
   CloseIcon,
   IndeterminateCheckboxIcon,
   SquareErrorIcon,
@@ -477,8 +478,36 @@ const lightTheme = createTheme({
       },
     },
     MuiAccordion: {
+      styleOverrides: {
+        root: {
+          '&::before': {
+            // Divider always visible
+            opacity: '1 !important',
+          },
+        },
+      },
       defaultProps: {
         elevation: 0,
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          flexDirection: 'row-reverse',
+          '&:hover': {
+            color: theme.palette.primary.main,
+          },
+        }),
+        expanded: {},
+        expandIconWrapper: {
+          color: 'inherit',
+          '&.Mui-expanded': {
+            transform: `rotate(90deg)`,
+          },
+        },
+      },
+      defaultProps: {
+        expandIcon: <ChevronRightIcon color="inherit" />,
       },
     },
     MuiInputBase: {
