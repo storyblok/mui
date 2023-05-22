@@ -36,8 +36,8 @@ const actions = (
 
 export const Basic = Template.bind({})
 Basic.args = {
-  title: 'Title',
-  subtitle: 'Subtitle',
+  title: 'My Storyblok App',
+  subtitle: 'With my Storyblok app, you can do all kinds of stuff.',
   icon: <DemoIcon />,
 }
 

@@ -24,10 +24,17 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 export const AppHeader: FunctionComponent<PropsWithChildren<AppHeaderProps>> = (
   props,
 ) => {
-  const textColumm = props.icon ? '2' : '1'
-  const actionsColumm = props.icon ? '3' : '3'
-  const { title, subtitle, icon, actionsProps, className, ...appBarProps } =
-    props
+  const {
+    title,
+    subtitle,
+    icon,
+    children,
+    actionsProps,
+    className,
+    ...appBarProps
+  } = props
+  const textColumm = icon ? '2' : '1'
+  const actionsColumm = icon ? '3' : '3'
   return (
     <StyledAppBar
       className={`SbAppHeader-root ${className ?? ''}`}
@@ -35,7 +42,7 @@ export const AppHeader: FunctionComponent<PropsWithChildren<AppHeaderProps>> = (
       color="transparent"
       {...appBarProps}
     >
-      {props.icon && (
+      {icon && (
         <Box
           sx={{
             display: 'flex',
@@ -45,35 +52,35 @@ export const AppHeader: FunctionComponent<PropsWithChildren<AppHeaderProps>> = (
             gridRow: '1',
           }}
         >
-          {props.icon}
+          {icon}
         </Box>
       )}
-      {props.title && (
+      {title && (
         <Typography
           variant="h1"
           sx={{
             gridColumn: textColumm,
             gridRow: '1',
-            margin: 0,
+            m: 0,
           }}
         >
-          {props.title}
+          {title}
         </Typography>
       )}
       <Box
         alignItems="center"
         display="flex"
         gap={4}
-        className={`SbAppHeader-actions ${props.actionsProps?.className ?? ''}`}
-        {...props.actionsProps}
+        className={`SbAppHeader-actions ${actionsProps?.className ?? ''}`}
+        {...actionsProps}
         sx={{
           gridColumn: actionsColumm,
           gridRow: '1',
         }}
       >
-        {props.children}
+        {children}
       </Box>
-      {props.subtitle && (
+      {subtitle && (
         <Typography
           variant="subtitle2"
           component="p"
@@ -81,9 +88,10 @@ export const AppHeader: FunctionComponent<PropsWithChildren<AppHeaderProps>> = (
             color: 'text.secondary',
             gridColumn: `${textColumm}/ span 2`,
             gridRow: '2',
+            ml: -3,
           }}
         >
-          {props.subtitle}
+          {subtitle}
         </Typography>
       )}
     </StyledAppBar>
