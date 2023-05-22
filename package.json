@@ -35,6 +35,10 @@
     "storybook": "start-storybook -p 6006 --disable-telemetry",
     "build:storybook": "build-storybook --disable-telemetry --quiet"
   },
+  "engines": {
+    "yarn": "^3.2.4"
+  },
+  "packageManager": "yarn@3.2.4",
   "dependencies": {
     "@mui/system": "^5.6.1",
     "@mui/utils": "^5.6.1"
@@ -44,8 +48,9 @@
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
     "@mui/material": "5.6.1",
-    "@mui/utils": ">=5.6.1",
     "@mui/system": ">=5.6.1",
+    "@mui/utils": ">=5.6.1",
+    "@rollup/plugin-node-resolve": "15.02",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -70,7 +75,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-visualizer": "5.9.0",
-    "@rollup/plugin-node-resolve": "15.02",
     "storybook-addon-material-ui": "^0.9.0-alpha.24",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "tsutils": "^3.21.0",
