@@ -7,14 +7,12 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material'
-import { useState } from 'react'
-
-const Component = Select
+import { ReactNode, useCallback, useState } from 'react'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: `Mui Components/Select`,
-  component: Component,
+  component: Select,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // variant: {
@@ -26,7 +24,7 @@ export default {
     //     options: [undefined, "inherit", "primary", "secondary", "success", "info", "warning", "error"],
     // },
   },
-} as ComponentMeta<typeof Component>
+} as ComponentMeta<typeof Select<string>>
 
 const names = [
   'Bradley Wilkerson',
@@ -36,7 +34,7 @@ const names = [
 ].sort()
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => {
+const Template: ComponentStory<typeof Select<string>> = (args) => {
   const [value, setValue] = useState<string>('')
 
   const handleChange = (event: SelectChangeEvent<unknown>) => {
@@ -47,17 +45,21 @@ const Template: ComponentStory<typeof Component> = (args) => {
     setValue(value as string)
   }
 
+  const renderValue = useCallback(
+    (value: string): ReactNode =>
+      value === '' ? <em>Select an option</em> : value,
+    [],
+  )
+
   return (
     <FormControl sx={{ width: 300 }}>
       <InputLabel id="story-select">Name</InputLabel>
-      <Component
+      <Select<string>
         labelId="story-select"
         displayEmpty
         value={value}
         onChange={handleChange}
-        renderValue={(selected) =>
-          selected === '' ? <em>Select an option</em> : selected
-        }
+        renderValue={renderValue}
         {...args}
       >
         {names.map((name) => (
@@ -68,7 +70,7 @@ const Template: ComponentStory<typeof Component> = (args) => {
             {name}
           </MenuItem>
         ))}
-      </Component>
+      </Select>
     </FormControl>
   )
 }
