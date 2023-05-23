@@ -27,6 +27,7 @@ module.exports = {
         'no-var': 'error',
         'prettier/prettier': ['warn'],
         'prefer-arrow/prefer-arrow-functions': 'error',
+        '@typescript-eslint/no-inferrable-types': 'off',
         'functional/immutable-data': 'error',
         'functional/no-let': 'error',
         'functional/no-class': 'error',
