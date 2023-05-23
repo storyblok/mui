@@ -22,4 +22,7 @@ module.exports = {
   features: { emotionAlias: false },
   "framework": "@storybook/react",
   staticDirs: ['./public'],
+  typescript: {
+    reactDocgen: 'react-docgen-typescript-plugin'
+  },
 }
