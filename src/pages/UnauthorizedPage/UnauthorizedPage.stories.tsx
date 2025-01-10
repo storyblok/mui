@@ -4,7 +4,7 @@ import { UnauthorizedPage } from './UnauthorizedPage'
 const Component = UnauthorizedPage
 
 export default {
-  title: `Pages/UnauthorizedPage`,
+  title: 'Pages/UnauthorizedPage',
   component: Component,
 } as ComponentMeta<typeof Component>
 

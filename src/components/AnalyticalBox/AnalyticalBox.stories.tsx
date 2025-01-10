@@ -15,7 +15,7 @@ const Component = AnalyticalBox
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Components/AnalyticalBox`,
+  title: 'Components/AnalyticalBox',
   component: Component,
   argTypes: {
     color: {

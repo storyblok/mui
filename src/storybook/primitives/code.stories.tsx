@@ -4,7 +4,7 @@ import { Alert, Box } from '@mui/material'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `HTML Elements/code`,
+  title: 'HTML Elements/code',
   component: Box,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

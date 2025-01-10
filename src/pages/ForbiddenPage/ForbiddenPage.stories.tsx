@@ -4,7 +4,7 @@ import { ForbiddenPage } from './ForbiddenPage'
 const Component = ForbiddenPage
 
 export default {
-  title: `Pages/ForbiddenPage`,
+  title: 'Pages/ForbiddenPage',
   component: Component,
 } as ComponentMeta<typeof Component>
 

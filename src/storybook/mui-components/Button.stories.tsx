@@ -7,7 +7,7 @@ const Component = Button
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui Components/Button`,
+  title: 'Mui Components/Button',
   component: Component,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

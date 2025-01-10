@@ -6,7 +6,7 @@ const Component = SettingsIcon
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui Components/Icon`,
+  title: 'Mui Components/Icon',
   component: Component,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<IconComponent>

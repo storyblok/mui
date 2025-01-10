@@ -20,7 +20,7 @@ import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
 const Component = AppDrawer
 
 export default {
-  title: `Layout/AppDrawer`,
+  title: 'Layout/AppDrawer',
   component: Component,
 } as ComponentMeta<typeof Component>
 

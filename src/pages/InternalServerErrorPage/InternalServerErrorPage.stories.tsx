@@ -4,7 +4,7 @@ import { InternalServerErrorPage } from './InternalServerErrorPage'
 const Component = InternalServerErrorPage
 
 export default {
-  title: `Pages/InternalServerErrorPage`,
+  title: 'Pages/InternalServerErrorPage',
   component: Component,
 } as ComponentMeta<typeof Component>
 

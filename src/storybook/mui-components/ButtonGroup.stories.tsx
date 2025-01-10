@@ -7,7 +7,7 @@ const Component = ButtonGroup
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui Components/ButtonGroup`,
+  title: 'Mui Components/ButtonGroup',
   component: Component,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

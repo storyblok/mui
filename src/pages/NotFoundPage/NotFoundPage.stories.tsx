@@ -4,7 +4,7 @@ import { NotFoundPage } from './NotFoundPage'
 const Component = NotFoundPage
 
 export default {
-  title: `Pages/NotFoundPage`,
+  title: 'Pages/NotFoundPage',
   component: Component,
 } as ComponentMeta<typeof Component>
 

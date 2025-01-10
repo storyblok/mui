@@ -6,7 +6,7 @@ import { AppContainer } from '../AppContainer'
 const Component = AppContent
 
 export default {
-  title: `Layout/AppContent`,
+  title: 'Layout/AppContent',
   component: Component,
 } as ComponentMeta<typeof Component>
 

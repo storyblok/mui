@@ -7,7 +7,7 @@ import { AppContainer } from '../AppContainer'
 const Component = CenteredContent
 
 export default {
-  title: `Layout/CenteredContent`,
+  title: 'Layout/CenteredContent',
   component: Component,
 } as ComponentMeta<typeof Component>
 

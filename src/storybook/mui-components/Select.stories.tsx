@@ -11,7 +11,7 @@ import { ReactNode, useCallback, useState } from 'react'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui Components/Select`,
+  title: 'Mui Components/Select',
   component: Select,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

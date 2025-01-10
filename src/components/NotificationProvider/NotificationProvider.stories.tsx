@@ -6,7 +6,7 @@ import { Button } from '@mui/material'
 const Component = NotificationProvider
 
 export default {
-  title: `Components/NotificationProvider`,
+  title: 'Components/NotificationProvider',
   component: Component,
 } as ComponentMeta<typeof Component>
 

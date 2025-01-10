@@ -4,7 +4,7 @@ import { LoadingIcon } from '../../icons'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui Components/CircularProgress`,
+  title: 'Mui Components/CircularProgress',
   component: CircularProgress,
   argTypes: {
     checked: {

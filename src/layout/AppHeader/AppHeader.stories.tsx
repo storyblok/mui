@@ -10,7 +10,7 @@ import { ContentDemoArea } from '../../storybook/demo-utils/ContentDemoArea'
 const Component = AppHeader
 
 export default {
-  title: `Layout/AppHeader`,
+  title: 'Layout/AppHeader',
   component: Component,
 } as ComponentMeta<typeof Component>
 

@@ -5,7 +5,7 @@ import { InternalServerErrorPictogram } from '../../icons'
 const Component = ErrorPage
 
 export default {
-  title: `Pages/ErrorPage`,
+  title: 'Pages/ErrorPage',
   component: Component,
 } as ComponentMeta<typeof Component>
 

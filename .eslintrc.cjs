@@ -9,6 +9,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'prettier',
         'eslint:recommended',
+        'plugin:storybook/recommended',
     ],
     'parser': '@typescript-eslint/parser',
     'parserOptions': {

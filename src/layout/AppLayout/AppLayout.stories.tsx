@@ -10,7 +10,7 @@ import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
 const Component = AppLayout
 
 export default {
-  title: `Layout/AppLayout`,
+  title: 'Layout/AppLayout',
   component: Component,
 } as ComponentMeta<typeof Component>
 

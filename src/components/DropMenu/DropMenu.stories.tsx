@@ -13,7 +13,7 @@ const Component = DropMenu
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Components/DropMenu`,
+  title: 'Components/DropMenu',
   component: Component,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

@@ -6,7 +6,7 @@ const Component = Chip
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui Components/Chip`,
+  title: 'Mui Components/Chip',
   component: Component,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

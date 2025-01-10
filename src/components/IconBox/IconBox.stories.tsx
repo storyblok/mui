@@ -14,7 +14,7 @@ const Component = IconBox
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Components/IconBox`,
+  title: 'Components/IconBox',
   component: Component,
   argTypes: {
     color: {

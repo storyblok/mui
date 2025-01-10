@@ -11,7 +11,7 @@ const Component = Radio
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: `Mui Components/RadioButton`,
+  title: 'Mui Components/RadioButton',
   component: Component,
   argTypes: {
     checked: {

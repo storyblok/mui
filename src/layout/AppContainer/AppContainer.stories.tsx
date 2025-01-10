@@ -7,7 +7,7 @@ import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
 const Component = AppContainer
 
 export default {
-  title: `Layout/AppContainer`,
+  title: 'Layout/AppContainer',
   component: Component,
   argTypes: {
     maxWidth: {
