@@ -1107,13 +1107,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/material-icons@npm:5.1.1":
-  version: 5.1.1
-  resolution: "@fontsource/material-icons@npm:5.1.1"
-  checksum: d038e51e07c769fb5b9fcc6c922982550cef0e3665f2442c0431571e890e82ced555312b04270613e9b6e1f38fdea75635e30a41c9404088c77c7df3c90576cf
-  languageName: node
-  linkType: hard
-
 "@fontsource/roboto@npm:5.1.1":
   version: 5.1.1
   resolution: "@fontsource/roboto@npm:5.1.1"
@@ -1702,7 +1695,6 @@ __metadata:
     "@babel/core": ^7.18.5
     "@emotion/react": 11.10.4
     "@emotion/styled": 11.10.4
-    "@fontsource/material-icons": 5.1.1
     "@fontsource/roboto": 5.1.1
     "@mui/material": 5.6.1
     "@mui/system": ">=5.6.1"

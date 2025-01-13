@@ -44,7 +44,6 @@
     "@babel/core": "^7.18.5",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
-    "@fontsource/material-icons": "5.1.1",
     "@fontsource/roboto": "5.1.1",
     "@mui/material": "5.6.1",
     "@mui/system": ">=5.6.1",
