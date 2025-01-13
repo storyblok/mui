@@ -1,9 +1,8 @@
 import {
   Meta,
-  DocsContainer,
   ColorPalette,
   ColorItem
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/blocks';
 import {
   alpha,
   Checkbox,
@@ -15,27 +14,20 @@ import {
   MenuList,
   ThemeProvider,
   useTheme,
-  Button
-} from "@mui/material";
-import {CssBaseline} from "@mui/material";
-import {lightTheme} from "@src/theme";
-import {useState} from "react";
+  Button,
+  CssBaseline
+} from '@mui/material'
+import { lightTheme } from '@src/theme'
+import { useState } from 'react'
 
-<Meta
-  title="Design/Actions"
-  parameters={{
-    docs: {
-      container: ({children, context}) => (
-        <DocsContainer context={context}>
-          <ThemeProvider theme={lightTheme}>
-            <CssBaseline/>
-            {children}
-          </ThemeProvider>
-        </DocsContainer>
-      ),
-    },
-  }}
-/>
+<Meta title="Design/Actions" />
+
+export const ThemeContainer = ({ children }) => (
+  <ThemeProvider theme={lightTheme}>
+    <CssBaseline/>
+    {children}
+  </ThemeProvider>
+)
 
 ## Actions
 
@@ -55,18 +47,20 @@ export const ActionItem = (props) => {
 export const ActionsPalette = () => {
   const {palette} = useTheme()
   return (
-    <ColorPalette>
-      <ActionItem name="active"/>
-      <ActionItem name="disabled"/>
-      <ActionItem name="hover"/>
-      <ActionItem name="focus"/>
-      <ColorItem
-        title="selected"
-        colors={{
-          "": alpha(palette.action.selected, palette.action.selectedOpacity),
-        }}
-      />
-    </ColorPalette>
+    <ThemeContainer>
+      <ColorPalette>
+        <ActionItem name="active"/>
+        <ActionItem name="disabled"/>
+        <ActionItem name="hover"/>
+        <ActionItem name="focus"/>
+        <ColorItem
+          title="selected"
+          colors={{
+            "": alpha(palette.action.selected, palette.action.selectedOpacity),
+          }}
+        />
+      </ColorPalette>
+    </ThemeContainer>
   )
 }
 
@@ -93,9 +87,11 @@ export const Actionable = () => {
   )
 }
 
-<MenuList>
-  <MenuItem>MenuItem</MenuItem>
-  <MenuItem selected>Selected MenuItem</MenuItem>
-  <MenuItem disabled>Disabled MenuItem <Button sx={{mx: 2}}>Enabled Button</Button></MenuItem>
-  <MenuItem>Enabled MenuItem <Button sx={{mx: 2}} disabled>Disabled Button</Button></MenuItem>
-</MenuList>
+<ThemeContainer>
+  <MenuList>
+    <MenuItem>MenuItem</MenuItem>
+    <MenuItem selected>Selected MenuItem</MenuItem>
+    <MenuItem disabled>Disabled MenuItem <Button sx={{mx: 2}}>Enabled Button</Button></MenuItem>
+    <MenuItem>Enabled MenuItem <Button sx={{mx: 2}} disabled>Disabled Button</Button></MenuItem>
+  </MenuList>
+</ThemeContainer>

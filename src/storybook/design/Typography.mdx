@@ -1,23 +1,15 @@
-import {Meta, DocsContainer} from '@storybook/addon-docs/blocks';
-import {Box, Link, Button, ThemeProvider, Typography} from "@mui/material";
-import {CssBaseline} from "@mui/material";
-import {lightTheme} from "@src/theme";
+import { Meta } from '@storybook/blocks';
+import { Box, Link, Button, ThemeProvider, Typography, CssBaseline } from '@mui/material'
+import { lightTheme } from '@src/theme'
 
-<Meta
-    title="Design/Typography"
-    parameters={{
-        docs: {
-            container: ({children, context}) => (
-                <DocsContainer context={context}>
-                    <ThemeProvider theme={lightTheme}>
-                        <CssBaseline/>
-                        {children}
-                    </ThemeProvider>
-                </DocsContainer>
-            ),
-        },
-    }}
-/>
+<Meta title="Design/Typography" />
+
+export const ThemeContainer = ({ children }) => (
+  <ThemeProvider theme={lightTheme}>
+    <CssBaseline/>
+    {children}
+  </ThemeProvider>
+)
 
 # Typography
 
@@ -31,38 +23,42 @@ The Material Design type scale includes a range of contrasting styles that suppo
 
 The type scale is a combination of thirteen styles that are supported by the type system. It contains reusable categories of text, each with an intended application and meaning.
 
-<Box sx={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: 4,
-}}>
-    <Typography variant="h1">Heading 1</Typography>
-    <Typography variant="h2">Heading 2</Typography>
-    <Typography variant="h3">Heading 3</Typography>
-    <Typography variant="h4">Heading 4</Typography>
-    <Typography variant="h5">Heading 5</Typography>
-    <Typography variant="h6">Heading 6</Typography>
-    <Typography variant="body1">body1</Typography>
-    <Typography variant="body2">body2</Typography>
-    <Typography variant="subtitle1">subtitle1</Typography>
-    <Typography variant="subtitle2">subtitle2</Typography>
-    <Typography variant="overline" component="div">overline</Typography>
-    <Typography variant="caption" component="div">caption</Typography>
-    <Button variant="text" color="secondary">Button</Button>
-</Box>
+<ThemeContainer>
+  <Box sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: 4,
+  }}>
+      <Typography variant="h1">Heading 1</Typography>
+      <Typography variant="h2">Heading 2</Typography>
+      <Typography variant="h3">Heading 3</Typography>
+      <Typography variant="h4">Heading 4</Typography>
+      <Typography variant="h5">Heading 5</Typography>
+      <Typography variant="h6">Heading 6</Typography>
+      <Typography variant="body1">body1</Typography>
+      <Typography variant="body2">body2</Typography>
+      <Typography variant="subtitle1">subtitle1</Typography>
+      <Typography variant="subtitle2">subtitle2</Typography>
+      <Typography variant="overline" component="div">overline</Typography>
+      <Typography variant="caption" component="div">caption</Typography>
+      <Button variant="text" color="secondary">Button</Button>
+  </Box>
+</ThemeContainer>
 
 ## Other Styles
 
 Other html elements are styled as follows:
 
-<Box sx={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: 4,
-}}>
-    <Link href="https://storyblok.com" target="_blank">Link</Link>
-    <Typography component="code">code</Typography>
-    <Typography component="mark">mark</Typography>
-</Box>
+<ThemeContainer>
+  <Box sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: 4,
+  }}>
+      <Link href="https://storyblok.com" target="_blank">Link</Link>
+      <Typography component="code">code</Typography>
+      <Typography component="mark">mark</Typography>
+  </Box>
+</ThemeContainer>

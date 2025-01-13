@@ -1,14 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Chip } from '@mui/material'
-import { CheckMarkIcon } from '../../icons'
+import { CheckMarkIcon } from "@src/icons"
 
-const Component = Chip
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof Chip> = {
   title: 'Mui Components/Chip',
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  component: Chip,
   argTypes: {
     variant: {
       control: 'select',
@@ -27,34 +23,37 @@ export default {
       ],
     },
   },
-} as ComponentMeta<typeof Component>
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}></Component>
-)
-
-export const Basic = Template.bind({})
-Basic.args = {
-  label: 'Label',
 }
 
-export const Colored = Template.bind({})
-Colored.args = {
-  label: 'Label',
-  color: 'success',
+export default meta
+
+type Story = StoryObj<typeof Chip>
+
+export const Basic: Story = {
+  args: {
+    label: 'Label',
+  },
 }
 
-export const Deleteable = Template.bind({})
-Deleteable.args = {
-  label: 'Delete me',
-  color: 'error',
-  onDelete: () => console.log('Deleted'),
+export const Colored: Story = {
+  args: {
+    label: 'Label',
+    color: 'success',
+  },
 }
 
-export const Icon = Template.bind({})
-Icon.args = {
-  label: 'Completed',
-  color: 'success',
-  icon: <CheckMarkIcon />,
+export const Deleteable: Story = {
+  args: {
+    label: 'Delete me',
+    color: 'error',
+    onDelete: () => console.log('Deleted'),
+  },
+}
+
+export const Icon: Story = {
+  args: {
+    label: 'Completed',
+    color: 'success',
+    icon: <CheckMarkIcon />,
+  },
 }

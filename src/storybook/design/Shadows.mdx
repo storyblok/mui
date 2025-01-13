@@ -1,29 +1,15 @@
-import {Meta, DocsContainer, ColorPalette, ColorItem} from '@storybook/addon-docs/blocks';
+import { Meta } from '@storybook/blocks';
 import {
     Grid,
     Paper,
     ThemeProvider,
     Typography,
-    useTheme
-} from "@mui/material";
-import {CssBaseline} from "@mui/material";
-import {lightTheme} from "@src/theme";
+    useTheme,
+  CssBaseline
+} from '@mui/material'
+import { lightTheme } from '@src/theme'
 
-<Meta
-    title="Design/Shadows"
-    parameters={{
-        docs: {
-            container: ({children, context}) => (
-                <DocsContainer context={context}>
-                    <ThemeProvider theme={lightTheme}>
-                        <CssBaseline/>
-                        {children}
-                    </ThemeProvider>
-                </DocsContainer>
-            ),
-        },
-    }}
-/>
+<Meta title="Design/Shadows" />
 
 # Shadows
 
@@ -58,4 +44,7 @@ export const Shadows = () => {
     )
 }
 
-<Shadows />
+<ThemeProvider theme={lightTheme}>
+  <CssBaseline/>
+  <Shadows />
+</ThemeProvider>

@@ -1,51 +1,53 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-
+import type { Meta, StoryObj } from '@storybook/react'
 import { IconButton } from '@mui/material'
-import { ArrowForwardIcon } from '../../icons'
+import { ArrowForwardIcon } from "@src/icons"
 
-const Component = IconButton
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof IconButton> = {
   title: 'Mui Components/IconButton',
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  component: IconButton,
   argTypes: {
     color: {
       control: 'select',
       options: [
-        undefined,
         'inherit',
+        'default',
         'primary',
         'secondary',
-        'success',
-        'info',
-        'warning',
         'error',
+        'info',
+        'success',
+        'warning',
       ],
+      table: {
+        defaultValue: {
+          summary: 'default',
+        },
+      },
     },
   },
-} as ComponentMeta<typeof Component>
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
-
-export const Default = Template.bind({})
-Default.args = {
-  color: 'default',
-  children: <ArrowForwardIcon />,
 }
 
-export const Primary = Template.bind({})
-Primary.args = {
-  color: 'primary',
-  children: <ArrowForwardIcon />,
+export default meta
+
+type Story = StoryObj<typeof IconButton>
+
+export const Default: Story = {
+  args: {
+    color: 'default',
+    children: <ArrowForwardIcon />,
+  },
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  color: 'secondary',
-  children: <ArrowForwardIcon />,
+export const Primary: Story = {
+  args: {
+    color: 'primary',
+    children: <ArrowForwardIcon />,
+  },
+}
+
+export const Secondary: Story = {
+  args: {
+    color: 'secondary',
+    children: <ArrowForwardIcon />,
+  },
 }

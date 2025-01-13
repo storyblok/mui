@@ -1,13 +1,9 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-
+import type { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from '@mui/material'
 
-const Component = Checkbox
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof Checkbox> = {
   title: 'Mui Components/Checkbox',
-  component: Component,
+  component: Checkbox,
   argTypes: {
     checked: {
       control: 'boolean',
@@ -16,19 +12,22 @@ export default {
       control: 'boolean',
     },
   },
-} as ComponentMeta<typeof Component>
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
-
-export const Basic = Template.bind({})
-export const Checked = Template.bind({})
-Checked.args = {
-  checked: true,
 }
-export const Indeterminate = Template.bind({})
-Indeterminate.args = {
-  indeterminate: true,
+
+export default meta
+
+type Story = StoryObj<typeof Checkbox>
+
+export const Basic: Story = {}
+
+export const Checked: Story = {
+  args: {
+    checked: true,
+  },
+}
+
+export const Indeterminate: Story = {
+  args: {
+    indeterminate: true,
+  },
 }

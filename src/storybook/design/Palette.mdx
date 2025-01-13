@@ -1,52 +1,45 @@
-import {Meta, DocsContainer, ColorPalette, ColorItem} from '@storybook/addon-docs/blocks';
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks'
 import {
   Container,
   Divider,
   Grid,
   ThemeProvider,
   Typography,
-  useTheme
+  useTheme,
+  CssBaseline
 } from "@mui/material";
-import {CssBaseline} from "@mui/material";
-import {lightTheme} from "@src/theme";
+import { lightTheme } from '@src/theme'
 
-<Meta
-  title="Design/Palette"
-  parameters={{
-    docs: {
-      container: ({children, context}) => (
-        <DocsContainer context={context}>
-          <ThemeProvider theme={lightTheme}>
-            <CssBaseline/>
-            {children}
-          </ThemeProvider>
-        </DocsContainer>
-      ),
-    },
-  }}
-/>
+<Meta title="Design/Palette" />
+
+export const ThemeContainer = ({ children }) => (
+  <ThemeProvider theme={lightTheme}>
+    <CssBaseline/>
+    {children}
+  </ThemeProvider>
+)
 
 export const PaletteItem = (props) => {
   const theme = useTheme()
   const {name} = props
   return (
     <Grid item
-          sx={{
-            p: 2,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            width: '100%',
-            backgroundColor: theme => theme.palette[name].main,
-            color: theme => theme.palette[name].contrastText,
-            borderRadius: '10px',
-          }}
+      sx={{
+        p: 2,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        width: '100%',
+        backgroundColor: theme => theme.palette[name].main,
+        color: theme => theme.palette[name].contrastText,
+        borderRadius: '10px',
+      }}
     >
-      <Typography variant="subtitle1">
+      <Typography variant="subtitle1" color={'white'}>
         {name}
       </Typography>
-      <Typography variant="body2">
+      <Typography variant="body2" color={'white'}>
         {theme.palette[name].main}
       </Typography>
     </Grid>
@@ -80,59 +73,66 @@ export const BackgroundItem = () => {
 
 ## Surfaces
 
-<Grid container gap={5}>
-  <PaletteItem name="primary"/>
-  <PaletteItem name="secondary"/>
-  <PaletteItem name="success"/>
-  <PaletteItem name="info"/>
-  <PaletteItem name="warning"/>
-  <PaletteItem name="error"/>
-</Grid>
+<ThemeContainer>
+  <Grid container gap={5}>
+    <PaletteItem name="primary"/>
+    <PaletteItem name="secondary"/>
+    <PaletteItem name="success"/>
+    <PaletteItem name="info"/>
+    <PaletteItem name="warning"/>
+    <PaletteItem name="error"/>
+  </Grid>
+</ThemeContainer>
 
 ## Background
 
-<ColorPalette>
-
-  <BackgroundItem/>
-</ColorPalette>
+<ThemeContainer>
+  <ColorPalette>
+    <BackgroundItem/>
+  </ColorPalette>
+</ThemeContainer>
 
 ## Divider
 
-<Container sx={{p: 4}}>
-  <Divider/>
-</Container>
+<ThemeContainer>
+  <Container sx={{p: 4}}>
+    <Divider/>
+  </Container>
+</ThemeContainer>
 
 ## Text
 
-<Grid container spacing={2}>
-  <Grid item xs={3}>
-    <Typography variant="subtitle1">
-      text.primary
-    </Typography>
+<ThemeContainer>
+  <Grid container spacing={2}>
+    <Grid item xs={3}>
+      <Typography variant="subtitle1">
+        text.primary
+      </Typography>
+    </Grid>
+    <Grid item xs={9}>
+      <Typography sx={{color: 'text.primary'}}>
+        <LoremIpsum/>
+      </Typography>
+    </Grid>
+    <Grid item xs={3}>
+      <Typography variant="subtitle1">
+        text.secondary
+      </Typography>
+    </Grid>
+    <Grid item xs={9}>
+      <Typography sx={{color: 'text.secondary'}}>
+        <LoremIpsum/>
+      </Typography>
+    </Grid>
+    <Grid item xs={3}>
+      <Typography variant="subtitle1">
+        text.disabled
+      </Typography>
+    </Grid>
+    <Grid item xs={9}>
+      <Typography sx={{color: 'text.disabled'}}>
+        <LoremIpsum/>
+      </Typography>
+    </Grid>
   </Grid>
-  <Grid item xs={9}>
-    <Typography sx={{color: 'text.primary'}}>
-      <LoremIpsum/>
-    </Typography>
-  </Grid>
-  <Grid item xs={3}>
-    <Typography variant="subtitle1">
-      text.secondary
-    </Typography>
-  </Grid>
-  <Grid item xs={9}>
-    <Typography sx={{color: 'text.secondary'}}>
-      <LoremIpsum/>
-    </Typography>
-  </Grid>
-  <Grid item xs={3}>
-    <Typography variant="subtitle1">
-      text.disabled
-    </Typography>
-  </Grid>
-  <Grid item xs={9}>
-    <Typography sx={{color: 'text.disabled'}}>
-      <LoremIpsum/>
-    </Typography>
-  </Grid>
-</Grid>
+</ThemeContainer>

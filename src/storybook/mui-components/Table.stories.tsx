@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-
+import type { Meta, StoryObj } from '@storybook/react'
 import {
   Table,
   TableBody,
@@ -89,19 +88,13 @@ const BasicTable: FunctionComponent = () => (
   </TableContainer>
 )
 
-const Component = BasicTable
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof BasicTable> = {
   title: 'Mui Components/Table',
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
-} as ComponentMeta<typeof Component>
+  component: BasicTable,
+}
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
+export default meta
 
-export const Basic = Template.bind({})
+type Story = StoryObj<typeof BasicTable>
+
+export const Basic: Story = {}

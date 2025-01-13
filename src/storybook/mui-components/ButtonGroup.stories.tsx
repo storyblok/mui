@@ -1,15 +1,9 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button, ButtonGroup } from '@mui/material'
 
-import { Button } from '@mui/material'
-import { ButtonGroup } from '@mui/material'
-
-const Component = ButtonGroup
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof ButtonGroup> = {
   title: 'Mui Components/ButtonGroup',
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  component: ButtonGroup,
   argTypes: {
     variant: {
       control: 'select',
@@ -28,87 +22,118 @@ export default {
       ],
     },
   },
-} as ComponentMeta<typeof Component>
+}
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}>
+export default meta
+
+type Story = StoryObj<typeof ButtonGroup>
+
+const children = (
+  <>
     <Button>One</Button>
     <Button>Two</Button>
     <Button>Three</Button>
-  </Component>
+  </>
 )
 
-export const Default = Template.bind({})
-
-export const ContainedPrimary = Template.bind({})
-ContainedPrimary.args = {
-  color: 'primary',
-  variant: 'contained',
+export const Default = {
+  args: {
+    children,
+  },
 }
 
-export const ContainedSecondary = Template.bind({})
-ContainedSecondary.args = {
-  color: 'secondary',
-  variant: 'contained',
+export const ContainedPrimary: Story = {
+  args: {
+    color: 'primary',
+    variant: 'contained',
+    children,
+  },
 }
 
-export const ContainedInherit = Template.bind({})
-ContainedInherit.args = {
-  color: 'inherit',
-  variant: 'contained',
+export const ContainedSecondary: Story = {
+  args: {
+    color: 'secondary',
+    variant: 'contained',
+    children,
+  },
 }
 
-export const TextPrimary = Template.bind({})
-TextPrimary.args = {
-  variant: 'text',
-  color: 'primary',
+export const ContainedInherit: Story = {
+  args: {
+    color: 'inherit',
+    variant: 'contained',
+    children,
+  },
 }
 
-export const TextSecondary = Template.bind({})
-TextSecondary.args = {
-  variant: 'text',
-  color: 'secondary',
+export const TextPrimary: Story = {
+  args: {
+    variant: 'text',
+    color: 'primary',
+    children,
+  },
 }
 
-export const TextInherit = Template.bind({})
-TextInherit.args = {
-  variant: 'text',
-  color: 'inherit',
+export const TextSecondary: Story = {
+  args: {
+    variant: 'text',
+    color: 'secondary',
+    children,
+  },
 }
 
-export const OutlinedPrimary = Template.bind({})
-OutlinedPrimary.args = {
-  variant: 'outlined',
-  color: 'primary',
+export const TextInherit: Story = {
+  args: {
+    variant: 'text',
+    color: 'inherit',
+    children,
+  },
 }
 
-export const OutlinedSecondary = Template.bind({})
-OutlinedSecondary.args = {
-  variant: 'outlined',
-  color: 'secondary',
+export const OutlinedPrimary: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'primary',
+    children,
+  },
 }
 
-export const OutlinedInherit = Template.bind({})
-OutlinedInherit.args = {
-  variant: 'outlined',
-  color: 'inherit',
+export const OutlinedSecondary: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'secondary',
+    children,
+  },
 }
 
-export const VerticalContained = Template.bind({})
-VerticalContained.args = {
-  orientation: 'vertical',
-  variant: 'contained',
+export const OutlinedInherit: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'inherit',
+    children,
+  },
 }
 
-export const VerticalText = Template.bind({})
-VerticalText.args = {
-  orientation: 'vertical',
-  variant: 'text',
+export const VerticalContained: Story = {
+  args: {
+    orientation: 'vertical',
+    variant: 'contained',
+    children,
+  },
 }
 
-export const VerticalOutlined = Template.bind({})
-VerticalOutlined.args = {
-  orientation: 'vertical',
-  variant: 'outlined',
+export const VerticalText: Story = {
+  args: {
+    orientation: 'vertical',
+    variant: 'text',
+    children,
+  },
+}
+
+export const VerticalOutlined: Story = {
+  args: {
+    orientation: 'vertical',
+    variant: 'outlined',
+    children,
+  },
 }

@@ -1,21 +1,20 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ForbiddenPage } from './ForbiddenPage'
+import type { Meta, StoryObj } from '@storybook/react'
+import { ForbiddenPage } from '@src/pages'
 
-const Component = ForbiddenPage
-
-export default {
+const meta: Meta<typeof ForbiddenPage> = {
   title: 'Pages/ForbiddenPage',
-  component: Component,
-} as ComponentMeta<typeof Component>
+  component: ForbiddenPage,
+}
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}></Component>
-)
+export default meta
 
-export const Basic = Template.bind({})
+type Story = StoryObj<typeof ForbiddenPage>
 
-export const CustomMessage = Template.bind({})
-CustomMessage.args = {
-  message:
-    "You don't have sufficient right to display this page. Consult with a space administrator if you need to load this page.",
+export const Basic: Story = {}
+
+export const CustomMessage: Story = {
+  args: {
+    message:
+      "You don't have sufficient right to display this page. Consult with a space administrator if you need to load this page.",
+  },
 }

@@ -1,18 +1,13 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { SettingsIcon } from '../../icons'
-import { IconComponent } from '../../icons'
+import type { Meta, StoryObj } from '@storybook/react'
+import { SettingsIcon } from '@src/icons'
 
-const Component = SettingsIcon
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof SettingsIcon> = {
   title: 'Mui Components/Icon',
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} as ComponentMeta<IconComponent>
+  component: SettingsIcon,
+}
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
-export const Icon = Template.bind({})
+export default meta
+
+type Story = StoryObj<typeof SettingsIcon>
+
+export const Icon: Story = {}

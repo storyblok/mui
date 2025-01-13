@@ -1,15 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-
+import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '@mui/material'
-import { StoryblokIcon } from '../../icons'
+import { StoryblokIcon } from '@src/icons'
 
-const Component = Button
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Mui Components/Button',
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  component: Button,
   argTypes: {
     variant: {
       control: 'select',
@@ -29,105 +25,123 @@ export default {
       ],
     },
   },
-} as ComponentMeta<typeof Component>
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
-
-export const Basic = Template.bind({})
-Basic.args = {
-  children: 'Button',
-}
-export const Small = Template.bind({})
-Small.args = {
-  children: 'Button',
-  size: 'small',
 }
 
-export const Large = Template.bind({})
-Large.args = {
-  children: 'Button',
-  size: 'large',
+export default meta
+
+type Story = StoryObj<typeof Button>
+
+export const Basic: Story = {
+  args: {
+    children: 'Button',
+  },
 }
 
-export const StartIcon = Template.bind({})
-StartIcon.args = {
-  children: 'Button',
-  startIcon: <StoryblokIcon />,
+export const Small: Story = {
+  args: {
+    children: 'Button',
+    size: 'small',
+  },
 }
 
-export const EndIcon = Template.bind({})
-EndIcon.args = {
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+export const Large: Story = {
+  args: {
+    children: 'Button',
+    size: 'large',
+  },
 }
 
-export const ContainedPrimary = Template.bind({})
-ContainedPrimary.args = {
-  variant: 'contained',
-  color: 'primary',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+export const StartIcon: Story = {
+  args: {
+    children: 'Button',
+    startIcon: <StoryblokIcon />,
+  },
 }
 
-export const ContainedSecondary = Template.bind({})
-ContainedSecondary.args = {
-  variant: 'contained',
-  color: 'secondary',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+export const EndIcon: Story = {
+  args: {
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
 }
 
-export const ContainedInherit = Template.bind({})
-ContainedInherit.args = {
-  variant: 'contained',
-  color: 'inherit',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+export const ContainedPrimary: Story = {
+  args: {
+    variant: 'contained',
+    color: 'primary',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
 }
 
-export const OutlinedPrimary = Template.bind({})
-OutlinedPrimary.args = {
-  variant: 'outlined',
-  color: 'primary',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
-}
-export const OutlinedSecondary = Template.bind({})
-OutlinedSecondary.args = {
-  variant: 'outlined',
-  color: 'secondary',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
-}
-export const OutlinedInherit = Template.bind({})
-OutlinedInherit.args = {
-  variant: 'outlined',
-  color: 'inherit',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+export const ContainedSecondary: Story = {
+  args: {
+    variant: 'contained',
+    color: 'secondary',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
 }
 
-export const TextPrimary = Template.bind({})
-TextPrimary.args = {
-  variant: 'text',
-  color: 'primary',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+export const ContainedInherit: Story = {
+  args: {
+    variant: 'contained',
+    color: 'inherit',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
 }
-export const TextSecondary = Template.bind({})
-TextSecondary.args = {
-  variant: 'text',
-  color: 'secondary',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+
+export const OutlinedPrimary: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'primary',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
 }
-export const TextInherit = Template.bind({})
-TextInherit.args = {
-  variant: 'text',
-  color: 'inherit',
-  children: 'Button',
-  endIcon: <StoryblokIcon />,
+
+export const OutlinedSecondary: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'secondary',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
+}
+
+export const OutlinedInherit: Story = {
+  args: {
+    variant: 'outlined',
+    color: 'inherit',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
+}
+
+export const TextPrimary: Story = {
+  args: {
+    variant: 'text',
+    color: 'primary',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
+}
+
+export const TextSecondary: Story = {
+  args: {
+    variant: 'text',
+    color: 'secondary',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
+}
+
+export const TextInherit: Story = {
+  args: {
+    variant: 'text',
+    color: 'inherit',
+    children: 'Button',
+    endIcon: <StoryblokIcon />,
+  },
 }

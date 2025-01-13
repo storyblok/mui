@@ -1,26 +1,16 @@
-import {Meta, DocsContainer} from '@storybook/addon-docs/blocks';
-import {
-    ThemeProvider,
-} from "@mui/material";
-import {CssBaseline} from "@mui/material";
-import {lightTheme} from "../theme";
-import {StoryblokIcon} from "./storyblok/storyblok";
+import { Meta } from '@storybook/blocks';
+import { ThemeProvider, CssBaseline } from '@mui/material'
+import { lightTheme } from '@src/theme';
+import { StoryblokIcon } from './storyblok/storyblok'
 
-<Meta
-    title="Icons/Overview"
-    parameters={{
-        docs: {
-            container: ({children, context}) => (
-                <DocsContainer context={context}>
-                    <ThemeProvider theme={lightTheme}>
-                        <CssBaseline/>
-                        {children}
-                    </ThemeProvider>
-                </DocsContainer>
-            ),
-        },
-    }}
-/>
+<Meta title="Icons/Overview" />
+
+export const ThemeContainer = ({ children }) => (
+  <ThemeProvider theme={lightTheme}>
+    <CssBaseline/>
+    {children}
+  </ThemeProvider>
+)
 
 # Icons
 
@@ -31,7 +21,9 @@ Each icon is exported as its own React component. For example:
 ```
 Result:
 
-<StoryblokIcon />
+<ThemeContainer>
+  <StoryblokIcon />
+</ThemeContainer>
 
 Each icon is a [MUI icon component](https://mui.com/material-ui/icons/#main-content). As such, they share the same API. For example:
 
@@ -41,6 +33,8 @@ Each icon is a [MUI icon component](https://mui.com/material-ui/icons/#main-cont
 
 Result:
 
-<StoryblokIcon color="primary" fontSize="large"/>
+<ThemeContainer>
+  <StoryblokIcon color="primary" fontSize="large"/>
+</ThemeContainer>
 
 Icons are tree-shakeable, so importing just a couple of icons doesn't increase the bundle size much.

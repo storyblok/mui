@@ -1,15 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { NotFoundPage } from './NotFoundPage'
+import type { Meta, StoryObj } from '@storybook/react'
+import { NotFoundPage } from '@src/pages'
 
-const Component = NotFoundPage
-
-export default {
+const meta: Meta<typeof NotFoundPage> = {
   title: 'Pages/NotFoundPage',
-  component: Component,
-} as ComponentMeta<typeof Component>
+  component: NotFoundPage,
+}
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}></Component>
-)
+export default meta
 
-export const Basic = Template.bind({})
+type Story = StoryObj<typeof NotFoundPage>
+
+export const Basic: Story = {}

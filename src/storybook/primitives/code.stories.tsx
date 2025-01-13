@@ -1,39 +1,37 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { Alert } from '@mui/material'
 
-import { Alert, Box } from '@mui/material'
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof Alert> = {
   title: 'HTML Elements/code',
-  component: Box,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  component: Alert,
   argTypes: {
     severity: {
       control: 'select',
       options: ['success', 'info', 'warning', 'error'],
     },
+    children: {
+      table: {
+        disable: true,
+      },
+    },
   },
-  // decorators: [(Story) => (
-  //     <ThemeProvider theme={lightTheme}>
-  //       <Story />
-  //     </ThemeProvider>
-  // )]
-} as ComponentMeta<typeof Box>
+}
 
-const exampleInlineCode = `console.log("Hello, Storyblok")`
+export default meta
 
-const Template: ComponentStory<typeof Box> = () => (
-  <code>{exampleInlineCode}</code>
-)
+type Story = StoryObj<typeof Alert>
 
-const BackgroundTemplate: ComponentStory<typeof Box> = () => (
-  <Alert severity="info">
+const exampleInlineCode = 'console.log("Hello, Storyblok")'
+
+export const InlineCode: Story = {
+  render: () => (
     <code>{exampleInlineCode}</code>
-  </Alert>
-)
+  ),
+}
 
-export const InlineCode = Template.bind({})
-InlineCode.args = {}
-
-export const OnBackground = BackgroundTemplate.bind({})
-OnBackground.args = {}
+export const OnBackground: Story = {
+  args: {
+    children: <code>{exampleInlineCode}</code>,
+    severity: 'info',
+  },
+}

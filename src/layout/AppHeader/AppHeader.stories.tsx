@@ -1,25 +1,20 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Args, Meta, StoryObj } from '@storybook/react'
 import { AppHeader } from './AppHeader'
-import { SearchIcon, SettingsIcon } from '../../icons'
+import { SearchIcon, SettingsIcon } from '@src/icons'
 import { Button } from '@mui/material'
-import { loremIpsum } from '../../storybook/demo-utils/loremIpsum'
-import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
-import { AppContainer } from '../AppContainer'
-import { ContentDemoArea } from '../../storybook/demo-utils/ContentDemoArea'
+import { loremIpsum } from '@src/storybook/demo-utils/loremIpsum'
+import { DemoIcon } from '@src/storybook/demo-utils/DemoIcon'
+import { AppContainer } from '@src/layout'
+import { ContentDemoArea } from '@src/storybook/demo-utils/ContentDemoArea'
 
-const Component = AppHeader
-
-export default {
+const meta: Meta<typeof AppHeader> = {
   title: 'Layout/AppHeader',
-  component: Component,
-} as ComponentMeta<typeof Component>
+  component: AppHeader,
+}
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <AppContainer>
-    <Component {...args} />
-    <ContentDemoArea />
-  </AppContainer>
-)
+export default meta
+
+type Story = StoryObj<typeof AppHeader>
 
 const actions = (
   <>
@@ -34,44 +29,57 @@ const actions = (
   </>
 )
 
-export const Basic = Template.bind({})
-Basic.args = {
-  title: 'Title',
-  subtitle: 'Subtitle',
-  icon: <DemoIcon />,
-}
-
-export const NoIcon = Template.bind({})
-NoIcon.args = {
-  title: 'Title',
-  subtitle: 'Subtitle',
-  children: actions,
-}
-
-export const LongSubtitle = Template.bind({})
-LongSubtitle.args = {
-  title: 'Title',
-  icon: <DemoIcon />,
-  subtitle: loremIpsum,
-  children: actions,
-}
-
-export const ManyActions = Template.bind({})
-ManyActions.args = {
-  title: 'Title',
-  subtitle: 'Subtitle',
-  icon: <DemoIcon />,
-  children: (
-    <>
-      <Button
-        startIcon={<SettingsIcon />}
-        variant="outlined"
-        color="secondary"
-      >
-        Settings
-      </Button>
-      <Button>Button with many words</Button>
-      <Button startIcon={<SearchIcon />}>Search</Button>
-    </>
+export const Basic: Story = {
+  args: {
+    title: 'Title',
+    subtitle: 'Subtitle',
+    icon: <DemoIcon />,
+  },
+  render: (args: Args) => (
+    <AppContainer>
+      <AppHeader {...args} />
+      <ContentDemoArea />
+    </AppContainer>
   ),
+}
+
+export const NoIcon: Story = {
+  args: {
+    title: 'Title',
+    subtitle: 'Subtitle',
+    children: actions,
+  },
+  render: Basic.render,
+}
+
+export const LongSubtitle: Story = {
+  args: {
+    title: 'Title',
+    icon: <DemoIcon />,
+    subtitle: loremIpsum,
+    children: actions,
+  },
+  render: Basic.render,
+}
+
+export const ManyActions: Story = {
+  args: {
+    title: 'Title',
+    subtitle: 'Subtitle',
+    icon: <DemoIcon />,
+    children: (
+      <>
+        <Button
+          startIcon={<SettingsIcon />}
+          variant="outlined"
+          color="secondary"
+        >
+          Settings
+        </Button>
+        <Button>Button with many words</Button>
+        <Button startIcon={<SearchIcon />}>Search</Button>
+      </>
+    ),
+  },
+  render: Basic.render,
 }

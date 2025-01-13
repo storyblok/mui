@@ -1,49 +1,51 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { CenteredContent } from './CenteredContent'
-import { EmptySearchPictogram, SearchIcon } from '../../icons'
+import type { Args, Meta, StoryObj } from '@storybook/react'
+import { CenteredContent } from '@src/layout'
+import { EmptySearchPictogram, SearchIcon } from '@src/icons'
 import { Button, Container, Typography } from '@mui/material'
-import { AppContainer } from '../AppContainer'
+import { AppContainer } from '@src/layout'
 
-const Component = CenteredContent
-
-export default {
+const meta: Meta<typeof CenteredContent> = {
   title: 'Layout/CenteredContent',
-  component: Component,
-} as ComponentMeta<typeof Component>
+  component: CenteredContent,
+}
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <AppContainer>
-    <Component {...args}></Component>
-  </AppContainer>
-)
+export default meta
 
-export const Basic = Template.bind({})
-Basic.args = {
-  children: (
-    <Container
-      maxWidth="sm"
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: 2,
-      }}
-    >
-      <EmptySearchPictogram fontSize="pictogram" />
-      <Typography variant="h1">Search</Typography>
-      <Typography
-        variant="body1"
-        sx={{ color: 'text.secondary' }}
+type Story = StoryObj<typeof CenteredContent>
+
+export const Basic: Story = {
+  args: {
+    children: (
+      <Container
+        maxWidth="sm"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 2,
+        }}
       >
-        A long description, a long description, a long description, a long
-        description, a long description, a long description.
-      </Typography>
-      <Button
-        startIcon={<SearchIcon />}
-        color="secondary"
-      >
-        Search
-      </Button>
-    </Container>
+        <EmptySearchPictogram fontSize="pictogram" />
+        <Typography variant="h1">Search</Typography>
+        <Typography
+          variant="body1"
+          sx={{ color: 'text.secondary' }}
+        >
+          A long description, a long description, a long description, a long
+          description, a long description, a long description.
+        </Typography>
+        <Button
+          startIcon={<SearchIcon />}
+          color="secondary"
+        >
+          Search
+        </Button>
+      </Container>
+    ),
+  },
+  render: (args: Args) => (
+    <AppContainer>
+      <CenteredContent {...args} />
+    </AppContainer>
   ),
 }

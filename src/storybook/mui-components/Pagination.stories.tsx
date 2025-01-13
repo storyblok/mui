@@ -1,27 +1,37 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Pagination } from '@mui/material'
 
-const Component = Pagination
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof Pagination> = {
   title: 'Mui Components/Pagination',
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  component: Pagination,
   argTypes: {
     size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
+      table: {
+        defaultValue: {
+          summary: 'medium',
+        },
+      },
+    },
+    count: {
+      control: 'number',
+      table: {
+        defaultValue: {
+          summary: '1',
+        },
+      },
     },
   },
-} as ComponentMeta<typeof Component>
+}
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component
-    count={10}
-    {...args}
-  />
-)
+export default meta
 
-export const Basic = Template.bind({})
+type Story = StoryObj<typeof Pagination>
+
+export const Basic: Story = {
+  args: {
+    size: 'medium',
+    count: 10,
+  },
+}
