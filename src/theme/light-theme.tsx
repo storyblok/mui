@@ -66,7 +66,7 @@ const shadows = [
     ),
 ] as Theme['shadows']
 
-const spacing = (factor: number = 1) => Math.floor(factor) * 4
+const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
 
 const palette = {
   mode: 'light',
