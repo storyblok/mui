@@ -1,20 +1,19 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { UnauthorizedPage } from './UnauthorizedPage'
+import type { Meta, StoryObj } from '@storybook/react'
+import { UnauthorizedPage } from '@src/pages'
 
-const Component = UnauthorizedPage
+const meta: Meta<typeof UnauthorizedPage> = {
+  title: 'Pages/UnauthorizedPage',
+  component: UnauthorizedPage,
+}
 
-export default {
-  title: `Pages/UnauthorizedPage`,
-  component: Component,
-} as ComponentMeta<typeof Component>
+export default meta
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}></Component>
-)
+type Story = StoryObj<typeof UnauthorizedPage>
 
-export const Basic = Template.bind({})
+export const Basic: Story = {}
 
-export const CustomMessage = Template.bind({})
-CustomMessage.args = {
-  message: 'You are not authenticated. Try to refresh the page',
+export const CustomMessage: Story = {
+  args: {
+    message: 'You are not authenticated. Try to refresh the page',
+  },
 }

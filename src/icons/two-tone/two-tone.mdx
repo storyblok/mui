@@ -1,0 +1,13 @@
+import { Meta } from '@storybook/blocks'
+import { CssBaseline, ThemeProvider } from "@mui/material"
+import { lightTheme } from "../../index"
+import { IconsGrid } from "../IconsGrid"
+
+import * as iconsModule from './two-tone'
+
+<Meta title="Icons/TwoTone" />
+
+<ThemeProvider theme={lightTheme}>
+  <CssBaseline/>
+  <IconsGrid iconModule={iconsModule}/>
+</ThemeProvider>

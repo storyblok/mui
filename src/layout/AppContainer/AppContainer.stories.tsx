@@ -1,47 +1,47 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { AppContainer } from './AppContainer'
-import { ContentDemoArea } from '../../storybook/demo-utils/ContentDemoArea'
-import { AppHeader } from '../AppHeader'
-import { DemoIcon } from '../../storybook/demo-utils/DemoIcon'
+import type { Meta, StoryObj } from '@storybook/react'
+import { AppContainer, AppHeader } from '@src/layout'
+import { ContentDemoArea } from '@src/storybook/demo-utils/ContentDemoArea'
+import { DemoIcon } from '@src/storybook/demo-utils/DemoIcon'
 
-const Component = AppContainer
-
-export default {
-  title: `Layout/AppContainer`,
-  component: Component,
+const meta: Meta<typeof AppContainer> = {
+  title: 'Layout/AppContainer',
+  component: AppContainer,
   argTypes: {
     maxWidth: {
       control: 'select',
       options: [undefined, 'sx', 'sm', 'md', 'lg', 'xl'],
     },
   },
-} as ComponentMeta<typeof Component>
-
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
-
-export const Basic = Template.bind({})
-Basic.args = {
-  children: <ContentDemoArea />,
 }
 
-export const WithHeader = Template.bind({})
-WithHeader.args = {
-  children: (
-    <>
-      <AppHeader
-        title="Title"
-        subtitle="Subtitle"
-        icon={<DemoIcon />}
-      />
-      <ContentDemoArea />
-    </>
-  ),
+export default meta
+
+type Story = StoryObj<typeof AppContainer>
+
+export const Basic: Story = {
+  args: {
+    children: <ContentDemoArea />,
+  },
 }
 
-export const CustomMaxWidth = Template.bind({})
-CustomMaxWidth.args = {
-  children: <ContentDemoArea />,
-  maxWidth: 'lg',
+export const WithHeader: Story = {
+  args: {
+    children: (
+      <>
+        <AppHeader
+          title="Title"
+          subtitle="Subtitle"
+          icon={<DemoIcon />}
+        />
+        <ContentDemoArea />
+      </>
+    ),
+  },
+}
+
+export const CustomMaxWidth: Story = {
+  args: {
+    children: <ContentDemoArea />,
+    maxWidth: 'lg',
+  },
 }

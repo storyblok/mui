@@ -1,41 +1,38 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Toolbar, Typography } from '@mui/material'
-import { ContentStoryFillIcon, LinkIcon, LoadingIcon } from '../../icons'
-import { AnalyticalBox } from '../../components'
+import { ContentStoryFillIcon, LinkIcon, LoadingIcon } from '@src/icons'
+import { AnalyticalBox } from '@src/components'
 
-const Component = Toolbar
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: `Mui Components/Toolbar`,
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+const meta: Meta = {
+  title: 'Mui Components/Toolbar',
+  component: Toolbar,
   argTypes: {
     variant: {
       control: 'select',
-      options: [undefined, 'contained', 'outlined'],
-    },
-    color: {
-      control: 'select',
-      options: [
-        undefined,
-        'primary',
-        'secondary',
-        'success',
-        'info',
-        'warning',
-        'error',
-      ],
+      options: ['dense', 'regular'],
+      table: {
+        defaultValue: {
+          summary: 'regular'
+        },
+      },
     },
     disableGutters: {
       control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false'
+        },
+      },
     },
   },
-} as ComponentMeta<typeof Component>
+}
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}>
+export default meta
+
+type Story = StoryObj<typeof Toolbar>
+
+const children = (
+  <>
     <LoadingIcon />
     <Typography>Loading...</Typography>
     <AnalyticalBox
@@ -54,17 +51,22 @@ const Template: ComponentStory<typeof Component> = (args) => (
       <Typography variant="subtitle1">Links</Typography>
       <Typography variant="subtitle2">15</Typography>
     </AnalyticalBox>
-  </Component>
+  </>
 )
 
-export const Basic = Template.bind({})
-Basic.args = {}
+export const Basic: Story = {
+  args: {
+    children,
+  },
+}
 
-export const Filled = Template.bind({})
-Filled.args = {
-  sx: {
-    backgroundColor: 'secondary.main',
-    color: 'secondary.contrastText',
-    borderRadius: 1,
+export const Filled: Story = {
+  args: {
+    children,
+    sx: {
+      backgroundColor: 'secondary.main',
+      color: 'secondary.contrastText',
+      borderRadius: 1,
+    },
   },
 }

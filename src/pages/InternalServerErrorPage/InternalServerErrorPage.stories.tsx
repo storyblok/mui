@@ -1,28 +1,28 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { InternalServerErrorPage } from './InternalServerErrorPage'
+import type { Meta, StoryObj } from '@storybook/react'
+import { InternalServerErrorPage } from '@src/pages'
 
-const Component = InternalServerErrorPage
+const meta: Meta<typeof InternalServerErrorPage> = {
+  title: 'Pages/InternalServerErrorPage',
+  component: InternalServerErrorPage,
+}
 
-export default {
-  title: `Pages/InternalServerErrorPage`,
-  component: Component,
-} as ComponentMeta<typeof Component>
+export default meta
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}></Component>
-)
+type Story = StoryObj<typeof InternalServerErrorPage>
 
-export const Basic = Template.bind({})
+export const Basic: Story = {}
 
 const message = 'An unexpected error occurred on the server.'
 
-export const CustomMessage = Template.bind({})
-CustomMessage.args = {
-  message,
+export const CustomMessage: Story = {
+  args: {
+    message,
+  },
 }
 
-export const Detailed = Template.bind({})
-Detailed.args = {
-  message,
-  details: 'The service XYZ did not respond.',
+export const Detailed: Story = {
+  args: {
+    message,
+    details: 'The service XYZ did not respond.',
+  },
 }

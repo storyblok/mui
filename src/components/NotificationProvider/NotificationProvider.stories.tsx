@@ -1,14 +1,16 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { NotificationProvider, useNotifications } from './NotificationProvider'
+import type { Args, Meta, StoryObj } from '@storybook/react'
 import { FunctionComponent, useMemo, useState } from 'react'
 import { Button } from '@mui/material'
+import { NotificationProvider, useNotifications } from './NotificationProvider'
 
-const Component = NotificationProvider
+const meta: Meta<typeof NotificationProvider> = {
+  title: 'Components/NotificationProvider',
+  component: NotificationProvider,
+}
 
-export default {
-  title: `Components/NotificationProvider`,
-  component: Component,
-} as ComponentMeta<typeof Component>
+export default meta
+
+type Story = StoryObj<typeof NotificationProvider>
 
 const WithContext: FunctionComponent = () => {
   const [count, setCount] = useState(0)
@@ -26,11 +28,10 @@ const WithContext: FunctionComponent = () => {
   return <Button onClick={handleClick}>Display</Button>
 }
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <NotificationProvider {...args}>
-    <WithContext />
-  </NotificationProvider>
-)
-
-export const Error = Template.bind({})
-Error.args = {}
+export const Error: Story = {
+  render: (args: Args) => (
+    <NotificationProvider {...args}>
+      <WithContext />
+    </NotificationProvider>
+  ),
+}

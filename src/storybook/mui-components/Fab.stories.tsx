@@ -1,46 +1,58 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Fab } from '@mui/material'
-import { CloseIcon } from '../../icons'
+import { CloseIcon } from '@src/icons'
 
-const Component = Fab
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: `Mui Components/Fab`,
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+const meta: Meta<typeof Fab> = {
+  title: 'Mui Components/Fab',
+  component: Fab,
   argTypes: {
     variant: {
       control: 'select',
-      options: [undefined, 'contained', 'outlined', 'text'],
+      options: ['circular', 'extended', 'string'],
+      table: {
+        defaultValue: {
+          summary: 'circular'
+        },
+      },
     },
     color: {
       control: 'select',
       options: [
-        undefined,
+        'default',
+        'error',
+        'info',
+        'inherit',
         'primary',
         'secondary',
         'success',
-        'info',
         'warning',
-        'error',
       ],
+      table: {
+        defaultValue: {
+          summary: 'primary'
+        },
+      },
     },
   },
-} as ComponentMeta<typeof Component>
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args}></Component>
-)
-
-export const Basic = Template.bind({})
-Basic.args = {
-  children: <CloseIcon />,
 }
 
-export const Small = Template.bind({})
-Small.args = {
-  size: 'small',
-  children: <CloseIcon fontSize="small" />,
+export default meta
+
+type Story = StoryObj<typeof Fab>
+
+export const Basic: Story = {
+  args: {
+    color: 'primary',
+    children: <CloseIcon />,
+    variant: 'circular',
+  },
+}
+
+export const Small: Story = {
+  args: {
+    color: 'primary',
+    children: <CloseIcon fontSize="small" />,
+    size: 'small',
+    variant: 'circular',
+  },
 }

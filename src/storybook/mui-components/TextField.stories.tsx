@@ -1,78 +1,82 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
+import { TextField } from '@mui/material'
 
-import {
-  FormControl,
-  FormLabel as MuiFormLabel,
-  TextField,
-} from '@mui/material'
-
-const Component = TextField
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: `Mui Components/TextField`,
-  component: Component,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+const meta: Meta<typeof TextField> = {
+  title: 'Mui Components/TextField',
+  component: TextField,
   argTypes: {
     variant: {
       control: 'select',
-      options: [undefined, 'outlined', 'filled', 'standard'],
+      options: ['outlined', 'filled', 'standard'],
+      table: {
+        defaultValue: {
+          summary: 'outlined',
+        },
+      },
     },
     error: {
       control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     disabled: {
       control: 'boolean',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     value: {
       control: 'text',
     },
   },
-  // decorators: [(Story) => (
-  //     <ThemeProvider theme={lightTheme}>
-  //       <Story />
-  //     </ThemeProvider>
-  // )]
-} as ComponentMeta<typeof Component>
+}
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-)
+export default meta
 
-const FormTemplate: ComponentStory<typeof Component> = (args) => (
-  <FormControl>
-    <MuiFormLabel>Label</MuiFormLabel>
-    <Component {...args} />
-  </FormControl>
-)
+type Story = StoryObj<typeof TextField>
 
-export const Basic = Template.bind({})
-Basic.args = {
-  placeholder: 'Placeholder',
+export const Basic: Story = {
+  args: {
+    placeholder: 'Placeholder',
+  },
 }
-export const Standard = Template.bind({})
-Standard.args = {
-  variant: 'standard',
-  placeholder: 'Placeholder',
+
+export const Standard: Story = {
+  args: {
+    variant: 'standard',
+    placeholder: 'Placeholder',
+  },
 }
-export const Disabled = Template.bind({})
-Disabled.args = {
-  value: 'Value',
-  disabled: true,
+
+export const Disabled: Story = {
+  args: {
+    value: 'Value',
+    disabled: true,
+  },
 }
-export const InputLabel = Template.bind({})
-InputLabel.args = {
-  placeholder: 'Placeholder',
-  label: 'Label',
+
+export const InputLabel: Story = {
+  args: {
+    placeholder: 'Placeholder',
+    label: 'Label',
+  },
 }
-export const FormLabel = FormTemplate.bind({})
-FormLabel.args = {
-  placeholder: 'Placeholder',
+
+export const FormLabel: Story = {
+  args: {
+    placeholder: 'Placeholder',
+  },
 }
-export const Error = Template.bind({})
-Error.args = {
-  label: 'Label',
-  placeholder: 'Placeholder',
-  error: true,
+
+export const Error: Story = {
+  args: {
+    label: 'Label',
+    placeholder: 'Placeholder',
+    error: true,
+  },
 }

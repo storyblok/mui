@@ -1,21 +1,22 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { AppContent } from './AppContent'
-import { ContentDemoArea } from '../../storybook/demo-utils/ContentDemoArea'
-import { AppContainer } from '../AppContainer'
+import type { Args, Meta, StoryObj } from '@storybook/react'
+import { AppContent, AppContainer } from '@src/layout'
+import { ContentDemoArea } from '@src/storybook/demo-utils/ContentDemoArea'
 
-const Component = AppContent
+const meta: Meta<typeof AppContent> = {
+  title: 'Layout/AppContent',
+  component: AppContent,
+}
 
-export default {
-  title: `Layout/AppContent`,
-  component: Component,
-} as ComponentMeta<typeof Component>
+export default meta
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <AppContainer>
-    <Component {...args}>
-      <ContentDemoArea />
-    </Component>
-  </AppContainer>
-)
+type Story = StoryObj<typeof AppContent>
 
-export const Basic = Template.bind({})
+export const Basic: Story = {
+  render: (args: Args) => (
+    <AppContainer>
+      <AppContent {...args}>
+        <ContentDemoArea />
+      </AppContent>
+    </AppContainer>
+  ),
+}
