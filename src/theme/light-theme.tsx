@@ -66,7 +66,7 @@ const shadows = [
     ),
 ] as Theme['shadows']
 
-const spacing = 5
+const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
 
 const palette = {
   mode: 'light',
@@ -144,8 +144,8 @@ const typography: ThemeOptions['typography'] = {
   fontWeightMedium: font_weight_medium,
   fontWeightBold: font_weight_bold,
   h1: {
-    marginTop: spacing * 2,
-    marginBottom: spacing * 2,
+    marginTop: spacing(2),
+    marginBottom: spacing(2),
     fontWeight: font_weight_bold,
     letterSpacing: 0,
     fontSize: heading_xl,
@@ -596,14 +596,14 @@ const lightTheme = createTheme({
     MuiFormHelperText: {
       styleOverrides: {
         root: {
-          marginTop: spacing,
+          marginTop: spacing(),
         },
       },
     },
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          marginBottom: spacing * 2,
+          marginBottom: spacing(2),
           color: `${palette.text.primary} !important`,
           fontSize: font_14,
           fontWeight: font_weight_medium,
@@ -626,8 +626,8 @@ const lightTheme = createTheme({
       styleOverrides: {
         select: {
           paddingLeft: '17px',
-          paddingTop: spacing * 2,
-          paddingBottom: spacing * 2,
+          paddingTop: spacing(2),
+          paddingBottom: spacing(2),
           display: 'flex',
           alignItems: 'center',
         },
@@ -650,7 +650,7 @@ const lightTheme = createTheme({
     MuiMenu: {
       styleOverrides: {
         root: {
-          marginTop: spacing * 2,
+          marginTop: spacing(2),
           boxShadow: shadows[24],
         },
       },
@@ -761,8 +761,8 @@ const lightTheme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: base_border_radius,
-          paddingLeft: spacing,
-          paddingRight: spacing,
+          paddingLeft: spacing(),
+          paddingRight: spacing(),
           height: 24,
           fontWeight: typography.fontWeightBold,
           fontSize: font_13,
@@ -770,8 +770,8 @@ const lightTheme = createTheme({
         },
         label: {
           padding: 0,
-          marginLeft: spacing,
-          marginRight: spacing,
+          marginLeft: spacing(),
+          marginRight: spacing(),
         },
         icon: {
           margin: 0,
