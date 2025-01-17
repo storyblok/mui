@@ -2,13 +2,6 @@ import {
   activatedOpacity,
   backgroundOpacity,
   base_border_radius,
-  black,
-  blue,
-  color_negative,
-  color_positive,
-  color_primary,
-  color_primary_dark,
-  color_warning,
   disabledOpacity,
   focusOpacity,
   font_12,
@@ -26,14 +19,28 @@ import {
   heading_xl,
   heading_xs,
   hoverOpacity,
-  light,
-  light_25,
-  light_50,
-  sb_dark_blue,
-  sb_dark_blue_25,
-  sb_dark_blue_50,
   selectedOpacity,
-  white,
+  sb_neutral_black,
+  sb_neutral_white,
+  sb_primary,
+  sb_secondary,
+  sb_secondary_50,
+  sb_info,
+  sb_info_950,
+  sb_success,
+  sb_danger,
+  sb_warning,
+  sb_base_50,
+  sb_base_100,
+  sb_base_200,
+  sb_base_300,
+  sb_base_400,
+  sb_base_500,
+  sb_base_600,
+  sb_base_700,
+  sb_base_800,
+  sb_base_900,
+  sb_overlay_secondary,
 } from '@src/theme/design-tokens'
 import { alpha, createTheme, Theme, ThemeOptions } from '@mui/material'
 import { ShapeOptions } from '@mui/system'
@@ -55,15 +62,11 @@ import {
 
 const shadows = [
   'none',
-  ...new Array(24)
-    .fill(0)
-    .map((_, i) => i + 1)
-    .map((i) => [0, i / 12, i, i / 4])
-    .map((v) => v.map(Math.ceil))
-    .map(
-      (v) =>
-        `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(sb_dark_blue, 0.07)}`,
-    ),
+  '0px 4px 8px 0px rgba(27, 36, 63, 0.08)',
+  '0px 8px 24px 0px rgba(27, 36, 63, 0.08)',
+  '0px 16px 32px 0px rgba(27, 36, 63, 0.08)',
+  '0px 16px 48px 0px rgba(27, 36, 63, 0.08)',
+  ...Array(20).fill('none'),
 ] as Theme['shadows']
 
 const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
@@ -71,68 +74,67 @@ const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
 const palette = {
   mode: 'light',
   primary: {
-    main: color_primary,
-    contrastText: white,
+    main: sb_primary,
+    contrastText: sb_neutral_white,
   },
   secondary: {
-    // main: color_secondary,
-    main: color_primary_dark,
-    contrastText: white,
+    main: sb_secondary,
+    contrastText: sb_neutral_white,
   },
   success: {
-    main: color_positive,
-    contrastText: white,
+    main: sb_success,
+    contrastText: sb_neutral_white,
   },
   info: {
-    main: blue,
-    contrastText: white,
+    main: sb_info,
+    contrastText: sb_neutral_white,
   },
   warning: {
-    main: color_warning,
-    contrastText: white,
+    main: sb_warning,
+    contrastText: sb_neutral_black,
   },
   error: {
-    main: color_negative,
-    contrastText: white,
+    main: sb_danger,
+    contrastText: sb_neutral_white,
   },
   background: {
-    default: white,
-    paper: white,
+    default: sb_neutral_white,
+    paper: sb_neutral_white,
   },
   common: {
-    white: white,
-    black: black,
+    white: sb_neutral_white,
+    black: sb_neutral_black,
   },
   text: {
-    primary: sb_dark_blue,
-    secondary: sb_dark_blue_50,
-    disabled: light_50,
+    primary: sb_info_950,
+    secondary: sb_base_700,
+    disabled: sb_base_500,
   },
-  divider: light,
+  divider: sb_base_200,
   action: {
-    focus: light_50, // background-color
+    focus: sb_base_500, // background-color
     focusOpacity: focusOpacity,
-    active: sb_dark_blue_50,
+    active: sb_base_700,
     activatedOpacity: activatedOpacity,
-    disabled: sb_dark_blue_25,
-    disabledBackground: light_25,
+    disabled: sb_secondary_50,
+    disabledBackground: sb_overlay_secondary,
     disabledOpacity: disabledOpacity,
-    hover: light_25, // background-color
+    hover: sb_secondary_50, // background-color
     hoverOpacity: hoverOpacity,
-    selected: light_50, // color
+    selected: sb_base_500, // color
     selectedOpacity: selectedOpacity,
   },
   grey: {
-    '50': '#f7f8f9',
-    '100': '#ECF0FF',
-    '200': '#E2E6F5',
-    '300': '#D1D5E4',
-    '400': '#ADB1C0',
-    '500': '#8d919f',
-    '600': '#656976',
-    '700': '#525662',
-    '800': '#343743',
-    '900': '#141822',
+    '50': sb_base_50,
+    '100': sb_base_100,
+    '200': sb_base_200,
+    '300': sb_base_300,
+    '400': sb_base_400,
+    '500': sb_base_500,
+    '600': sb_base_600,
+    '700': sb_base_700,
+    '800': sb_base_800,
+    '900': sb_base_900,
   },
 } as const
 
@@ -179,7 +181,7 @@ const typography: ThemeOptions['typography'] = {
     fontWeight: font_weight_regular,
   },
   button: {
-    fontSize: font_16,
+    fontSize: font_14,
     fontWeight: font_weight_medium,
     textTransform: 'inherit',
     lineHeight: 'normal',
@@ -233,7 +235,6 @@ const lightTheme = createTheme({
       styleOverrides: {
         '&:not(pre)>code': {
           fontFamily: `ui-monospace,Menlo,Monaco,"Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Droid Sans Mono","Courier New",monospace`,
-          color: sb_dark_blue,
           backgroundColor: palette.grey['50'],
           borderRadius: shape.borderRadius,
           padding: '3px 5px',
@@ -380,7 +381,7 @@ const lightTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: color_primary,
+          color: sb_primary,
         },
       },
     },
@@ -397,18 +398,21 @@ const lightTheme = createTheme({
       styleOverrides: {
         sizeSmall: {
           fontSize: font_14,
-          padding: `8px 16px`,
+          padding: '0 16px',
+          height: '36px',
         },
         sizeMedium: {
-          fontSize: font_16,
-          padding: `12px 28px`,
+          fontSize: font_14,
+          padding: '0 24px',
+          height: '44px',
         },
         sizeLarge: {
           fontSize: font_16,
-          padding: `20px 43px`,
+          padding: '0 32px',
+          height: '52px',
         },
         containedInherit: {
-          backgroundColor: light_25,
+          backgroundColor: sb_overlay_secondary,
         },
         outlinedInherit: {
           borderColor: palette.divider,
@@ -664,13 +668,15 @@ const lightTheme = createTheme({
       styleOverrides: {
         root: {
           '&.Mui-selected': {
-            backgroundColor: alpha(
-              sb_dark_blue,
-              palette.action.selectedOpacity,
-            ),
+            backgroundColor: 'transparent',
+            color: palette.primary.main,
+            fontWeight: font_weight_bold,
             '&:hover': {
-              backgroundColor: alpha(sb_dark_blue, palette.action.hoverOpacity),
+              backgroundColor: sb_secondary_50,
             },
+          },
+          '&:hover': {
+            backgroundColor: sb_secondary_50,
           },
         },
       },
@@ -679,13 +685,13 @@ const lightTheme = createTheme({
       styleOverrides: {
         root: {
           '&.Mui-selected': {
-            backgroundColor: alpha(
-              sb_dark_blue,
-              palette.action.selectedOpacity,
-            ),
+            backgroundColor: sb_secondary_50,
             '&:hover': {
-              backgroundColor: alpha(sb_dark_blue, palette.action.hoverOpacity),
+              backgroundColor: sb_base_100,
             },
+          },
+          '&:hover': {
+            backgroundColor: sb_secondary_50,
           },
         },
       },
@@ -693,8 +699,14 @@ const lightTheme = createTheme({
     MuiListItemButton: {
       styleOverrides: {
         root: {
+          '&.Mui-selected': {
+            backgroundColor: sb_secondary_50,
+            '&:hover': {
+              backgroundColor: sb_base_100,
+            },
+          },
           '&:hover': {
-            backgroundColor: alpha(sb_dark_blue, palette.action.hoverOpacity),
+            backgroundColor: sb_secondary_50,
           },
         },
       },
@@ -702,7 +714,7 @@ const lightTheme = createTheme({
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          backgroundColor: alpha(sb_dark_blue, 0.2),
+          backgroundColor: alpha(sb_info_950, 0.2),
         },
         invisible: {
           opacity: 0,

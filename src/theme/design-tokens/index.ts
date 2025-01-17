@@ -1,4 +1,4 @@
-import { light } from '@src/theme/design-tokens/palette'
+import { sb_base_200 } from '@src/theme/design-tokens/palette'
 
 export * from './palette'
 export * from './typography'
@@ -9,14 +9,14 @@ export const sb_avatar_small = `26px`
 export const sb_avatar_normal = `32px`
 export const sb_avatar_large = `46px`
 //Datepicker variables
-export const light_border = `1px solid ${light}`
+export const light_border = `1px solid ${sb_base_200}`
 //Box-shadow
 export const box_shadow_default = `0 2px 17px 3px rgba(34, 42, 69, 0.07)`
 //Transition
 export const base_transition_duration = '0.1s'
 export const base_transition_easing = 'ease-in-out'
 export const base_transition = `all ${base_transition_duration} ${base_transition_easing}`
-export const base_border_radius = 5
+export const base_border_radius = 8
 
 // Icon Sizes
 export const icon_small_size = '1.6rem'
