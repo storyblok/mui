@@ -181,7 +181,7 @@ const typography: ThemeOptions['typography'] = {
     fontWeight: font_weight_regular,
   },
   button: {
-    fontSize: font_16,
+    fontSize: font_14,
     fontWeight: font_weight_medium,
     textTransform: 'inherit',
     lineHeight: 'normal',
@@ -398,15 +398,18 @@ const lightTheme = createTheme({
       styleOverrides: {
         sizeSmall: {
           fontSize: font_14,
-          padding: `8px 16px`,
+          padding: '0 16px',
+          height: '36px',
         },
         sizeMedium: {
-          fontSize: font_16,
-          padding: `12px 28px`,
+          fontSize: font_14,
+          padding: '0 24px',
+          height: '44px',
         },
         sizeLarge: {
           fontSize: font_16,
-          padding: `20px 43px`,
+          padding: '0 32px',
+          height: '52px',
         },
         containedInherit: {
           backgroundColor: sb_overlay_secondary,
