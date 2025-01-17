@@ -62,15 +62,11 @@ import {
 
 const shadows = [
   'none',
-  ...new Array(24)
-    .fill(0)
-    .map((_, i) => i + 1)
-    .map((i) => [0, i / 12, i, i / 4])
-    .map((v) => v.map(Math.ceil))
-    .map(
-      (v) =>
-        `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(sb_info_950, 0.07)}`,
-    ),
+  '0px 4px 8px 0px rgba(27, 36, 63, 0.08)',
+  '0px 8px 24px 0px rgba(27, 36, 63, 0.08)',
+  '0px 16px 32px 0px rgba(27, 36, 63, 0.08)',
+  '0px 16px 48px 0px rgba(27, 36, 63, 0.08)',
+  ...Array(20).fill('none'),
 ] as Theme['shadows']
 
 const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
