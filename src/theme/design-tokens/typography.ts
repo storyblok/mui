@@ -1,7 +1,7 @@
-import { sb_info_950 } from '@src/theme/design-tokens/palette'
+import { color_primary_dark } from '@src/theme/design-tokens/palette'
 
 export const primary_font_family = "'Roboto', sans-serif"
-export const primary_text_color = sb_info_950
+export const primary_text_color = color_primary_dark
 export const font_size_default = '1.6rem'
 export const line_height_default = 1
 

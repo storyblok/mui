@@ -19,10 +19,9 @@ type Story = StoryObj<typeof Accordion>
 
 export const Basic: Story = {
   render: (args: Args) => {
-    const { children, ...accordionProps } = args
     return (
       <Stack>
-        <Accordion {...accordionProps}>
+        <Accordion {...args}>
           <AccordionSummary>
             <Typography variant="subtitle1">Summary A</Typography>
           </AccordionSummary>
@@ -30,7 +29,7 @@ export const Basic: Story = {
             <Typography>{loremIpsum}</Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion {...accordionProps}>
+        <Accordion {...args}>
           <AccordionSummary>
             <Typography variant="subtitle1">Summary B</Typography>
           </AccordionSummary>
@@ -38,7 +37,7 @@ export const Basic: Story = {
             <Typography>{loremIpsum}</Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion {...accordionProps}>
+        <Accordion {...args}>
           <AccordionSummary>
             <Typography variant="subtitle1">Summary C</Typography>
           </AccordionSummary>

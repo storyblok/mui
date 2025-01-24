@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Args, Meta, StoryObj } from '@storybook/react'
 import {
   Divider,
   ListItemButton,
@@ -18,7 +18,7 @@ export default meta
 type Story = StoryObj<typeof DropMenu>
 
 export const Basic: Story = {
-  render: (args: any) => (
+  render: (args: Args) => (
     <DropMenu
       {...args}
       label="Options"

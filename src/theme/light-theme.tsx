@@ -20,27 +20,18 @@ import {
   heading_xs,
   hoverOpacity,
   selectedOpacity,
-  sb_neutral_black,
-  sb_neutral_white,
-  sb_primary,
-  sb_secondary,
-  sb_secondary_50,
-  sb_info,
-  sb_info_950,
-  sb_success,
-  sb_danger,
-  sb_warning,
-  sb_base_50,
-  sb_base_100,
-  sb_base_200,
-  sb_base_300,
-  sb_base_400,
-  sb_base_500,
-  sb_base_600,
-  sb_base_700,
-  sb_base_800,
-  sb_base_900,
-  sb_overlay_secondary,
+  color_primary,
+  color_primary_dark,
+  color_secondary,
+  color_negative,
+  color_positive,
+  color_warning,
+  color_info,
+  color_grey,
+  sbSecondary,
+  sbOverlay,
+  white,
+  black,
 } from '@src/theme/design-tokens'
 import { alpha, createTheme, Theme, ThemeOptions } from '@mui/material'
 import { ShapeOptions } from '@mui/system'
@@ -62,11 +53,18 @@ import {
 
 const shadows = [
   'none',
-  '0px 4px 8px 0px rgba(27, 36, 63, 0.08)',
-  '0px 8px 24px 0px rgba(27, 36, 63, 0.08)',
-  '0px 16px 32px 0px rgba(27, 36, 63, 0.08)',
-  '0px 16px 48px 0px rgba(27, 36, 63, 0.08)',
-  ...Array(20).fill('none'),
+  ...new Array(24)
+    .fill(0)
+    .map((_, i) => i + 1)
+    .map((i) => [0, i / 12, i, i / 4])
+    .map((v) => v.map(Math.ceil))
+    .map(
+      (v) =>
+        `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(
+          color_primary_dark,
+          0.07,
+        )}`,
+    ),
 ] as Theme['shadows']
 
 const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
@@ -74,68 +72,57 @@ const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
 const palette = {
   mode: 'light',
   primary: {
-    main: sb_primary,
-    contrastText: sb_neutral_white,
+    main: color_primary,
+    contrastText: white,
   },
   secondary: {
-    main: sb_secondary,
-    contrastText: sb_neutral_white,
+    main: color_secondary,
+    contrastText: white,
   },
   success: {
-    main: sb_success,
-    contrastText: sb_neutral_white,
+    main: color_positive,
+    contrastText: white,
   },
   info: {
-    main: sb_info,
-    contrastText: sb_neutral_white,
+    main: color_info,
+    contrastText: white,
   },
   warning: {
-    main: sb_warning,
-    contrastText: sb_neutral_black,
+    main: color_warning,
+    contrastText: black,
   },
   error: {
-    main: sb_danger,
-    contrastText: sb_neutral_white,
+    main: color_negative,
+    contrastText: white,
   },
   background: {
-    default: sb_neutral_white,
-    paper: sb_neutral_white,
+    default: white,
+    paper: white,
   },
   common: {
-    white: sb_neutral_white,
-    black: sb_neutral_black,
+    white: white,
+    black: black,
   },
   text: {
-    primary: sb_info_950,
-    secondary: sb_base_700,
-    disabled: sb_base_500,
+    primary: color_primary_dark,
+    secondary: color_grey['700'],
+    disabled: color_grey['500'],
   },
-  divider: sb_base_200,
+  divider: color_grey['200'],
   action: {
-    focus: sb_base_500, // background-color
+    focus: color_grey['500'], // background-color
     focusOpacity: focusOpacity,
-    active: sb_base_700,
+    active: color_grey['700'],
     activatedOpacity: activatedOpacity,
-    disabled: sb_secondary_50,
-    disabledBackground: sb_overlay_secondary,
+    disabled: sbSecondary['50'],
+    disabledBackground: sbOverlay.secondary,
     disabledOpacity: disabledOpacity,
-    hover: sb_secondary_50, // background-color
+    hover: sbSecondary['50'], // background-color
     hoverOpacity: hoverOpacity,
-    selected: sb_base_500, // color
+    selected: color_grey['500'], // color
     selectedOpacity: selectedOpacity,
   },
-  grey: {
-    '50': sb_base_50,
-    '100': sb_base_100,
-    '200': sb_base_200,
-    '300': sb_base_300,
-    '400': sb_base_400,
-    '500': sb_base_500,
-    '600': sb_base_600,
-    '700': sb_base_700,
-    '800': sb_base_800,
-    '900': sb_base_900,
-  },
+  grey: color_grey,
 } as const
 
 const typography: ThemeOptions['typography'] = {
@@ -381,7 +368,7 @@ const lightTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: sb_primary,
+          color: color_primary,
         },
       },
     },
@@ -412,7 +399,7 @@ const lightTheme = createTheme({
           height: '52px',
         },
         containedInherit: {
-          backgroundColor: sb_overlay_secondary,
+          backgroundColor: sbOverlay.secondary,
         },
         outlinedInherit: {
           borderColor: palette.divider,
@@ -666,55 +653,55 @@ const lightTheme = createTheme({
     },
     MuiMenuItem: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           '&.Mui-selected': {
             backgroundColor: 'transparent',
-            color: palette.primary.main,
-            fontWeight: font_weight_bold,
+            color: theme.palette.primary.main,
+            fontWeight: theme.typography.fontWeightBold,
             '&:hover': {
-              backgroundColor: sb_secondary_50,
+              backgroundColor: theme.palette.action.hover,
             },
           },
           '&:hover': {
-            backgroundColor: sb_secondary_50,
+            backgroundColor: theme.palette.action.hover,
           },
-        },
+        }),
       },
     },
     MuiListItem: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           '&.Mui-selected': {
-            backgroundColor: sb_secondary_50,
+            backgroundColor: theme.palette.action.hover,
             '&:hover': {
-              backgroundColor: sb_base_100,
+              backgroundColor: theme.palette.grey['100'],
             },
           },
           '&:hover': {
-            backgroundColor: sb_secondary_50,
+            backgroundColor: theme.palette.action.hover,
           },
-        },
+        }),
       },
     },
     MuiListItemButton: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           '&.Mui-selected': {
-            backgroundColor: sb_secondary_50,
+            backgroundColor: theme.palette.action.hover,
             '&:hover': {
-              backgroundColor: sb_base_100,
+              backgroundColor: theme.palette.grey['100'],
             },
           },
           '&:hover': {
-            backgroundColor: sb_secondary_50,
+            backgroundColor: theme.palette.action.hover,
           },
-        },
+        }),
       },
     },
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          backgroundColor: alpha(sb_info_950, 0.2),
+          backgroundColor: alpha(color_primary_dark, 0.2),
         },
         invisible: {
           opacity: 0,

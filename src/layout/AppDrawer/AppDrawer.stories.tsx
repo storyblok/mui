@@ -15,7 +15,7 @@ import {
 } from '@mui/material'
 import { Button } from '@mui/material'
 import { AppDrawer } from './AppDrawer'
-import { loremIpsum } from "@src/storybook/demo-utils/loremIpsum"
+import { loremIpsum } from '@src/storybook/demo-utils/loremIpsum'
 
 const Component = AppDrawer
 
@@ -42,7 +42,7 @@ export const Basic: Story = {
         />
       </Container>
     )
-  }
+  },
 }
 
 export const OverflowY: Story = {
