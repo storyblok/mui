@@ -177,7 +177,7 @@ export const white = '#ffffff'
 export const black_trasparent = 'rgba($sb-dark-blue, 0.2)'
 
 export const color_primary = sbPrimary['700']
-export const color_primary_dark = sbInfo['950']
+export const color_primary_dark = sbPrimary['950']
 export const color_secondary = sbSecondary['950']
 export const color_positive = sbSuccess['500']
 export const color_negative = sbDanger['700']
