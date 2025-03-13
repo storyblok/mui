@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '@mui/material'
 import { StoryblokIcon } from '@src/icons'
 
-
 const meta: Meta<typeof Button> = {
   title: 'Mui Components/Button',
   component: Button,
@@ -29,6 +28,9 @@ const meta: Meta<typeof Button> = {
       table: {
         defaultValue: { summary: 'primary' },
       },
+    },
+    disabled: {
+      control: 'boolean',
     },
   },
 }

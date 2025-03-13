@@ -101,14 +101,14 @@ const palette = {
   action: {
     focus: sbGrey['500'], // background-color
     focusOpacity: focusOpacity,
-    active: sbGrey['700'],
+    active: sbGrey['500'],
     activatedOpacity: activatedOpacity,
-    disabled: sbSecondary['50'],
-    disabledBackground: sbOverlay.secondary,
+    disabled: sbGrey['200'], // color
+    disabledBackground: sbGrey['100'],
     disabledOpacity: disabledOpacity,
-    hover: sbSecondary['50'], // background-color
+    hover: sbGrey['50'], // background-color
     hoverOpacity: hoverOpacity,
-    selected: sbGrey['500'], // color
+    selected: sbGrey['100'], // color
     selectedOpacity: selectedOpacity,
   },
   grey: sbGrey,
