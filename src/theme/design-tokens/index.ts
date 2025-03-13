@@ -1,4 +1,4 @@
-import { color_grey } from '@src/theme/design-tokens/palette'
+import { sbGrey } from '@src/theme/design-tokens/palette'
 
 export * from './palette'
 export * from './typography'
@@ -9,7 +9,7 @@ export const sb_avatar_small = `26px`
 export const sb_avatar_normal = `32px`
 export const sb_avatar_large = `46px`
 //Datepicker variables
-export const light_border = `1px solid ${color_grey['200']}`
+export const light_border = `1px solid ${sbGrey['200']}`
 //Box-shadow
 export const box_shadow_default = `0 2px 17px 3px rgba(34, 42, 69, 0.07)`
 //Transition

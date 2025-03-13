@@ -26,20 +26,6 @@ export const sbSecondary = {
   950: '#1b243f',
 }
 
-export const sbBase = {
-  50: '#f6f7f8',
-  100: '#ebecee',
-  200: '#dbdde2',
-  300: '#c3c7cd',
-  400: '#b1b5be',
-  500: '#8f93a2',
-  600: '#717384',
-  700: '#5f616e',
-  800: '#4f5059',
-  900: '#333338',
-  950: '#242429',
-}
-
 export const sbInfo = {
   50: '#f1f5fd',
   100: '#e0e9f9',
@@ -120,26 +106,18 @@ export const sbHighlight = {
   950: '#2a1065',
 }
 
-export const color_primary = sbPrimary['700']
-export const color_primary_dark = sbInfo['950']
-export const color_secondary = sbSecondary['950']
-export const color_positive = sbSuccess['500']
-export const color_negative = sbDanger['700']
-export const color_warning = sbWarning['400']
-export const color_info = sbInfo['800']
-export const color_white = '#ffffff'
-export const color_black = '#000000'
-export const color_grey = {
-  50: sbBase['50'],
-  100: sbBase['100'],
-  200: sbBase['200'],
-  300: sbBase['300'],
-  400: sbBase['400'],
-  500: sbBase['500'],
-  600: sbBase['600'],
-  700: sbBase['700'],
-  800: sbBase['800'],
-  900: sbBase['900'],
+export const sbGrey = {
+  50: '#f6f7f8',
+  100: '#ebecee',
+  200: '#dbdde2',
+  300: '#c3c7cd',
+  400: '#b1b5be',
+  500: '#8f93a2',
+  600: '#717384',
+  700: '#5f616e',
+  800: '#4f5059',
+  900: '#333338',
+  950: '#242429',
 }
 
 // Old colors
@@ -194,6 +172,16 @@ export const light_50 = '#eff1f3'
 export const light_25 = '#f7f8f9'
 export const light_gray = '#b1b5be'
 
-export const black = '#000000'
+export const black = '#101525'
 export const white = '#ffffff'
 export const black_trasparent = 'rgba($sb-dark-blue, 0.2)'
+
+export const color_primary = sbPrimary['700']
+export const color_primary_dark = sbInfo['950']
+export const color_secondary = sbSecondary['950']
+export const color_positive = sbSuccess['500']
+export const color_negative = sbDanger['700']
+export const color_warning = sbWarning['400']
+export const color_info = sbInfo['800']
+export const color_white = white
+export const color_black = black

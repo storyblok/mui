@@ -27,7 +27,7 @@ import {
   color_positive,
   color_warning,
   color_info,
-  color_grey,
+  sbGrey,
   sbSecondary,
   sbOverlay,
   white,
@@ -104,25 +104,25 @@ const palette = {
     black: black,
   },
   text: {
-    primary: color_primary_dark,
-    secondary: color_grey['700'],
-    disabled: color_grey['500'],
+    primary: sbSecondary['950'],
+    secondary: sbGrey['700'],
+    disabled: sbGrey['500'],
   },
-  divider: color_grey['200'],
+  divider: sbGrey['200'],
   action: {
-    focus: color_grey['500'], // background-color
+    focus: sbGrey['500'], // background-color
     focusOpacity: focusOpacity,
-    active: color_grey['700'],
+    active: sbGrey['700'],
     activatedOpacity: activatedOpacity,
     disabled: sbSecondary['50'],
     disabledBackground: sbOverlay.secondary,
     disabledOpacity: disabledOpacity,
     hover: sbSecondary['50'], // background-color
     hoverOpacity: hoverOpacity,
-    selected: color_grey['500'], // color
+    selected: sbGrey['500'], // color
     selectedOpacity: selectedOpacity,
   },
-  grey: color_grey,
+  grey: sbGrey,
 } as const
 
 const typography: ThemeOptions['typography'] = {
@@ -385,18 +385,15 @@ const lightTheme = createTheme({
       styleOverrides: {
         sizeSmall: {
           fontSize: font_14,
-          padding: '0 16px',
-          height: '36px',
+          padding: `8px 16px`,
         },
         sizeMedium: {
-          fontSize: font_14,
-          padding: '0 24px',
-          height: '44px',
+          fontSize: font_16,
+          padding: `12px 28px`,
         },
         sizeLarge: {
           fontSize: font_16,
-          padding: '0 32px',
-          height: '52px',
+          padding: `20px 43px`,
         },
         containedInherit: {
           backgroundColor: sbOverlay.secondary,
