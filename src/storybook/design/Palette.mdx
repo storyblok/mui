@@ -6,7 +6,8 @@ import {
   ThemeProvider,
   Typography,
   useTheme,
-  CssBaseline
+  CssBaseline,
+  Box
 } from "@mui/material";
 import { lightTheme } from '@src/theme'
 
@@ -23,25 +24,34 @@ export const PaletteItem = (props) => {
   const theme = useTheme()
   const {name} = props
   return (
-    <Grid item
-      sx={{
-        p: 2,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        width: '100%',
-        backgroundColor: theme => theme.palette[name].main,
-        color: theme => theme.palette[name].contrastText,
-        borderRadius: '10px',
-      }}
-    >
-      <Typography variant="subtitle1" color={'white'}>
-        {name}
-      </Typography>
-      <Typography variant="body2" color={'white'}>
-        {theme.palette[name].main}
-      </Typography>
+    <Grid item sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      borderRadius: 2,
+      overflow: 'hidden',
+    }}>
+      {['light', 'main', 'dark'].map((variant) => (
+        <Box
+          sx={{
+            p: 2,
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            backgroundColor: theme => theme.palette[name][variant],
+            color: theme => theme.palette[name].contrastText,
+          }}>
+          <Typography variant="subtitle1" color={'white'}>
+            {name}.{variant}
+          </Typography>
+          <Typography variant="body2" color={'white'}>
+            {theme.palette[name][variant]}
+          </Typography>
+        </Box>
+      ))}
     </Grid>
   )
 }

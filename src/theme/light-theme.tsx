@@ -20,13 +20,11 @@ import {
   heading_xs,
   hoverOpacity,
   selectedOpacity,
-  color_primary,
-  color_primary_dark,
-  color_secondary,
-  color_negative,
-  color_positive,
-  color_warning,
-  color_info,
+  sbInfo,
+  sbSuccess,
+  sbPrimary,
+  sbWarning,
+  sbDanger,
   sbGrey,
   sbSecondary,
   sbOverlay,
@@ -51,48 +49,39 @@ import {
   UncheckedRadioIcon,
 } from '@src/icons'
 
-const shadows = [
-  'none',
-  ...new Array(24)
-    .fill(0)
-    .map((_, i) => i + 1)
-    .map((i) => [0, i / 12, i, i / 4])
-    .map((v) => v.map(Math.ceil))
-    .map(
-      (v) =>
-        `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(
-          color_primary_dark,
-          0.07,
-        )}`,
-    ),
-] as Theme['shadows']
-
 const spacing = (factor?: number) => Math.floor(factor ?? 1) * 4
+
+const textPrimary = sbSecondary['950']
 
 const palette = {
   mode: 'light',
   primary: {
-    main: color_primary,
+    main: sbPrimary['700'],
+    dark: sbPrimary['900'],
     contrastText: white,
   },
   secondary: {
-    main: color_secondary,
+    main: sbSecondary['950'],
     contrastText: white,
   },
   success: {
-    main: color_positive,
+    main: sbSuccess['700'],
+    dark: sbSuccess['900'],
     contrastText: white,
   },
   info: {
-    main: color_info,
+    main: sbInfo['700'],
+    dark: sbInfo['900'],
     contrastText: white,
   },
   warning: {
-    main: color_warning,
-    contrastText: black,
+    main: sbWarning['400'],
+    dark: sbWarning['500'],
+    contrastText: textPrimary,
   },
   error: {
-    main: color_negative,
+    main: sbDanger['700'],
+    dark: sbDanger['800'],
     contrastText: white,
   },
   background: {
@@ -112,18 +101,34 @@ const palette = {
   action: {
     focus: sbGrey['500'], // background-color
     focusOpacity: focusOpacity,
-    active: sbGrey['700'],
+    active: sbGrey['500'],
     activatedOpacity: activatedOpacity,
-    disabled: sbSecondary['50'],
-    disabledBackground: sbOverlay.secondary,
+    disabled: sbGrey['200'], // color
+    disabledBackground: sbGrey['100'],
     disabledOpacity: disabledOpacity,
-    hover: sbSecondary['50'], // background-color
+    hover: sbGrey['50'], // background-color
     hoverOpacity: hoverOpacity,
-    selected: sbGrey['500'], // color
+    selected: sbGrey['100'], // color
     selectedOpacity: selectedOpacity,
   },
   grey: sbGrey,
 } as const
+
+const shadows = [
+  'none',
+  ...new Array(24)
+    .fill(0)
+    .map((_, i) => i + 1)
+    .map((i) => [0, i / 12, i, i / 4])
+    .map((v) => v.map(Math.ceil))
+    .map(
+      (v) =>
+        `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(
+          palette.primary.dark,
+          0.07,
+        )}`,
+    ),
+] as Theme['shadows']
 
 const typography: ThemeOptions['typography'] = {
   htmlFontSize: 10,
@@ -367,9 +372,9 @@ const lightTheme = createTheme({
     },
     MuiLink: {
       styleOverrides: {
-        root: {
-          color: color_primary,
-        },
+        root: ({ theme }) => ({
+          color: theme.palette.primary.main,
+        }),
       },
     },
     MuiButtonBase: {
@@ -697,9 +702,9 @@ const lightTheme = createTheme({
     },
     MuiBackdrop: {
       styleOverrides: {
-        root: {
-          backgroundColor: alpha(color_primary_dark, 0.2),
-        },
+        root: ({ theme }) => ({
+          backgroundColor: alpha(theme.palette.secondary.dark, 0.2),
+        }),
         invisible: {
           opacity: 0,
         },
