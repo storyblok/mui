@@ -40,11 +40,7 @@ export const Drawer: Story = {
         title="App Name"
         subtitle="Created by Johannes Lindgren"
         contentProps={{ className: 'AppLayout-custom' }}
-        header={
-          <Button onClick={() => setDrawerOpen(true)}>
-            Open Drawer
-          </Button>
-        }
+        header={<Button onClick={() => setDrawerOpen(true)}>Open Drawer</Button>}
       >
         <AppDrawer
           open={drawerOpen ?? false}
