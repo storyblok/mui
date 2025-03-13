@@ -2,13 +2,6 @@ import {
   activatedOpacity,
   backgroundOpacity,
   base_border_radius,
-  black,
-  blue,
-  color_negative,
-  color_positive,
-  color_primary,
-  color_primary_dark,
-  color_warning,
   disabledOpacity,
   focusOpacity,
   font_12,
@@ -26,14 +19,19 @@ import {
   heading_xl,
   heading_xs,
   hoverOpacity,
-  light,
-  light_25,
-  light_50,
-  sb_dark_blue,
-  sb_dark_blue_25,
-  sb_dark_blue_50,
   selectedOpacity,
+  color_primary,
+  color_primary_dark,
+  color_secondary,
+  color_negative,
+  color_positive,
+  color_warning,
+  color_info,
+  sbGrey,
+  sbSecondary,
+  sbOverlay,
   white,
+  black,
 } from '@src/theme/design-tokens'
 import { alpha, createTheme, Theme, ThemeOptions } from '@mui/material'
 import { ShapeOptions } from '@mui/system'
@@ -62,7 +60,10 @@ const shadows = [
     .map((v) => v.map(Math.ceil))
     .map(
       (v) =>
-        `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(sb_dark_blue, 0.07)}`,
+        `${v[0]}px ${v[1]}px ${v[2]}px ${v[3]}px ${alpha(
+          color_primary_dark,
+          0.07,
+        )}`,
     ),
 ] as Theme['shadows']
 
@@ -75,8 +76,7 @@ const palette = {
     contrastText: white,
   },
   secondary: {
-    // main: color_secondary,
-    main: color_primary_dark,
+    main: color_secondary,
     contrastText: white,
   },
   success: {
@@ -84,12 +84,12 @@ const palette = {
     contrastText: white,
   },
   info: {
-    main: blue,
+    main: color_info,
     contrastText: white,
   },
   warning: {
     main: color_warning,
-    contrastText: white,
+    contrastText: black,
   },
   error: {
     main: color_negative,
@@ -104,36 +104,25 @@ const palette = {
     black: black,
   },
   text: {
-    primary: sb_dark_blue,
-    secondary: sb_dark_blue_50,
-    disabled: light_50,
+    primary: sbSecondary['950'],
+    secondary: sbGrey['700'],
+    disabled: sbGrey['500'],
   },
-  divider: light,
+  divider: sbGrey['200'],
   action: {
-    focus: light_50, // background-color
+    focus: sbGrey['500'], // background-color
     focusOpacity: focusOpacity,
-    active: sb_dark_blue_50,
+    active: sbGrey['700'],
     activatedOpacity: activatedOpacity,
-    disabled: sb_dark_blue_25,
-    disabledBackground: light_25,
+    disabled: sbSecondary['50'],
+    disabledBackground: sbOverlay.secondary,
     disabledOpacity: disabledOpacity,
-    hover: light_25, // background-color
+    hover: sbSecondary['50'], // background-color
     hoverOpacity: hoverOpacity,
-    selected: light_50, // color
+    selected: sbGrey['500'], // color
     selectedOpacity: selectedOpacity,
   },
-  grey: {
-    '50': '#f7f8f9',
-    '100': '#ECF0FF',
-    '200': '#E2E6F5',
-    '300': '#D1D5E4',
-    '400': '#ADB1C0',
-    '500': '#8d919f',
-    '600': '#656976',
-    '700': '#525662',
-    '800': '#343743',
-    '900': '#141822',
-  },
+  grey: sbGrey,
 } as const
 
 const typography: ThemeOptions['typography'] = {
@@ -179,7 +168,7 @@ const typography: ThemeOptions['typography'] = {
     fontWeight: font_weight_regular,
   },
   button: {
-    fontSize: font_16,
+    fontSize: font_14,
     fontWeight: font_weight_medium,
     textTransform: 'inherit',
     lineHeight: 'normal',
@@ -233,7 +222,6 @@ const lightTheme = createTheme({
       styleOverrides: {
         '&:not(pre)>code': {
           fontFamily: `ui-monospace,Menlo,Monaco,"Roboto Mono","Oxygen Mono","Ubuntu Monospace","Source Code Pro","Droid Sans Mono","Courier New",monospace`,
-          color: sb_dark_blue,
           backgroundColor: palette.grey['50'],
           borderRadius: shape.borderRadius,
           padding: '3px 5px',
@@ -408,7 +396,7 @@ const lightTheme = createTheme({
           padding: `20px 43px`,
         },
         containedInherit: {
-          backgroundColor: light_25,
+          backgroundColor: sbOverlay.secondary,
         },
         outlinedInherit: {
           borderColor: palette.divider,
@@ -662,47 +650,55 @@ const lightTheme = createTheme({
     },
     MuiMenuItem: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           '&.Mui-selected': {
-            backgroundColor: alpha(
-              sb_dark_blue,
-              palette.action.selectedOpacity,
-            ),
+            backgroundColor: 'transparent',
+            color: theme.palette.primary.main,
+            fontWeight: theme.typography.fontWeightBold,
             '&:hover': {
-              backgroundColor: alpha(sb_dark_blue, palette.action.hoverOpacity),
+              backgroundColor: theme.palette.action.hover,
             },
           },
-        },
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover,
+          },
+        }),
       },
     },
     MuiListItem: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           '&.Mui-selected': {
-            backgroundColor: alpha(
-              sb_dark_blue,
-              palette.action.selectedOpacity,
-            ),
+            backgroundColor: theme.palette.action.hover,
             '&:hover': {
-              backgroundColor: alpha(sb_dark_blue, palette.action.hoverOpacity),
+              backgroundColor: theme.palette.grey['100'],
             },
           },
-        },
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover,
+          },
+        }),
       },
     },
     MuiListItemButton: {
       styleOverrides: {
-        root: {
-          '&:hover': {
-            backgroundColor: alpha(sb_dark_blue, palette.action.hoverOpacity),
+        root: ({ theme }) => ({
+          '&.Mui-selected': {
+            backgroundColor: theme.palette.action.hover,
+            '&:hover': {
+              backgroundColor: theme.palette.grey['100'],
+            },
           },
-        },
+          '&:hover': {
+            backgroundColor: theme.palette.action.hover,
+          },
+        }),
       },
     },
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          backgroundColor: alpha(sb_dark_blue, 0.2),
+          backgroundColor: alpha(color_primary_dark, 0.2),
         },
         invisible: {
           opacity: 0,

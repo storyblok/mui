@@ -10,6 +10,9 @@ const meta: Meta<typeof Button> = {
     variant: {
       control: 'select',
       options: [undefined, 'contained', 'outlined', 'text'],
+      table: {
+        defaultValue: { summary: 'contained' },
+      },
     },
     color: {
       control: 'select',
@@ -23,6 +26,9 @@ const meta: Meta<typeof Button> = {
         'warning',
         'error',
       ],
+      table: {
+        defaultValue: { summary: 'primary' },
+      },
     },
   },
 }
