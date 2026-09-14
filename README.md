@@ -91,6 +91,7 @@ Releases are automated with [release-please](https://github.com/googleapis/relea
    - `feat!:` / `BREAKING CHANGE:` → minor release, while the package is still pre-`1.0.0`
    - `chore:`, `docs:`, `refactor:`, `test:`, `ci:`, `build:`, `style:` → no release
 2. release-please opens and maintains a `chore(main): release x.y.z` pull request that bumps `package.json` and updates `CHANGELOG.md`.
-3. Merging that pull request tags the release as `@storyblok/mui@x.y.z`, creates the GitHub release, and stages the package for publication on NPM. Publishing uses [trusted publishing](https://docs.npmjs.com/trusted-publishers) over OIDC, so a maintainer has to approve the staged release on npmjs.com before it goes live.
+3. You can update the release notes in the pull request description, which will be used for the GitHub release notes.
+3. Merging that pull request tags the release as `@storyblok/mui@x.y.z`, creates the GitHub release, and stages the package for publication on NPM.
+4. Publishing uses [trusted publishing](https://docs.npmjs.com/trusted-publishers) over OIDC, so a maintainer has to approve the staged release on npmjs.com before it goes live.
 
-If a user-facing change lands under a type that does not trigger a release, it will not ship until the next `fix:` or `feat:` is merged.
