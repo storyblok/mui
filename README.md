@@ -7,7 +7,7 @@
   </p>
 </div>
 
-[![Node.js Package](https://github.com/storyblok/mui/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/storyblok/mui/actions/workflows/ci.yml)
+[![Node.js Package](https://github.com/storyblok/mui/actions/workflows/npm-publish.yml/badge.svg?branch=develop)](https://github.com/storyblok/mui/actions/workflows/npm-publish.yml)
 
 `@storybook/mui` is a component library based on [MUI](https://mui.com/). It is the ideal package to use for building Storyblok extensions with React as it takes care of the task of styling your components and lets you focus on building business logic. Thus, extensions built with `@storybook/mui` will seamlessly, visually integrate into Storyblok.
 
@@ -91,6 +91,6 @@ Releases are automated with [release-please](https://github.com/googleapis/relea
    - `feat!:` / `BREAKING CHANGE:` → minor release, while the package is still pre-`1.0.0`
    - `chore:`, `docs:`, `refactor:`, `test:`, `ci:`, `build:`, `style:` → no release
 2. release-please opens and maintains a `chore(main): release x.y.z` pull request that bumps `package.json` and updates `CHANGELOG.md`.
-3. Merging that pull request tags the release as `@storyblok/mui@x.y.z`, creates the GitHub release, and publishes the package to NPM.
+3. Merging that pull request tags the release as `@storyblok/mui@x.y.z`, creates the GitHub release, and stages the package for publication on NPM. Publishing uses [trusted publishing](https://docs.npmjs.com/trusted-publishers) over OIDC, so a maintainer has to approve the staged release on npmjs.com before it goes live.
 
 If a user-facing change lands under a type that does not trigger a release, it will not ship until the next `fix:` or `feat:` is merged.
