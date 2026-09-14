@@ -26,12 +26,13 @@ jobs:
           node-version: 22
           cache: 'yarn'
           registry-url: 'https://registry.npmjs.org'
-      # `npm stage publish` requires npm >= 11.15.0, but Node 22 ships npm 10.
-      - name: Update npm (staged publishing support)
+      # Trusted publishing requires npm >= 11.5.1, but Node 22 ships npm 10.
+      - name: Update npm (trusted publishing support)
         run: npm install -g npm@11.15.0
       - name: Install
         run: yarn install --immutable
       - name: Build
         run: yarn build
-      - name: Stage publish to npm (awaits 2FA approval)
-        run: npm stage publish --access public
+      # Authenticated via OIDC
+      - name: Publish to NPM
+        run: npm publish --access public
