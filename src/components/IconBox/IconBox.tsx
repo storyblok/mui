@@ -31,11 +31,11 @@ const width = (size: IconSize): number => {
 const fontSize = (size: IconSize): number | string => {
   switch (size) {
     case 'large':
-      return '2.4rem'
+      return '1.5rem'
     case 'medium':
-      return '2rem'
+      return '1.25rem'
     case 'small':
-      return '2rem'
+      return '1.25rem'
   }
 }
 

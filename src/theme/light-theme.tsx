@@ -131,7 +131,7 @@ const shadows = [
 ] as Theme['shadows']
 
 const typography: ThemeOptions['typography'] = {
-  htmlFontSize: 10,
+  htmlFontSize: 16,
   fontSize: 14,
   fontWeightLight: font_weight_light,
   fontWeightRegular: font_weight_regular,
@@ -244,7 +244,7 @@ const lightTheme = createTheme({
           backgroundColor: palette.primary.main,
         },
         html: {
-          fontSize: '62.5%',
+          fontSize: '100%',
         },
         body: {},
         a: {
@@ -633,8 +633,8 @@ const lightTheme = createTheme({
               right: 0,
               m: 2,
               pointerEvents: 'none',
-              width: '2.4rem',
-              height: '2.4rem',
+              width: '1.5rem',
+              height: '1.5rem',
             }}
           />
         ),

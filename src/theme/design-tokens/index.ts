@@ -19,7 +19,7 @@ export const base_transition = `all ${base_transition_duration} ${base_transitio
 export const base_border_radius = 5
 
 // Icon Sizes
-export const icon_small_size = '1.6rem'
-export const icon_default_size = '2.4rem'
-export const icon_large_size = '3.2rem'
-export const icon_extra_large_size = '4.8rem'
+export const icon_small_size = '1rem'
+export const icon_default_size = '1.5rem'
+export const icon_large_size = '2rem'
+export const icon_extra_large_size = '3rem'
