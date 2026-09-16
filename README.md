@@ -80,3 +80,17 @@ const App = () => (
     </ThemeProvider>
 )
 ````
+
+## Releasing
+
+Releases are automated with [release-please](https://github.com/googleapis/release-please). There is no manual version bumping, tagging, or publishing.
+
+1. Merge pull requests into `main` with a [conventional commit](https://www.conventionalcommits.org/) title. The title becomes the commit message on `main`, so it is what determines the next version:
+   - `fix:` → patch release
+   - `feat:` → minor release
+   - `feat!:` / `BREAKING CHANGE:` → minor release, while the package is still pre-`1.0.0`
+   - `chore:`, `docs:`, `refactor:`, `test:`, `ci:`, `build:`, `style:` → no release
+2. release-please opens and maintains a `chore(main): release x.y.z` pull request that bumps `package.json` and updates `CHANGELOG.md`.
+3. (Optional) Update the release notes in the pull request description, which will be used for the GitHub 
+   release notes.
+3. Merging that pull request tags the release as `@storyblok/mui@x.y.z`, creates the GitHub release, and publishes the package to NPM.

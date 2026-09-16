@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "package-name": "@storyblok/mui",
+      "component": "@storyblok/mui",
+      "include-component-in-tag": true,
+      "include-v-in-tag": false,
+      "tag-separator": "@",
+      "bump-minor-pre-major": true,
+      "changelog-path": "CHANGELOG.md"
+    }
+  }
+}
