@@ -243,9 +243,6 @@ const lightTheme = createTheme({
           color: palette.primary.contrastText,
           backgroundColor: palette.primary.main,
         },
-        html: {
-          fontSize: '100%',
-        },
         body: {},
         a: {
           color: palette.primary.main,
